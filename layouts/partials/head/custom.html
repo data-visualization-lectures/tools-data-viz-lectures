@@ -1,0 +1,39 @@
+{{/* hreflang: 検索エンジンに言語別URLを通知 */}}
+{{- if .IsTranslated -}}
+  {{- range .AllTranslations -}}
+    <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
+  {{- end -}}
+  <link rel="alternate" hreflang="x-default" href="{{ .Permalink }}">
+{{- end -}}
+
+<script>
+  window.DATAVIZ_HEADER_CONFIG = {
+    {{ if eq site.Params.headerMode "public" }}mode: 'public'{{ end }}
+  };
+</script>
+<style>
+  .external-link-card__media {
+    height: 160px !important;
+    overflow: hidden;
+  }
+
+  .article-content .external-link-card__media img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center;
+  }
+
+</style>
+{{/* GA4 クロスドメイン linker (Hugo internal の gtag config の後で上書き) */}}
+{{- with site.Config.Services.GoogleAnalytics.ID -}}
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('config', '{{ . }}', {
+    linker: { domains: ['tools.data-viz-lectures.com','id.data-viz-lectures.com','www.dataviz.jp','www.dataprep.jp','app.dataviz.jp','app.dataprep.jp','video.dataviz.jp'] }
+  });
+</script>
+{{- end -}}
+<script src="{{ site.Params.authBaseURL }}/lib/supabase.js"></script>
+<script src="{{ site.Params.authBaseURL }}/lib/dataviz-auth-client.js"></script>

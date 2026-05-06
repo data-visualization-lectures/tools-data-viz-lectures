@@ -1,0 +1,12 @@
+{{- $banners := default slice .Params.items -}}
+<section class="widget banners-widget">
+  <div style="display: flex; flex-direction: column; gap: 10px;">
+    {{ range $banners }}
+      <a href="{{ .url }}" style="display: block; overflow: hidden; border-radius: 12px; border: 1px solid var(--card-border-color, #e5e7eb); box-shadow: 0 1px 2px rgba(0,0,0,0.05); transition: opacity 0.2s;"
+         onmouseover="this.style.opacity='0.6'" onmouseout="this.style.opacity='1'"
+         {{ if .external }}target="_blank" rel="noopener noreferrer"{{ end }}>
+        <img src="{{ .image }}" alt="{{ .alt }}" style="width: 100%; height: auto; display: block;" />
+      </a>
+    {{ end }}
+  </div>
+</section>

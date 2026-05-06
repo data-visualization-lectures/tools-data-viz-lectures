@@ -1,0 +1,175 @@
+{{/* Main navigation bar for tools.data-viz-lectures.com (public mode only) */}}
+<nav class="www-mainnav" aria-label="{{ T "header.mainnavAria" | default "Main navigation" }}">
+  <div class="www-mainnav__inner">
+
+    <button type="button" class="www-mainnav__hamburger" aria-expanded="false" aria-controls="www-mainnav-menu" aria-label="{{ T "header.mainnavAria" | default "Menu" }}">
+      <span class="www-mainnav__hamburger-bar"></span>
+      <span class="www-mainnav__hamburger-bar"></span>
+      <span class="www-mainnav__hamburger-bar"></span>
+    </button>
+
+    <div class="www-mainnav__menu" id="www-mainnav-menu">
+
+      {{/* Features */}}
+      <div class="www-mainnav__item">
+        <button type="button" class="www-mainnav__trigger" aria-expanded="false" aria-haspopup="true" aria-controls="www-mainnav-features">
+          <span>{{ T "header.navFeatures" | default "特徴" }}</span>
+          <svg class="www-mainnav__chevron" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="www-mainnav__dropdown" id="www-mainnav-features" role="menu">
+          <div class="www-mainnav__dropdown-grid">
+            <a href="{{ "feature-many-tools/" | relLangURL }}" class="www-mainnav__dropdown-link" role="menuitem">
+              <span class="www-mainnav__dropdown-icon" aria-hidden="true">🧰</span>
+              <span class="www-mainnav__dropdown-body">
+                <span class="www-mainnav__dropdown-title">{{ T "mainnav.features.manyTools" | default "40種類以上のツールが使い放題" }}</span>
+                <span class="www-mainnav__dropdown-desc">{{ T "mainnav.features.manyToolsDesc" | default "可視化から加工まで定額で利用可能" }}</span>
+              </span>
+            </a>
+            <a href="{{ "feature-browser-only/" | relLangURL }}" class="www-mainnav__dropdown-link" role="menuitem">
+              <span class="www-mainnav__dropdown-icon" aria-hidden="true">🌐</span>
+              <span class="www-mainnav__dropdown-body">
+                <span class="www-mainnav__dropdown-title">{{ T "mainnav.features.browserOnly" | default "インストール不要、ブラウザだけで完結" }}</span>
+                <span class="www-mainnav__dropdown-desc">{{ T "mainnav.features.browserOnlyDesc" | default "環境構築なしですぐ使える" }}</span>
+              </span>
+            </a>
+            <a href="{{ "feature-data-viz-capabilities/" | relLangURL }}" class="www-mainnav__dropdown-link" role="menuitem">
+              <span class="www-mainnav__dropdown-icon" aria-hidden="true">📊</span>
+              <span class="www-mainnav__dropdown-body">
+                <span class="www-mainnav__dropdown-title">{{ T "mainnav.features.dataViz" | default "データ可視化ツールで出来ること" }}</span>
+                <span class="www-mainnav__dropdown-desc">{{ T "mainnav.features.dataVizDesc" | default "チャート・地図・ネットワークまで" }}</span>
+              </span>
+            </a>
+            <a href="{{ "feature-data-wrangling-capabilities/" | relLangURL }}" class="www-mainnav__dropdown-link" role="menuitem">
+              <span class="www-mainnav__dropdown-icon" aria-hidden="true">🧹</span>
+              <span class="www-mainnav__dropdown-body">
+                <span class="www-mainnav__dropdown-title">{{ T "mainnav.features.dataWrangling" | default "データ加工ツールで出来ること" }}</span>
+                <span class="www-mainnav__dropdown-desc">{{ T "mainnav.features.dataWranglingDesc" | default "クレンジング・変換・結合" }}</span>
+              </span>
+            </a>
+            <a href="{{ "feature-data-portal/" | relLangURL }}" class="www-mainnav__dropdown-link" role="menuitem">
+              <span class="www-mainnav__dropdown-icon" aria-hidden="true">📂</span>
+              <span class="www-mainnav__dropdown-body">
+                <span class="www-mainnav__dropdown-title">{{ T "mainnav.features.dataPortal" | default "データポータル" }}</span>
+                <span class="www-mainnav__dropdown-desc">{{ T "mainnav.features.dataPortalDesc" | default "サンプル&実務データを提供" }}</span>
+              </span>
+            </a>
+            <a href="{{ "feature-team-project-share/" | relLangURL }}" class="www-mainnav__dropdown-link" role="menuitem">
+              <span class="www-mainnav__dropdown-icon" aria-hidden="true">👥</span>
+              <span class="www-mainnav__dropdown-body">
+                <span class="www-mainnav__dropdown-title">{{ T "mainnav.features.teamShare" | default "グループでのプロジェクト共有機能" }}</span>
+                <span class="www-mainnav__dropdown-desc">{{ T "mainnav.features.teamShareDesc" | default "チーム全体でリテラシー底上げ" }}</span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {{/* Tools */}}
+      <div class="www-mainnav__item">
+        <button type="button" class="www-mainnav__trigger" aria-expanded="false" aria-haspopup="true" aria-controls="www-mainnav-tools">
+          <span>{{ T "header.navTools" | default "ツール一覧" }}</span>
+          <svg class="www-mainnav__chevron" width="10" height="6" viewBox="0 0 10 6" aria-hidden="true"><path d="M1 1l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="www-mainnav__dropdown" id="www-mainnav-tools" role="menu">
+          <div class="www-mainnav__dropdown-grid">
+            <a href="{{ "tools/" | relLangURL }}" class="www-mainnav__dropdown-link" role="menuitem">
+              <span class="www-mainnav__dropdown-icon" aria-hidden="true">🗺️</span>
+              <span class="www-mainnav__dropdown-body">
+                <span class="www-mainnav__dropdown-title">{{ T "mainnav.tools.allTools" | default "全ツール一覧" }}</span>
+                <span class="www-mainnav__dropdown-desc">{{ T "mainnav.tools.allToolsDesc" | default "40種類以上のツールを一覧表示" }}</span>
+              </span>
+            </a>
+            <a href="{{ "how-to-use-data-viz/" | relLangURL }}" class="www-mainnav__dropdown-link" role="menuitem">
+              <span class="www-mainnav__dropdown-icon" aria-hidden="true">🎨</span>
+              <span class="www-mainnav__dropdown-body">
+                <span class="www-mainnav__dropdown-title">{{ T "mainnav.tools.howToViz" | default "データ可視化ツールの使い分け" }}</span>
+                <span class="www-mainnav__dropdown-desc">{{ T "mainnav.tools.howToVizDesc" | default "目的別にツールを選ぶ" }}</span>
+              </span>
+            </a>
+            <a href="{{ "how-to-use-data-wrangling/" | relLangURL }}" class="www-mainnav__dropdown-link" role="menuitem">
+              <span class="www-mainnav__dropdown-icon" aria-hidden="true">🧹</span>
+              <span class="www-mainnav__dropdown-body">
+                <span class="www-mainnav__dropdown-title">{{ T "mainnav.tools.howToWrangling" | default "データ加工ツールの使い分け" }}</span>
+                <span class="www-mainnav__dropdown-desc">{{ T "mainnav.tools.howToWranglingDesc" | default "目的別にツールを選ぶ" }}</span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</nav>
+
+<script>
+(function () {
+  var nav = document.querySelector('.www-mainnav');
+  if (!nav) return;
+
+  var hamburger = nav.querySelector('.www-mainnav__hamburger');
+  var triggers = nav.querySelectorAll('.www-mainnav__trigger');
+  var mqDesktop = window.matchMedia('(min-width: 768px)');
+
+  function closeAllDropdowns(except) {
+    triggers.forEach(function (btn) {
+      if (btn !== except) btn.setAttribute('aria-expanded', 'false');
+    });
+  }
+
+  function closeHamburger() {
+    nav.classList.remove('is-open');
+    if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('www-mainnav-is-open');
+    closeAllDropdowns(null);
+  }
+
+  function openHamburger() {
+    nav.classList.add('is-open');
+    if (hamburger) hamburger.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('www-mainnav-is-open');
+  }
+
+  if (hamburger) {
+    hamburger.addEventListener('click', function (e) {
+      e.stopPropagation();
+      if (hamburger.getAttribute('aria-expanded') === 'true') {
+        closeHamburger();
+      } else {
+        openHamburger();
+      }
+    });
+  }
+
+  triggers.forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      closeAllDropdowns(btn);
+      btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+    });
+  });
+
+  document.addEventListener('click', function (e) {
+    if (mqDesktop.matches && !e.target.closest('.www-mainnav__item')) {
+      closeAllDropdowns(null);
+    }
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+      closeAllDropdowns(null);
+      closeHamburger();
+    }
+  });
+
+  var onMqChange = function (e) {
+    if (e.matches) closeHamburger();
+    closeAllDropdowns(null);
+  };
+  if (mqDesktop.addEventListener) {
+    mqDesktop.addEventListener('change', onMqChange);
+  } else if (mqDesktop.addListener) {
+    mqDesktop.addListener(onMqChange);
+  }
+})();
+</script>

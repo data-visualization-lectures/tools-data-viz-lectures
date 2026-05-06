@@ -1,0 +1,52 @@
+{{/* Sub-navigation bar for app service hosts (protected mode only) */}}
+{{- $currentHost := site.BaseURL | urls.Parse -}}
+{{- $isDataprep := strings.HasSuffix $currentHost.Host "dataprep.jp" -}}
+{{- $datavizUrl := "https://app.dataviz.jp/" -}}
+{{- $dataprepUrl := "https://app.dataprep.jp/" -}}
+{{- $datavizHref := $datavizUrl -}}
+{{- $dataprepHref := $dataprepUrl -}}
+{{- if $isDataprep -}}
+  {{- $datavizHref = printf "https://app.dataprep.jp/auth/session-bridge?redirect_to=%s" ($datavizUrl | urlquery) -}}
+{{- else -}}
+  {{- $dataprepHref = printf "https://app.dataviz.jp/auth/session-bridge?redirect_to=%s" ($dataprepUrl | urlquery) -}}
+{{- end -}}
+<nav class="app-subnav" aria-label="App navigation">
+  <div class="app-subnav__inner">
+    <div class="app-subnav__service-switch" aria-label="{{ T "header.serviceSwitch" | default "Service switch" }}">
+      <a
+        href="{{ $datavizHref | safeURL }}"
+        class="app-subnav__service-link{{ if not $isDataprep }} is-current{{ end }}"
+        data-service="dataviz"
+        {{ if not $isDataprep }}aria-current="page"{{ end }}
+      >{{ T "header.serviceDataviz" | default "データ可視化" }}</a>
+      <a
+        href="{{ $dataprepHref | safeURL }}"
+        class="app-subnav__service-link{{ if $isDataprep }} is-current{{ end }}"
+        data-service="dataprep"
+        {{ if $isDataprep }}aria-current="page"{{ end }}
+      >{{ T "header.serviceDataprep" | default "データ加工" }}</a>
+    </div>
+    <a href="/" class="app-subnav__link">{{ T "header.navTools" | default "ツール一覧" }}</a>
+    <a href="/data-library" class="app-subnav__link">{{ T "header.navDataLibrary" | default "データ一覧" }}</a>
+    <a href="/projects" class="app-subnav__link">{{ T "header.navProjects" | default "保存プロジェクト一覧" }}</a>
+    <a href="/account" class="app-subnav__link">{{ T "header.navAccount" | default "アカウント情報" }}</a>
+  </div>
+</nav>
+<script>
+  (function () {
+    var isDataprep = window.location.hostname.endsWith("dataprep.jp");
+    if (!isDataprep) return;
+
+    var datavizLink = document.querySelector(".app-subnav__service-link[data-service='dataviz']");
+    var dataprepLink = document.querySelector(".app-subnav__service-link[data-service='dataprep']");
+    if (!datavizLink || !dataprepLink) return;
+
+    datavizLink.classList.remove("is-current");
+    datavizLink.removeAttribute("aria-current");
+    datavizLink.href = "https://app.dataprep.jp/auth/session-bridge?redirect_to=" + encodeURIComponent("https://app.dataviz.jp/");
+
+    dataprepLink.classList.add("is-current");
+    dataprepLink.setAttribute("aria-current", "page");
+    dataprepLink.href = "https://app.dataprep.jp/";
+  })();
+</script>

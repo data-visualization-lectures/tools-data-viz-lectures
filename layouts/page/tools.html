@@ -1,0 +1,119 @@
+{{ define "main" }}
+<style>
+  .tools-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 0;
+    color: var(--card-text-color-main);
+  }
+
+  .tools-header {
+    text-align: center;
+  }
+
+  .tools-header__title {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+  }
+
+  .tools-header__subtitle {
+    font-size: 1.6rem;
+    color: var(--card-text-color-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .tools-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .tools-card {
+    background: var(--card-background);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-l1);
+    transition: transform 0.2s;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .tools-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .tools-card__icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    padding: 0.5rem;
+    background: rgba(16, 185, 129, 0.1);
+    border-radius: 8px;
+    color: #10B981;
+  }
+
+  .tools-card__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .tools-card__desc {
+    line-height: 1.6;
+    color: var(--body-text-color);
+    flex: 1;
+  }
+
+  .tools-card__count {
+    font-size: 1.3rem;
+    color: var(--card-text-color-tertiary);
+    margin-top: 0.5rem;
+  }
+</style>
+
+{{- $icons := dict
+  "data-visualization" "📊"
+  "data-visualization-map" "🌍"
+  "data-visualization-parts" "🎨"
+  "data-visualization-color" "🎨"
+  "data-wrangling" "🔧"
+  "data-wrangling-map" "🔧"
+-}}
+
+{{- $order := default (slice) .Site.Params.sidebar.categories.order -}}
+
+<div class="tools-container">
+  <header class="tools-header">
+    <h1 class="tools-header__title">{{ T "tools.title" }}</h1>
+    <p class="tools-header__subtitle">{{ T "tools.subtitle" }}</p>
+  </header>
+
+  <div class="tools-grid">
+    {{- range $slug := $order -}}
+      {{- if ne $slug "how-to" -}}
+        {{- with site.GetPage (printf "categories/%s" $slug) -}}
+          <a href="{{ .RelPermalink }}" class="tools-card">
+            <div class="tools-card__icon">{{ index $icons $slug }}</div>
+            <h2 class="tools-card__title">{{ .Title }}</h2>
+            <p class="tools-card__desc">{{ .Params.description }}</p>
+            <span class="tools-card__count">{{ len .Pages }} {{ T "tools.count" }}</span>
+          </a>
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+  </div>
+</div>
+{{ end }}
+

@@ -1,0 +1,361 @@
+# Homepage
+hero.title:
+  other: "データの道具箱"
+hero.subtitle:
+  other: "データ可視化とデータ加工の便利ツール集"
+hero.notice:
+  other: "Excelよりも多様に、B.I.ツールよりも簡単に、小回りの利くデータ可視化（チャートやデータ地図、ネットワーク図）作成・データ加工ツールを40種類以上用意しています。ブラウザですべて完結し、定額で使い放題で利用いただけます。"
+hero.cta.primary:
+  other: "今すぐはじめる"
+hero.cta.secondary:
+  other: "もっと詳しく"
+hero.image.alt:
+  other: "データ可視化イメージ"
+hero.alert.label:
+  other: ""
+hero.alert:
+  other: ""
+hero.news.label:
+  other: "お知らせ"
+hero.news:
+  other: "データ可視化とデータ加工の各サービスを公開中です。"
+
+# Feature cards
+feature.dataviz.title:
+  other: "データ可視化"
+feature.dataviz.desc:
+  other: "チャート作成に役立つツールをまとめています。"
+feature.dataviz-map.title:
+  other: "データ可視化：地図"
+feature.dataviz-map.desc:
+  other: "地図を使ったデータ可視化ツールをまとめています。"
+feature.dataviz-parts.title:
+  other: "データ可視化：個別"
+feature.dataviz-parts.desc:
+  other: "チャートの一部や特定の可視化表現に焦点を当てたリソースをまとめています。"
+feature.dataviz-color.title:
+  other: "データ可視化：色"
+feature.dataviz-color.desc:
+  other: "配色設計やカラーパレット作成に特化した可視化ツール。"
+feature.wrangling.title:
+  other: "データ加工"
+feature.wrangling.desc:
+  other: "加工・整形・変換など、データ整備に使えるツールのまとめです。"
+feature.wrangling-map.title:
+  other: "データ加工：地図"
+feature.wrangling-map.desc:
+  other: "地図用データの整形・結合・クレンジングに焦点を当てたツールです。"
+
+# Sidebar
+sidebar.sample-data:
+  other: "サンプル・データ"
+sidebar.data-portal:
+  other: "オリジナル・データ"
+
+# App sub-navigation
+header.serviceSwitch:
+  other: "サービス切替"
+header.serviceDataviz:
+  other: "データ可視化"
+header.serviceDataprep:
+  other: "データ加工"
+header.navTools:
+  other: "ツール一覧"
+header.navDataLibrary:
+  other: "データ一覧"
+header.navProjects:
+  other: "保存プロジェクト一覧"
+header.navAccount:
+  other: "アカウント情報"
+
+# www main navigation
+header.navFeatures:
+  other: "特徴"
+header.navPricing:
+  other: "料金プラン"
+header.mainnavAria:
+  other: "メインナビゲーション"
+
+# www main navigation - dropdown items
+mainnav.features.manyTools:
+  other: "40種類以上のツールが使い放題"
+mainnav.features.manyToolsDesc:
+  other: "可視化から加工まで定額で利用可能"
+mainnav.features.browserOnly:
+  other: "インストール不要、ブラウザだけで完結"
+mainnav.features.browserOnlyDesc:
+  other: "環境構築なしですぐ使える"
+mainnav.features.dataViz:
+  other: "データ可視化ツールで出来ること"
+mainnav.features.dataVizDesc:
+  other: "チャート・地図・ネットワークまで"
+mainnav.features.dataWrangling:
+  other: "データ加工ツールで出来ること"
+mainnav.features.dataWranglingDesc:
+  other: "クレンジング・変換・結合"
+mainnav.features.dataPortal:
+  other: "データポータル"
+mainnav.features.dataPortalDesc:
+  other: "サンプル&実務データを提供"
+mainnav.features.teamShare:
+  other: "グループでのプロジェクト共有機能"
+mainnav.features.teamShareDesc:
+  other: "チーム全体でリテラシー底上げ"
+mainnav.tools.allTools:
+  other: "全ツール一覧"
+mainnav.tools.allToolsDesc:
+  other: "可視化・加工ツールを一覧表示"
+mainnav.tools.howToViz:
+  other: "データ可視化ツールの使い分け"
+mainnav.tools.howToVizDesc:
+  other: "目的別にツールを選ぶ"
+mainnav.tools.howToWrangling:
+  other: "データ加工ツールの使い分け"
+mainnav.tools.howToWranglingDesc:
+  other: "目的別にツールを選ぶ"
+
+# Pricing page
+pricing.title:
+  other: "料金プラン"
+pricing.subtitle:
+  other: "あなたのニーズに合ったプランをお選びください。"
+pricing.standard:
+  other: "通常プラン"
+pricing.coaching:
+  other: "コーチングプラン"
+pricing.monthly:
+  other: "月額"
+pricing.yearly:
+  other: "年額"
+pricing.per-month:
+  other: "/ 月"
+pricing.per-year:
+  other: "/ 年（2ヶ月分お得）"
+pricing.recommended:
+  other: "おすすめ"
+pricing.cta:
+  other: "申し込む"
+pricing.standard.monthly.desc:
+  other: "一番ベーシックなプランです。一ヶ月ごとの更新ですので、ご利用状況に応じて使いやすいです。"
+pricing.standard.yearly.desc:
+  other: "しっかりと本格的に取り組みたい方へ。月額よりも2ヶ月分お得です。"
+pricing.standard.monthly.f1:
+  other: "40種類以上のツールが使い放題"
+pricing.standard.monthly.f2:
+  other: "インストール不要、ブラウザで完結"
+pricing.standard.monthly.f3:
+  other: "データ可視化＋データ加工をカバー"
+pricing.standard.monthly.f4:
+  other: "サンプルデータ・オリジナルデータ付き"
+pricing.standard.monthly.f5:
+  other: "いつでも解約可能"
+pricing.standard.yearly.f1:
+  other: "40種類以上のツールが使い放題"
+pricing.standard.yearly.f2:
+  other: "インストール不要、ブラウザで完結"
+pricing.standard.yearly.f3:
+  other: "データ可視化＋データ加工をカバー"
+pricing.standard.yearly.f4:
+  other: "サンプルデータ・オリジナルデータ付き"
+pricing.standard.yearly.f5:
+  other: "月あたり約¥2,067（年間約¥4,960お得）"
+pricing.coaching.desc:
+  other: "本ツール利用と月に一度の<a href=\"https://personal.data-viz-lectures.com/\">1対1でのコーチング</a>のセットです。月々1,000円お得です。"
+pricing.coaching.yearly.desc:
+  other: "本ツール利用と月に一度の<a href=\"https://personal.data-viz-lectures.com/\">1対1でのコーチング</a>のセットです。月々1,000円お得です。"
+pricing.coaching.f1:
+  other: "通常プランと同様のツール提供サービス（2,480円）"
+pricing.coaching.f2:
+  other: "1対1でのコーチング（5,500円→4,500円）"
+pricing.coaching.monthly.f3:
+  other: "合計金額より1,000円ディスカウント"
+pricing.coaching.yearly.f3:
+  other: "月額よりも2ヶ月分を割引"
+pricing.refund:
+  other: "アカウント登録から14日間まで無料でご利用いただけます。"
+pricing.receipt:
+  other: "領収書を発行します（Stripe）。"
+
+# Pricing tabs
+pricing.tab.individual:
+  other: "一人で利用"
+pricing.tab.team:
+  other: "複数人で利用"
+
+# Team plans
+pricing.team.subtitle:
+  other: "ご契約者がリーダーとなり、他のメンバーにプロジェクトファイルを共有できます。他のメンバーはご契約後、アカウントを発行いたします（既存ユーザーの移行も可能）。個別相談が必要な場合は<a href=\"/contact/\">お問い合わせ</a>ください。"
+pricing.team.small.name:
+  other: "スモールチームプラン（最大5名まで）"
+pricing.team.small.desc:
+  other: "少人数のチームに最適。リーダーが共有したプロジェクトをメンバー全員が閲覧・活用できます。"
+pricing.team.small.f1:
+  other: "最大5名までご利用可能"
+pricing.team.small.f2:
+  other: "40種類以上のツールが使い放題"
+pricing.team.small.f3:
+  other: "リーダーがプロジェクトをチームに共有"
+pricing.team.small.f4:
+  other: "メンバーは共有プロジェクトを閲覧・コピー保存"
+pricing.team.standard.name:
+  other: "チームプラン（最大10名まで）"
+pricing.team.standard.desc:
+  other: "中規模チーム向け。部署やプロジェクト単位での活用に適しています。"
+pricing.team.standard.f1:
+  other: "最大10名までご利用可能"
+pricing.team.standard.f2:
+  other: "40種類以上のツールが使い放題"
+pricing.team.standard.f3:
+  other: "リーダーがプロジェクトをチームに共有"
+pricing.team.standard.f4:
+  other: "メンバーは共有プロジェクトを閲覧・コピー保存"
+pricing.team.enterprise.name:
+  other: "法人プラン（最大30名まで）"
+pricing.team.enterprise.desc:
+  other: "大規模な組織での導入に。研修や社内教育にも最適です。"
+pricing.team.enterprise.f1:
+  other: "最大30名までご利用可能"
+pricing.team.enterprise.f2:
+  other: "40種類以上のツールが使い放題"
+pricing.team.enterprise.f3:
+  other: "リーダーがプロジェクトをチームに共有"
+pricing.team.enterprise.f4:
+  other: "メンバーは共有プロジェクトを閲覧・コピー保存"
+pricing.team.enterprise.f5:
+  other: "導入サポート"
+pricing.team.per-year:
+  other: "/ 年（2ヶ月分お得）"
+pricing.team.contact:
+  other: "お問い合わせ"
+
+# Catalogue
+catalogue.filter.all:
+  other: "すべて"
+catalogue.filter.aria:
+  other: "チャートカテゴリフィルター"
+catalogue.count:
+  other: "件"
+
+# Catalogue categories
+cat.numeric:
+  other: "数値"
+cat.text:
+  other: "言葉"
+cat.time:
+  other: "時間"
+cat.location:
+  other: "位置"
+cat.structure:
+  other: "構造"
+cat.relationship:
+  other: "関係"
+
+# Catalogue subcategories
+subcat.distribution-summary:
+  other: "分布を知りたい（要約値）"
+subcat.distribution-individual:
+  other: "分布を知りたい（個別値）"
+subcat.breakdown:
+  other: "内訳を知りたい"
+subcat.comparison:
+  other: "比較をしたい"
+subcat.multivariate:
+  other: "多変量で比較したい"
+subcat.correlation:
+  other: "相関関係を知りたい"
+subcat.text-frequency:
+  other: "テキストの頻度"
+subcat.text-sets:
+  other: "テキストの集合"
+subcat.typographic:
+  other: "図形記号の文字記号化"
+subcat.paragraphs:
+  other: "段落の文章を主役とする"
+subcat.linear-cartesian:
+  other: "線形時間×直交座標系"
+subcat.cyclic-cartesian:
+  other: "周期時間×直交座標系"
+subcat.linear-polar:
+  other: "線形時間×極座標系"
+subcat.cyclic-polar:
+  other: "周期時間×極座標系"
+subcat.point-geometry:
+  other: "点ジオメトリー"
+subcat.line-geometry:
+  other: "線ジオメトリー"
+subcat.area-geometry:
+  other: "面ジオメトリー"
+subcat.multivariate-geometry:
+  other: "多変量ジオメトリー"
+subcat.tree-connection:
+  other: "ツリー構造のコネクション型"
+subcat.tree-juxtaposition:
+  other: "ツリー構造の面型（並置）"
+subcat.tree-nested:
+  other: "ツリー構造の面型（入れ子）"
+subcat.network-connection:
+  other: "ネットワーク構造のコネクション型"
+subcat.network-flow:
+  other: "ネットワーク構造のフロー型"
+subcat.network-matrix:
+  other: "ネットワーク構造のマトリックス型"
+
+# Chart detail page
+chart.back:
+  other: "← カタログに戻る"
+chart.category:
+  other: "カテゴリ"
+chart.related:
+  other: "関連するチャート"
+
+# Tools page
+tools.title:
+  other: "ツール一覧"
+tools.subtitle:
+  other: "カテゴリーからツールを探す"
+tools.count:
+  other: "件"
+
+# Post card buttons
+post.detail:
+  other: "詳しく見る"
+post.use-tool:
+  other: "ツールを使う"
+
+# Tools page banners
+tools.banners.aria:
+  other: "関連コンテンツ"
+tools.banner.showcase:
+  other: "ショーケース"
+tools.banner.catalogue:
+  other: "チャートカタログ"
+tools.banner.visualizing:
+  other: "チャート解説"
+
+# Fat footer
+footer.nav.aria:
+  other: "フッターナビゲーション"
+footer.col.service:
+  other: "サービス"
+footer.col.legal:
+  other: "規約"
+footer.col.other:
+  other: "その他"
+footer.link.pricing:
+  other: "料金プラン"
+footer.link.faq:
+  other: "よくある質問"
+footer.link.changelog:
+  other: "更新情報"
+footer.link.terms:
+  other: "利用規約"
+footer.link.privacy:
+  other: "プライバシー・ポリシー"
+footer.link.transaction:
+  other: "特定商取引法に基づく表記"
+footer.link.contact:
+  other: "お問い合わせ"
+footer.link.about:
+  other: "運営会社"
+footer.link.license:
+  other: "ライセンス"

@@ -1,0 +1,666 @@
+{{ define "main" }}
+{{ $planSuffix := cond (eq .Lang "en") "_usd" "_jpy" }}
+{{ $checkoutBaseURL := default (printf "%s/billing/checkout" site.Params.authBaseURL) site.Params.checkoutBaseURL }}
+<style>
+  /* Pricing Page */
+  .pricing-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 2rem 0;
+    color: var(--card-text-color-main);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .pricing-header {
+    text-align: center;
+  }
+
+  .pricing-header__title {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+  }
+
+  .pricing-header__subtitle {
+    font-size: 1.6rem;
+    color: var(--card-text-color-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .pricing-section-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  /* Tabs */
+  .pricing-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    margin-top: 3rem;
+  }
+
+  .pricing-tab {
+    padding: 0.75rem 2rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: 2px solid var(--card-separator-color);
+    background: transparent;
+    color: var(--card-text-color-secondary);
+    transition: all 0.2s;
+  }
+
+  .pricing-tab:first-child {
+    border-radius: 8px 0 0 8px;
+    border-right: 1px solid var(--card-separator-color);
+  }
+
+  .pricing-tab:last-child {
+    border-radius: 0 8px 8px 0;
+    border-left: 1px solid var(--card-separator-color);
+  }
+
+  .pricing-tab--active {
+    background: var(--accent-color);
+    color: var(--accent-color-text);
+    border-color: var(--accent-color);
+  }
+
+  .pricing-tab:hover:not(.pricing-tab--active) {
+    background: var(--card-background);
+    box-shadow: var(--shadow-l1);
+  }
+
+  .pricing-tab-content {
+    display: none;
+  }
+
+  .pricing-tab-content--active {
+    display: contents;
+  }
+
+  /* Pricing Cards Grid */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    align-items: stretch;
+  }
+
+  .pricing-grid--three {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    .pricing-grid {
+      grid-template-columns: 1fr;
+      max-width: 420px;
+      margin: 0 auto;
+    }
+    .pricing-grid--three {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Card */
+  .pricing-card {
+    background: var(--card-background);
+    border-radius: 12px;
+    box-shadow: var(--shadow-l1);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid transparent;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .pricing-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-l2);
+  }
+
+  .pricing-card--recommended {
+    border-color: #10B981;
+    position: relative;
+  }
+
+  .pricing-card__badge {
+    position: absolute;
+    top: -13px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #10B981;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 0.25rem 1rem;
+    border-radius: 999px;
+    white-space: nowrap;
+    letter-spacing: 0.05em;
+  }
+
+  .pricing-card__name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--card-text-color-secondary);
+    margin-bottom: 0.75rem;
+  }
+
+  .pricing-card__price {
+    display: flex;
+    align-items: baseline;
+    gap: 0.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .pricing-card__amount {
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--card-text-color-main);
+  }
+
+  .pricing-card__period {
+    font-size: 1.4rem;
+    color: var(--card-text-color-tertiary);
+  }
+
+  .pricing-card__description {
+    font-size: 1.4rem;
+    color: var(--card-text-color-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    min-height: 4.5em;
+  }
+
+  .pricing-card__divider {
+    border: none;
+    border-top: 1px solid var(--card-separator-color);
+    margin: 0 0 1.5rem 0;
+  }
+
+  .pricing-card__features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex: 1;
+  }
+
+  .pricing-card__features li {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: var(--card-text-color-main);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .pricing-card__features li::before {
+    content: "✓";
+    color: #10B981;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 0.05em;
+  }
+
+  .pricing-card__cta {
+    margin-top: auto;
+  }
+
+  .pricing-card__cta .button {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* FAQ Section */
+  .pricing-faq {
+    margin-top: 1rem;
+  }
+
+  .pricing-faq__title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .pricing-faq__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .pricing-faq__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .pricing-faq__item {
+    background: var(--card-background);
+    border-radius: 12px;
+    box-shadow: var(--shadow-l1);
+    padding: 1.5rem;
+  }
+
+  .pricing-faq__question {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--card-text-color-main);
+  }
+
+  .pricing-faq__answer {
+    font-size: 1.4rem;
+    color: var(--card-text-color-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+</style>
+
+<div class="pricing-container">
+  <!-- Header -->
+  <header class="pricing-header">
+    <h1 class="pricing-header__title">{{ T "pricing.title" }}</h1>
+    <p class="pricing-header__subtitle">{{ T "pricing.subtitle" }}</p>
+    <p class="pricing-header__subtitle">{{ T "pricing.refund" }}</p>
+    <p class="pricing-header__subtitle">{{ T "pricing.receipt" }}</p>
+
+    <!-- Tabs -->
+    <div class="pricing-tabs">
+      <button class="pricing-tab pricing-tab--active" data-tab="individual">{{ T "pricing.tab.individual" }}</button>
+      <button class="pricing-tab" data-tab="team">{{ T "pricing.tab.team" }}</button>
+    </div>
+  </header>
+
+  <!-- ============ Individual tab ============ -->
+  <div class="pricing-tab-content pricing-tab-content--active" data-tab="individual">
+
+  <h2 class="pricing-section-title">{{ if eq .Lang "en" }}Monthly Plans{{ else }}月額プラン{{ end }}</h2>
+  <div class="pricing-grid pricing-grid--three">
+    <div class="pricing-card">
+      <div class="pricing-card__name">VIZ</div>
+      <div class="pricing-card__price">
+        {{- if eq .Lang "en" -}}
+        <span class="pricing-card__amount">$8</span>
+        {{- else -}}
+        <span class="pricing-card__amount">¥1,000</span>
+        {{- end -}}
+        <span class="pricing-card__period">{{ T "pricing.per-month" }}</span>
+      </div>
+      <p class="pricing-card__description">{{ if eq .Lang "en" }}Access to visualization tools for charts, maps, and analytical storytelling.{{ else }}チャート・地図・ストーリーテリング向けの可視化ツールを利用できます。{{ end }}</p>
+      <hr class="pricing-card__divider">
+      <ul class="pricing-card__features">
+        <li>{{ if eq .Lang "en" }}Visualization tools only{{ else }}可視化ツールのみ{{ end }}</li>
+        <li>{{ if eq .Lang "en" }}Project save and restore{{ else }}保存と再編集に対応{{ end }}</li>
+        <li>{{ if eq .Lang "en" }}Single-user subscription{{ else }}個人向け契約{{ end }}</li>
+      </ul>
+      <div class="pricing-card__cta">
+        <a href="{{ printf "%s?%s" $checkoutBaseURL (querify "plan_id" (printf "viz_monthly%s" $planSuffix) "lang" .Lang) | safeURL }}" class="button primary">{{ T "pricing.cta" }}</a>
+      </div>
+    </div>
+
+    <div class="pricing-card">
+      <div class="pricing-card__name">PREP</div>
+      <div class="pricing-card__price">
+        {{- if eq .Lang "en" -}}
+        <span class="pricing-card__amount">$12</span>
+        {{- else -}}
+        <span class="pricing-card__amount">¥1,480</span>
+        {{- end -}}
+        <span class="pricing-card__period">{{ T "pricing.per-month" }}</span>
+      </div>
+      <p class="pricing-card__description">{{ if eq .Lang "en" }}Access to data preparation tools for cleaning, reshaping, and transforming source data.{{ else }}データの整形・変換・前処理に使う加工ツールを利用できます。{{ end }}</p>
+      <hr class="pricing-card__divider">
+      <ul class="pricing-card__features">
+        <li>{{ if eq .Lang "en" }}Preparation tools only{{ else }}加工ツールのみ{{ end }}</li>
+        <li>{{ if eq .Lang "en" }}Project save and restore{{ else }}保存と再編集に対応{{ end }}</li>
+        <li>{{ if eq .Lang "en" }}Single-user subscription{{ else }}個人向け契約{{ end }}</li>
+      </ul>
+      <div class="pricing-card__cta">
+        <a href="{{ printf "%s?%s" $checkoutBaseURL (querify "plan_id" (printf "prep_monthly%s" $planSuffix) "lang" .Lang) | safeURL }}" class="button primary">{{ T "pricing.cta" }}</a>
+      </div>
+    </div>
+
+    <div class="pricing-card pricing-card--recommended">
+      <span class="pricing-card__badge">{{ T "pricing.recommended" }}</span>
+      <div class="pricing-card__name">BUNDLE</div>
+      <div class="pricing-card__price">
+        {{- if eq .Lang "en" -}}
+        <span class="pricing-card__amount">$19</span>
+        {{- else -}}
+        <span class="pricing-card__amount">¥2,480</span>
+        {{- end -}}
+        <span class="pricing-card__period">{{ T "pricing.per-month" }}</span>
+      </div>
+      <p class="pricing-card__description">{{ if eq .Lang "en" }}Full access to both visualization and data preparation tools in one subscription.{{ else }}可視化とデータ加工の両方をまとめて使える総合プランです。{{ end }}</p>
+      <hr class="pricing-card__divider">
+      <ul class="pricing-card__features">
+        <li>{{ if eq .Lang "en" }}Visualization + preparation{{ else }}可視化 + データ加工{{ end }}</li>
+        <li>{{ if eq .Lang "en" }}Project save and restore{{ else }}保存と再編集に対応{{ end }}</li>
+        <li>{{ if eq .Lang "en" }}Best value for mixed workflows{{ else }}複数用途に最適{{ end }}</li>
+      </ul>
+      <div class="pricing-card__cta">
+        <a href="{{ printf "%s?%s" $checkoutBaseURL (querify "plan_id" (printf "bundle_monthly%s" $planSuffix) "lang" .Lang) | safeURL }}" class="button primary">{{ T "pricing.cta" }}</a>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="pricing-section-title">{{ if eq .Lang "en" }}Yearly Plans{{ else }}年額プラン{{ end }}</h2>
+  <div class="pricing-grid pricing-grid--three">
+    <div class="pricing-card">
+      <div class="pricing-card__name">VIZ</div>
+      <div class="pricing-card__price">
+        {{- if eq .Lang "en" -}}
+        <span class="pricing-card__amount">$80</span>
+        {{- else -}}
+        <span class="pricing-card__amount">¥10,000</span>
+        {{- end -}}
+        <span class="pricing-card__period">{{ T "pricing.per-year" }}</span>
+      </div>
+      <p class="pricing-card__description">{{ if eq .Lang "en" }}Yearly visualization access for users who mainly work on charts and presentation-ready outputs.{{ else }}グラフ・地図・資料向けの可視化作業を継続的に行う方向けの年額プランです。{{ end }}</p>
+      <hr class="pricing-card__divider">
+      <ul class="pricing-card__features">
+        <li>{{ if eq .Lang "en" }}Visualization tools only{{ else }}可視化ツールのみ{{ end }}</li>
+        <li>{{ if eq .Lang "en" }}Lower annual cost{{ else }}年額で割安{{ end }}</li>
+        <li>{{ if eq .Lang "en" }}Single-user subscription{{ else }}個人向け契約{{ end }}</li>
+      </ul>
+      <div class="pricing-card__cta">
+        <a href="{{ printf "%s?%s" $checkoutBaseURL (querify "plan_id" (printf "viz_yearly%s" $planSuffix) "lang" .Lang) | safeURL }}" class="button primary">{{ T "pricing.cta" }}</a>
+      </div>
+    </div>
+
+    <div class="pricing-card">
+      <div class="pricing-card__name">PREP</div>
+      <div class="pricing-card__price">
+        {{- if eq .Lang "en" -}}
+        <span class="pricing-card__amount">$120</span>
+        {{- else -}}
+        <span class="pricing-card__amount">¥14,800</span>
+        {{- end -}}
+        <span class="pricing-card__period">{{ T "pricing.per-year" }}</span>
+      </div>
+      <p class="pricing-card__description">{{ if eq .Lang "en" }}Yearly access to prep workflows for repeat cleaning and transformation work.{{ else }}定常的なデータ整形・変換作業に向いた年額プランです。{{ end }}</p>
+      <hr class="pricing-card__divider">
+      <ul class="pricing-card__features">
+        <li>{{ if eq .Lang "en" }}Preparation tools only{{ else }}加工ツールのみ{{ end }}</li>
+        <li>{{ if eq .Lang "en" }}Lower annual cost{{ else }}年額で割安{{ end }}</li>
+        <li>{{ if eq .Lang "en" }}Single-user subscription{{ else }}個人向け契約{{ end }}</li>
+      </ul>
+      <div class="pricing-card__cta">
+        <a href="{{ printf "%s?%s" $checkoutBaseURL (querify "plan_id" (printf "prep_yearly%s" $planSuffix) "lang" .Lang) | safeURL }}" class="button primary">{{ T "pricing.cta" }}</a>
+      </div>
+    </div>
+
+    <div class="pricing-card pricing-card--recommended">
+      <span class="pricing-card__badge">{{ T "pricing.recommended" }}</span>
+      <div class="pricing-card__name">BUNDLE</div>
+      <div class="pricing-card__price">
+        {{- if eq .Lang "en" -}}
+        <span class="pricing-card__amount">$190</span>
+        {{- else -}}
+        <span class="pricing-card__amount">¥24,800</span>
+        {{- end -}}
+        <span class="pricing-card__period">{{ T "pricing.per-year" }}</span>
+      </div>
+      <p class="pricing-card__description">{{ if eq .Lang "en" }}The best choice for teams of one who need both data preparation and visualization all year.{{ else }}可視化とデータ加工を通年で使いたい方に最適な年額プランです。{{ end }}</p>
+      <hr class="pricing-card__divider">
+      <ul class="pricing-card__features">
+        <li>{{ if eq .Lang "en" }}Visualization + preparation{{ else }}可視化 + データ加工{{ end }}</li>
+        <li>{{ if eq .Lang "en" }}Lower annual cost{{ else }}年額で割安{{ end }}</li>
+        <li>{{ if eq .Lang "en" }}Best value for mixed workflows{{ else }}複数用途に最適{{ end }}</li>
+      </ul>
+      <div class="pricing-card__cta">
+        <a href="{{ printf "%s?%s" $checkoutBaseURL (querify "plan_id" (printf "bundle_yearly%s" $planSuffix) "lang" .Lang) | safeURL }}" class="button primary">{{ T "pricing.cta" }}</a>
+      </div>
+    </div>
+  </div>
+
+  </div><!-- /individual tab -->
+
+  <!-- ============ Team tab ============ -->
+  <div class="pricing-tab-content" data-tab="team">
+
+  <p class="pricing-header__subtitle" style="text-align:center;">{{ if eq .Lang "en" }}All team plans are annual and include shared access for 5, 10, or 30 members.{{ else }}チームプランはすべて年額です。5名・10名・30名向けにご用意しています。{{ end }}</p>
+
+  <h2 class="pricing-section-title">{{ if eq .Lang "en" }}Small Team (5 seats){{ else }}スモールチーム（5名）{{ end }}</h2>
+  <div class="pricing-grid pricing-grid--three">
+    <div class="pricing-card">
+      <div class="pricing-card__name">TEAM VIZ</div>
+      <div class="pricing-card__price">
+        {{- if eq .Lang "en" -}}
+        <span class="pricing-card__amount">$320</span>
+        {{- else -}}
+        <span class="pricing-card__amount">¥40,000</span>
+        {{- end -}}
+        <span class="pricing-card__period">{{ T "pricing.team.per-year" }}</span>
+      </div>
+      <p class="pricing-card__description">{{ if eq .Lang "en" }}Visualization access for a five-person team.{{ else }}5名までの可視化チーム向け年額プランです。{{ end }}</p>
+      <hr class="pricing-card__divider">
+      <ul class="pricing-card__features">
+        <li>{{ if eq .Lang "en" }}Up to 5 seats{{ else }}5名まで利用可能{{ end }}</li>
+        <li>{{ if eq .Lang "en" }}Visualization tools only{{ else }}可視化ツールのみ{{ end }}</li>
+        <li>{{ if eq .Lang "en" }}Shared team workspace{{ else }}チーム運用に対応{{ end }}</li>
+      </ul>
+      <div class="pricing-card__cta">
+        <a href="{{ printf "%s?%s" $checkoutBaseURL (querify "plan_id" (printf "team_viz_small_yearly%s" $planSuffix) "lang" .Lang) | safeURL }}" class="button primary">{{ T "pricing.cta" }}</a>
+      </div>
+    </div>
+    <div class="pricing-card">
+      <div class="pricing-card__name">TEAM PREP</div>
+      <div class="pricing-card__price">
+        {{- if eq .Lang "en" -}}
+        <span class="pricing-card__amount">$480</span>
+        {{- else -}}
+        <span class="pricing-card__amount">¥59,000</span>
+        {{- end -}}
+        <span class="pricing-card__period">{{ T "pricing.team.per-year" }}</span>
+      </div>
+      <p class="pricing-card__description">{{ if eq .Lang "en" }}Preparation workflows for a five-person team.{{ else }}5名までのデータ加工チーム向け年額プランです。{{ end }}</p>
+      <hr class="pricing-card__divider">
+      <ul class="pricing-card__features">
+        <li>{{ if eq .Lang "en" }}Up to 5 seats{{ else }}5名まで利用可能{{ end }}</li>
+        <li>{{ if eq .Lang "en" }}Preparation tools only{{ else }}加工ツールのみ{{ end }}</li>
+        <li>{{ if eq .Lang "en" }}Shared team workspace{{ else }}チーム運用に対応{{ end }}</li>
+      </ul>
+      <div class="pricing-card__cta">
+        <a href="{{ printf "%s?%s" $checkoutBaseURL (querify "plan_id" (printf "team_prep_small_yearly%s" $planSuffix) "lang" .Lang) | safeURL }}" class="button primary">{{ T "pricing.cta" }}</a>
+      </div>
+    </div>
+    <div class="pricing-card pricing-card--recommended">
+      <span class="pricing-card__badge">{{ T "pricing.recommended" }}</span>
+      <div class="pricing-card__name">TEAM BUNDLE</div>
+      <div class="pricing-card__price">
+        {{- if eq .Lang "en" -}}
+        <span class="pricing-card__amount">$800</span>
+        {{- else -}}
+        <span class="pricing-card__amount">¥99,000</span>
+        {{- end -}}
+        <span class="pricing-card__period">{{ T "pricing.team.per-year" }}</span>
+      </div>
+      <p class="pricing-card__description">{{ if eq .Lang "en" }}Full visualization and preparation access for a five-person team.{{ else }}5名までで可視化とデータ加工の両方を使える年額プランです。{{ end }}</p>
+      <hr class="pricing-card__divider">
+      <ul class="pricing-card__features">
+        <li>{{ if eq .Lang "en" }}Up to 5 seats{{ else }}5名まで利用可能{{ end }}</li>
+        <li>{{ if eq .Lang "en" }}Visualization + preparation{{ else }}可視化 + データ加工{{ end }}</li>
+        <li>{{ if eq .Lang "en" }}Shared team workspace{{ else }}チーム運用に対応{{ end }}</li>
+      </ul>
+      <div class="pricing-card__cta">
+        <a href="{{ printf "%s?%s" $checkoutBaseURL (querify "plan_id" (printf "team_bundle_small_yearly%s" $planSuffix) "lang" .Lang) | safeURL }}" class="button primary">{{ T "pricing.cta" }}</a>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="pricing-section-title">{{ if eq .Lang "en" }}Standard Team (10 seats){{ else }}スタンダードチーム（10名）{{ end }}</h2>
+  <div class="pricing-grid pricing-grid--three">
+    <div class="pricing-card">
+      <div class="pricing-card__name">TEAM VIZ</div>
+      <div class="pricing-card__price">
+        {{- if eq .Lang "en" -}}
+        <span class="pricing-card__amount">$640</span>
+        {{- else -}}
+        <span class="pricing-card__amount">¥80,000</span>
+        {{- end -}}
+        <span class="pricing-card__period">{{ T "pricing.team.per-year" }}</span>
+      </div>
+      <p class="pricing-card__description">{{ if eq .Lang "en" }}Visualization access for a ten-person team.{{ else }}10名までの可視化チーム向け年額プランです。{{ end }}</p>
+      <hr class="pricing-card__divider">
+      <ul class="pricing-card__features">
+        <li>{{ if eq .Lang "en" }}Up to 10 seats{{ else }}10名まで利用可能{{ end }}</li>
+        <li>{{ if eq .Lang "en" }}Visualization tools only{{ else }}可視化ツールのみ{{ end }}</li>
+        <li>{{ if eq .Lang "en" }}Shared team workspace{{ else }}チーム運用に対応{{ end }}</li>
+      </ul>
+      <div class="pricing-card__cta">
+        <a href="{{ printf "%s?%s" $checkoutBaseURL (querify "plan_id" (printf "team_viz_standard_yearly%s" $planSuffix) "lang" .Lang) | safeURL }}" class="button primary">{{ T "pricing.cta" }}</a>
+      </div>
+    </div>
+    <div class="pricing-card">
+      <div class="pricing-card__name">TEAM PREP</div>
+      <div class="pricing-card__price">
+        {{- if eq .Lang "en" -}}
+        <span class="pricing-card__amount">$960</span>
+        {{- else -}}
+        <span class="pricing-card__amount">¥118,000</span>
+        {{- end -}}
+        <span class="pricing-card__period">{{ T "pricing.team.per-year" }}</span>
+      </div>
+      <p class="pricing-card__description">{{ if eq .Lang "en" }}Preparation workflows for a ten-person team.{{ else }}10名までのデータ加工チーム向け年額プランです。{{ end }}</p>
+      <hr class="pricing-card__divider">
+      <ul class="pricing-card__features">
+        <li>{{ if eq .Lang "en" }}Up to 10 seats{{ else }}10名まで利用可能{{ end }}</li>
+        <li>{{ if eq .Lang "en" }}Preparation tools only{{ else }}加工ツールのみ{{ end }}</li>
+        <li>{{ if eq .Lang "en" }}Shared team workspace{{ else }}チーム運用に対応{{ end }}</li>
+      </ul>
+      <div class="pricing-card__cta">
+        <a href="{{ printf "%s?%s" $checkoutBaseURL (querify "plan_id" (printf "team_prep_standard_yearly%s" $planSuffix) "lang" .Lang) | safeURL }}" class="button primary">{{ T "pricing.cta" }}</a>
+      </div>
+    </div>
+    <div class="pricing-card pricing-card--recommended">
+      <span class="pricing-card__badge">{{ T "pricing.recommended" }}</span>
+      <div class="pricing-card__name">TEAM BUNDLE</div>
+      <div class="pricing-card__price">
+        {{- if eq .Lang "en" -}}
+        <span class="pricing-card__amount">$1,600</span>
+        {{- else -}}
+        <span class="pricing-card__amount">¥198,000</span>
+        {{- end -}}
+        <span class="pricing-card__period">{{ T "pricing.team.per-year" }}</span>
+      </div>
+      <p class="pricing-card__description">{{ if eq .Lang "en" }}Full visualization and preparation access for a ten-person team.{{ else }}10名までで可視化とデータ加工の両方を使える年額プランです。{{ end }}</p>
+      <hr class="pricing-card__divider">
+      <ul class="pricing-card__features">
+        <li>{{ if eq .Lang "en" }}Up to 10 seats{{ else }}10名まで利用可能{{ end }}</li>
+        <li>{{ if eq .Lang "en" }}Visualization + preparation{{ else }}可視化 + データ加工{{ end }}</li>
+        <li>{{ if eq .Lang "en" }}Shared team workspace{{ else }}チーム運用に対応{{ end }}</li>
+      </ul>
+      <div class="pricing-card__cta">
+        <a href="{{ printf "%s?%s" $checkoutBaseURL (querify "plan_id" (printf "team_bundle_standard_yearly%s" $planSuffix) "lang" .Lang) | safeURL }}" class="button primary">{{ T "pricing.cta" }}</a>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="pricing-section-title">{{ if eq .Lang "en" }}Enterprise Team (30 seats){{ else }}エンタープライズチーム（30名）{{ end }}</h2>
+  <div class="pricing-grid pricing-grid--three">
+    <div class="pricing-card">
+      <div class="pricing-card__name">TEAM VIZ</div>
+      <div class="pricing-card__price">
+        {{- if eq .Lang "en" -}}
+        <span class="pricing-card__amount">$1,920</span>
+        {{- else -}}
+        <span class="pricing-card__amount">¥240,000</span>
+        {{- end -}}
+        <span class="pricing-card__period">{{ T "pricing.team.per-year" }}</span>
+      </div>
+      <p class="pricing-card__description">{{ if eq .Lang "en" }}Visualization access for a thirty-person team.{{ else }}30名までの可視化チーム向け年額プランです。{{ end }}</p>
+      <hr class="pricing-card__divider">
+      <ul class="pricing-card__features">
+        <li>{{ if eq .Lang "en" }}Up to 30 seats{{ else }}30名まで利用可能{{ end }}</li>
+        <li>{{ if eq .Lang "en" }}Visualization tools only{{ else }}可視化ツールのみ{{ end }}</li>
+        <li>{{ if eq .Lang "en" }}Shared team workspace{{ else }}チーム運用に対応{{ end }}</li>
+      </ul>
+      <div class="pricing-card__cta">
+        <a href="{{ printf "%s?%s" $checkoutBaseURL (querify "plan_id" (printf "team_viz_enterprise_yearly%s" $planSuffix) "lang" .Lang) | safeURL }}" class="button primary">{{ T "pricing.cta" }}</a>
+      </div>
+    </div>
+    <div class="pricing-card">
+      <div class="pricing-card__name">TEAM PREP</div>
+      <div class="pricing-card__price">
+        {{- if eq .Lang "en" -}}
+        <span class="pricing-card__amount">$2,880</span>
+        {{- else -}}
+        <span class="pricing-card__amount">¥355,000</span>
+        {{- end -}}
+        <span class="pricing-card__period">{{ T "pricing.team.per-year" }}</span>
+      </div>
+      <p class="pricing-card__description">{{ if eq .Lang "en" }}Preparation workflows for a thirty-person team.{{ else }}30名までのデータ加工チーム向け年額プランです。{{ end }}</p>
+      <hr class="pricing-card__divider">
+      <ul class="pricing-card__features">
+        <li>{{ if eq .Lang "en" }}Up to 30 seats{{ else }}30名まで利用可能{{ end }}</li>
+        <li>{{ if eq .Lang "en" }}Preparation tools only{{ else }}加工ツールのみ{{ end }}</li>
+        <li>{{ if eq .Lang "en" }}Shared team workspace{{ else }}チーム運用に対応{{ end }}</li>
+      </ul>
+      <div class="pricing-card__cta">
+        <a href="{{ printf "%s?%s" $checkoutBaseURL (querify "plan_id" (printf "team_prep_enterprise_yearly%s" $planSuffix) "lang" .Lang) | safeURL }}" class="button primary">{{ T "pricing.cta" }}</a>
+      </div>
+    </div>
+    <div class="pricing-card pricing-card--recommended">
+      <span class="pricing-card__badge">{{ T "pricing.recommended" }}</span>
+      <div class="pricing-card__name">TEAM BUNDLE</div>
+      <div class="pricing-card__price">
+        {{- if eq .Lang "en" -}}
+        <span class="pricing-card__amount">$4,800</span>
+        {{- else -}}
+        <span class="pricing-card__amount">¥595,000</span>
+        {{- end -}}
+        <span class="pricing-card__period">{{ T "pricing.team.per-year" }}</span>
+      </div>
+      <p class="pricing-card__description">{{ if eq .Lang "en" }}Full visualization and preparation access for a thirty-person team.{{ else }}30名までで可視化とデータ加工の両方を使える年額プランです。{{ end }}</p>
+      <hr class="pricing-card__divider">
+      <ul class="pricing-card__features">
+        <li>{{ if eq .Lang "en" }}Up to 30 seats{{ else }}30名まで利用可能{{ end }}</li>
+        <li>{{ if eq .Lang "en" }}Visualization + preparation{{ else }}可視化 + データ加工{{ end }}</li>
+        <li>{{ if eq .Lang "en" }}Shared team workspace{{ else }}チーム運用に対応{{ end }}</li>
+      </ul>
+      <div class="pricing-card__cta">
+        <a href="{{ printf "%s?%s" $checkoutBaseURL (querify "plan_id" (printf "team_bundle_enterprise_yearly%s" $planSuffix) "lang" .Lang) | safeURL }}" class="button primary">{{ T "pricing.cta" }}</a>
+      </div>
+    </div>
+  </div>
+
+  </div><!-- /team tab -->
+
+</div>
+
+<script>
+(function() {
+  var tabs = document.querySelectorAll('.pricing-tab');
+  var contents = document.querySelectorAll('.pricing-tab-content');
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      var target = this.getAttribute('data-tab');
+      tabs.forEach(function(t) { t.classList.remove('pricing-tab--active'); });
+      this.classList.add('pricing-tab--active');
+      contents.forEach(function(c) {
+        c.classList.toggle('pricing-tab-content--active', c.getAttribute('data-tab') === target);
+      });
+    });
+  });
+})();
+</script>
+{{ end }}
+
+{{ define "right-sidebar" }}
+    {{ partial "sidebar/right.html" (dict "Context" . "Scope" "frontpage") }}
+{{ end }}

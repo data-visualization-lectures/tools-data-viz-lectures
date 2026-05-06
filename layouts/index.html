@@ -1,0 +1,256 @@
+{{ define "main" }}
+{{ if eq site.Params.headerMode "protected" }}
+  {{/* app.dataviz.jp: ツール一覧をトップページとして表示 */}}
+  {{ partial "tools-grid.html" . }}
+{{ else }}
+<style>
+  .lp-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 2rem 0;
+    color: var(--card-text-color-main);
+  }
+
+  /* Hero Section */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .hero-image {
+    order: -1;
+  }
+
+  .hero-content {
+    max-width: 800px;
+  }
+
+  .hero-title {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    color: #183d8a;
+  }
+
+  .hero-subtitle {
+    font-size: 1.65rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero-image img {
+    max-width: 100%;
+    max-height: 400px;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+  }
+
+  /* Features Section */
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .features {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .feature-card {
+    background: var(--card-background);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow-l1);
+    transition: transform 0.2s;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .feature-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    padding: 0.5rem;
+    background: rgba(16, 185, 129, 0.1);
+    border-radius: 8px;
+    color: #10B981;
+  }
+
+  .feature-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .feature-desc {
+    line-height: 1.6;
+    color: var(--body-text-color);
+  }
+
+  /* News Bar */
+  .hero-news {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--card-background);
+    border-radius: 999px;
+    box-shadow: var(--shadow-l1);
+    font-size: 1.6rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .hero-news-label {
+    display: inline-block;
+    padding: 0.15rem 0.6rem;
+    background: #183d8a;
+    color: #fff;
+    border-radius: 999px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .hero-news-label--alert {
+    background: #b91c1c;
+  }
+
+  .hero-news a {
+    color: var(--body-text-color);
+    text-decoration: none;
+  }
+
+  .hero-news a:hover {
+    text-decoration: underline;
+  }
+
+  .hero-news-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .hero-banners {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero-banners {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .hero-banner {
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-l1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .hero-banner:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-l2);
+  }
+
+  .hero-banner img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+</style>
+
+<div class="lp-container">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">{{ T "hero.title" }}</h1>
+      <p class="hero-subtitle">{{ T "hero.subtitle" }}</p>
+      <p class="hero-subtitle">{{ T "hero.notice" }}</p>
+    </div>
+    <div class="hero-image">
+      {{- if eq .Lang "en" -}}
+      <img src="/images/hero-dataviz_en.jpg" alt="{{ T "hero.image.alt" }}" style="width: 100%; height: auto; border-radius: 20px;">
+      {{- else -}}
+      <img src="/images/hero-dataviz_ja.jpg" alt="{{ T "hero.image.alt" }}" style="width: 100%; height: auto; border-radius: 20px;">
+      {{- end -}}
+    </div>
+  </section>
+
+  <section class="hero-buttons hero-cta">
+    <a href="{{ site.Params.authBaseURL }}/auth/sign-up?lang={{ .Lang }}" class="button primary">{{ T "hero.cta.primary" }}</a>
+    <a href="{{ "pricing/" | relLangURL }}" class="button secondary">{{ T "footer.link.pricing" }}</a>
+  </section>
+
+  <div class="hero-news-group">
+    {{ with T "hero.alert" }}
+    <div class="hero-news">
+      <span class="hero-news-label hero-news-label--alert">{{ T "hero.alert.label" }}</span>
+      <span>{{ . }}</span>
+    </div>
+    {{ end }}
+
+    {{ with T "hero.news" }}
+    <div class="hero-news">
+      <span class="hero-news-label">{{ T "hero.news.label" }}</span>
+      <span><a href="{{ "changelog/" | relLangURL }}">{{ . }}</a></span>
+    </div>
+    {{ end }}
+  </div>
+
+  <nav class="hero-banners" aria-label="{{ T "tools.banners.aria" }}">
+    <a href="{{ "categories/showcase/" | relLangURL }}" class="hero-banner"><img src="/banners/banner_showcase{{ if eq .Lang "en" }}_en{{ end }}_v2.jpg" alt="{{ T "tools.banner.showcase" }}" width="372" height="80" loading="lazy"></a>
+    <a href="{{ "catalogue/" | relLangURL }}" class="hero-banner"><img src="/banners/banner_chart-catalogue{{ if eq .Lang "en" }}_en{{ end }}_v2.jpg" alt="{{ T "tools.banner.catalogue" }}" width="372" height="80" loading="lazy"></a>
+    <a href="https://visualizing.jp/" class="hero-banner" target="_blank" rel="noopener"><img src="/banners/banner_visualizing{{ if eq .Lang "en" }}_en{{ end }}_v2.jpg" alt="{{ T "tools.banner.visualizing" }}" width="372" height="80" loading="lazy"></a>
+  </nav>
+
+  {{ with .Content }}
+  <section class="overview-content article-content">
+    {{ . }}
+  </section>
+  {{ end }}
+
+</div>
+{{ end }}{{/* end else (www mode) */}}
+{{ end }}{{/* end define main */}}
+
+{{ define "left-sidebar" }}
+    {{/* トップページでは左サイドバーを非表示 */}}
+    {{ " " }}
+{{ end }}
+
+{{ define "right-sidebar" }}
+    {{ if ne site.Params.headerMode "protected" }}
+    {{ partial "sidebar/right.html" (dict "Context" . "Scope" "frontpage") }}
+    {{ end }}
+{{ end }}

@@ -1,0 +1,394 @@
+{{ define "main" }}
+<style>
+  .catalogue-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 0;
+    color: var(--card-text-color-main);
+  }
+
+  .catalogue-header {
+    text-align: center;
+  }
+
+  .catalogue-header__title {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+  }
+
+  .catalogue-header__subtitle {
+    font-size: 1.6rem;
+    color: var(--card-text-color-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Filter Buttons */
+  .catalogue-filters {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .catalogue-filters__row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
+  .catalogue-filters__btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1.25rem;
+    border-radius: 999px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid var(--card-separator-color);
+    background: var(--card-background);
+    color: var(--card-text-color-main);
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+  }
+
+  .catalogue-filters__btn:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+  }
+
+  .catalogue-filters__btn--active {
+    background: var(--accent-color);
+    color: var(--accent-color-text);
+    border-color: var(--accent-color);
+  }
+
+  .catalogue-filters__btn--active:hover {
+    background: var(--accent-color-darker);
+    border-color: var(--accent-color-darker);
+    color: var(--accent-color-text);
+  }
+
+  /* Subcategory row */
+  .catalogue-filters__sub {
+    display: none;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+
+  .catalogue-filters__sub--visible {
+    display: flex;
+  }
+
+  .catalogue-filters__sub-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid var(--card-separator-color);
+    background: var(--card-background);
+    color: var(--card-text-color-secondary);
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+  }
+
+  .catalogue-filters__sub-btn:hover {
+    border-color: #10B981;
+    color: #10B981;
+  }
+
+  .catalogue-filters__sub-btn--active {
+    background: #10B981;
+    color: #fff;
+    border-color: #10B981;
+  }
+
+  .catalogue-filters__sub-btn--active:hover {
+    background: #059669;
+    border-color: #059669;
+    color: #fff;
+  }
+
+  /* Count */
+  .catalogue-count {
+    text-align: center;
+    font-size: 1.4rem;
+    color: var(--card-text-color-secondary);
+    margin: 0;
+  }
+
+  /* Chart Grid */
+  .catalogue-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .catalogue-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+  }
+
+  /* Chart Card */
+  .catalogue-card {
+    background: var(--card-background);
+    border-radius: 12px;
+    box-shadow: var(--shadow-l1);
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .catalogue-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-l2);
+  }
+
+  .catalogue-card[data-hidden="true"] {
+    display: none;
+  }
+
+  .catalogue-card__image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .catalogue-card__placeholder {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: var(--card-background-selected);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: var(--card-text-color-tertiary);
+  }
+
+  .catalogue-card__body {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .catalogue-card__title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--card-text-color-main);
+    margin: 0;
+  }
+
+  .catalogue-card__title-en {
+    font-size: 1.2rem;
+    color: var(--card-text-color-secondary);
+    margin: 0;
+  }
+</style>
+
+<div class="catalogue-container">
+  <header class="catalogue-header">
+    <h1 class="catalogue-header__title">{{ .Title }}</h1>
+    {{ with .Params.description }}
+      <p class="catalogue-header__subtitle">{{ . }}</p>
+    {{ end }}
+  </header>
+
+  <!-- Filter Buttons -->
+  <nav class="catalogue-filters" aria-label="{{ T "catalogue.filter.aria" }}">
+    <!-- Category row -->
+    <div class="catalogue-filters__row">
+      <button class="catalogue-filters__btn catalogue-filters__btn--active"
+              data-filter="all" type="button">
+        {{ T "catalogue.filter.all" }}
+      </button>
+      {{ $catKeys := slice "numeric" "text" "time" "location" "structure" "relationship" }}
+      {{ range $catKeys }}
+        <button class="catalogue-filters__btn"
+                data-filter="{{ . }}" type="button">
+          {{ T (printf "cat.%s" .) }}
+        </button>
+      {{ end }}
+    </div>
+
+    <!-- Subcategory rows (one per category, hidden by default) -->
+    {{ $subcategories := slice
+      (dict "parent" "numeric" "subs" (slice "distribution-summary" "distribution-individual" "breakdown" "comparison" "multivariate" "correlation"))
+      (dict "parent" "text" "subs" (slice "text-frequency" "text-sets" "typographic" "paragraphs"))
+      (dict "parent" "time" "subs" (slice "linear-cartesian" "cyclic-cartesian" "linear-polar" "cyclic-polar"))
+      (dict "parent" "location" "subs" (slice "point-geometry" "line-geometry" "area-geometry" "multivariate-geometry"))
+      (dict "parent" "structure" "subs" (slice "tree-connection" "tree-juxtaposition" "tree-nested"))
+      (dict "parent" "relationship" "subs" (slice "network-connection" "network-flow" "network-matrix"))
+    }}
+    {{ range $subcategories }}
+      <div class="catalogue-filters__sub" data-parent="{{ .parent }}">
+        <button class="catalogue-filters__sub-btn catalogue-filters__sub-btn--active"
+                data-subfilter="all" type="button">
+          {{ T "catalogue.filter.all" }}
+        </button>
+        {{ range .subs }}
+          <button class="catalogue-filters__sub-btn"
+                  data-subfilter="{{ . }}" type="button">
+            {{ T (printf "subcat.%s" .) }}
+          </button>
+        {{ end }}
+      </div>
+    {{ end }}
+  </nav>
+
+  <p class="catalogue-count">
+    <span id="catalogue-visible-count">{{ len .Pages }}</span>{{ T "catalogue.count" }} / {{ len .Pages }}{{ T "catalogue.count" }}
+  </p>
+
+  <!-- Chart Grid -->
+  <div class="catalogue-grid">
+    {{ range sort .Pages "Weight" }}
+      {{ $cats := delimit (default (slice) .Params.chart_categories) "," }}
+      {{ $subs := delimit (default (slice) .Params.chart_subcategories) "," }}
+      <a href="{{ .RelPermalink }}"
+         class="catalogue-card"
+         data-categories="{{ $cats }}"
+         data-subcategories="{{ $subs }}">
+        {{ $image := .Resources.GetMatch "images/thumbnail.*" }}
+        {{ if $image }}
+          <img class="catalogue-card__image"
+               src="{{ $image.RelPermalink }}"
+               alt="{{ .Title }}"
+               width="{{ $image.Width }}"
+               height="{{ $image.Height }}"
+               loading="lazy">
+        {{ else }}
+          <div class="catalogue-card__placeholder">&#x1f4ca;</div>
+        {{ end }}
+        <div class="catalogue-card__body">
+          <h2 class="catalogue-card__title">{{ .Title }}</h2>
+          {{ with .Params.title_en }}
+            <p class="catalogue-card__title-en">{{ . }}</p>
+          {{ end }}
+        </div>
+      </a>
+    {{ end }}
+  </div>
+</div>
+
+<script>
+(function() {
+  var catButtons = document.querySelectorAll('.catalogue-filters__btn');
+  var subRows = document.querySelectorAll('.catalogue-filters__sub');
+  var cards = document.querySelectorAll('.catalogue-card');
+  var countEl = document.getElementById('catalogue-visible-count');
+
+  var activeCategory = 'all';
+  var activeSubcategory = 'all';
+
+  function updateCards() {
+    var visible = 0;
+    cards.forEach(function(card) {
+      var cats = (card.getAttribute('data-categories') || '').split(',');
+      var subs = (card.getAttribute('data-subcategories') || '').split(',');
+
+      var catMatch = (activeCategory === 'all') || cats.indexOf(activeCategory) !== -1;
+      var subMatch = (activeSubcategory === 'all') || subs.indexOf(activeSubcategory) !== -1;
+      var show = catMatch && subMatch;
+
+      card.setAttribute('data-hidden', show ? 'false' : 'true');
+      if (show) visible++;
+    });
+    if (countEl) countEl.textContent = visible;
+  }
+
+  function setCategory(category) {
+    activeCategory = category;
+    activeSubcategory = 'all';
+
+    catButtons.forEach(function(btn) {
+      btn.classList.toggle(
+        'catalogue-filters__btn--active',
+        btn.getAttribute('data-filter') === category
+      );
+    });
+
+    subRows.forEach(function(row) {
+      var isTarget = row.getAttribute('data-parent') === category;
+      row.classList.toggle('catalogue-filters__sub--visible', isTarget && category !== 'all');
+      row.querySelectorAll('.catalogue-filters__sub-btn').forEach(function(btn) {
+        btn.classList.toggle(
+          'catalogue-filters__sub-btn--active',
+          btn.getAttribute('data-subfilter') === 'all'
+        );
+      });
+    });
+
+    updateCards();
+  }
+
+  function setSubcategory(subcategory, row) {
+    activeSubcategory = subcategory;
+
+    row.querySelectorAll('.catalogue-filters__sub-btn').forEach(function(btn) {
+      btn.classList.toggle(
+        'catalogue-filters__sub-btn--active',
+        btn.getAttribute('data-subfilter') === subcategory
+      );
+    });
+
+    updateCards();
+  }
+
+  function updateHash() {
+    if (activeCategory === 'all') {
+      history.replaceState(null, '', location.pathname);
+    } else if (activeSubcategory === 'all') {
+      history.replaceState(null, '', '#' + activeCategory);
+    } else {
+      history.replaceState(null, '', '#' + activeCategory + '/' + activeSubcategory);
+    }
+  }
+
+  function applyHash() {
+    var hash = location.hash.replace('#', '');
+    if (!hash) { setCategory('all'); return; }
+    var parts = hash.split('/');
+    setCategory(parts[0]);
+    if (parts[1]) {
+      subRows.forEach(function(row) {
+        if (row.getAttribute('data-parent') === parts[0]) {
+          setSubcategory(parts[1], row);
+        }
+      });
+    }
+  }
+
+  catButtons.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      setCategory(this.getAttribute('data-filter'));
+      updateHash();
+    });
+  });
+
+  subRows.forEach(function(row) {
+    row.querySelectorAll('.catalogue-filters__sub-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        setSubcategory(this.getAttribute('data-subfilter'), row);
+        updateHash();
+      });
+    });
+  });
+
+  window.addEventListener('popstate', function() { applyHash(); });
+
+  applyHash();
+})();
+</script>
+{{ end }}

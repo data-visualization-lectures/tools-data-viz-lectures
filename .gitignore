@@ -1,0 +1,12 @@
+node_modules/
+resources/_gen/
+public/
+.hugo_cache/
+.hugo_cache_app/
+.hugo_build.lock
+_vendor/
+content/post/.DS_Store
+.DS_Store
+.vercel
+.claude/
+PLAN_CHART_CATALOGUE.md

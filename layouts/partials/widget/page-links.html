@@ -1,0 +1,18 @@
+{{- $links := default (slice
+  (dict "name" "ダミーページ 1" "url" "#dummy-1")
+  (dict "name" "ダミーページ 2" "url" "#dummy-2")
+  (dict "name" "ダミーページ 3" "url" "#dummy-3")
+  (dict "name" "ダミーページ 4" "url" "#dummy-4")
+) .Params.links -}}
+
+<section class="widget page-links">
+  <ul class="page-links__list">
+    {{ range $links }}
+      {{- $name := default "ダミーページ" .name -}}
+      {{- $url := default "#" .url -}}
+      <li class="page-links__item">
+        <a href="{{ $url }}">{{ $name }}</a>
+      </li>
+    {{ end }}
+  </ul>
+</section>

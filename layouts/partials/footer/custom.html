@@ -1,0 +1,60 @@
+{{- if eq site.Params.headerMode "public" -}}
+<footer class="fat-footer" role="contentinfo">
+  <div class="fat-footer__inner">
+
+    <div class="fat-footer__brand">
+      <div class="fat-footer__site-name">{{ .Site.Title }}</div>
+      <div class="fat-footer__copyright">
+        &copy;
+        {{ if and (.Site.Params.footer.since) (ne .Site.Params.footer.since (int (now.Format "2006"))) }}
+          {{ .Site.Params.footer.since }}&ndash;{{ now.Format "2006" }}
+        {{ else }}
+          {{ now.Format "2006" }}
+        {{ end }}
+        {{ default .Site.Title .Site.Copyright }}
+      </div>
+      {{- $currentLang := .Language.Lang -}}
+      {{- if gt .Site.Home.AllTranslations.Len 1 -}}
+        <div class="fat-footer__lang">
+          {{- range .Site.Home.AllTranslations -}}
+            {{- if ne .Language.Lang $currentLang -}}
+              <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
+            {{- end -}}
+          {{- end -}}
+        </div>
+      {{- end -}}
+    </div>
+
+    <nav class="fat-footer__nav" aria-label="{{ T "footer.nav.aria" }}">
+
+      <div class="fat-footer__column">
+        <h3 class="fat-footer__heading">{{ T "footer.col.service" }}</h3>
+        <ul class="fat-footer__links">
+          <li><a href="{{ "pricing/" | relLangURL }}">{{ T "footer.link.pricing" }}</a></li>
+          <li><a href="{{ "faq/" | relLangURL }}">{{ T "footer.link.faq" }}</a></li>
+          <li><a href="{{ "changelog/" | relLangURL }}">{{ T "footer.link.changelog" }}</a></li>
+        </ul>
+      </div>
+
+      <div class="fat-footer__column">
+        <h3 class="fat-footer__heading">{{ T "footer.col.legal" }}</h3>
+        <ul class="fat-footer__links">
+          <li><a href="{{ "terms/" | relLangURL }}">{{ T "footer.link.terms" }}</a></li>
+          <li><a href="{{ "privacy/" | relLangURL }}">{{ T "footer.link.privacy" }}</a></li>
+          <li><a href="{{ "transaction-law/" | relLangURL }}">{{ T "footer.link.transaction" }}</a></li>
+        </ul>
+      </div>
+
+      <div class="fat-footer__column">
+        <h3 class="fat-footer__heading">{{ T "footer.col.other" }}</h3>
+        <ul class="fat-footer__links">
+          <li><a href="{{ "contact/" | relLangURL }}">{{ T "footer.link.contact" }}</a></li>
+          <li><a href="{{ "about/" | relLangURL }}">{{ T "footer.link.about" }}</a></li>
+          <li><a href="{{ "license/" | relLangURL }}">{{ T "footer.link.license" }}</a></li>
+        </ul>
+      </div>
+
+    </nav>
+  </div>
+</footer>
+{{- end -}}

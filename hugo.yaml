@@ -1,0 +1,123 @@
+baseurl: https://tools.data-viz-lectures.com/
+copyright: "Data Viz Lectures Tools"
+DefaultContentLanguage: ja
+hasCJKLanguage: true
+enableRobotsTXT: true
+
+languages:
+  ja:
+    languageName: 日本語
+    weight: 1
+    languageCode: ja
+    title: データの道具箱
+    params:
+      sidebar:
+        subtitle: データ可視化とデータ加工の総合案内
+        author:
+          bio: 株式会社ビジネス・アーキテクツにてユーザー・インターフェイス・デザイナーおよびアート・ディレクターを7年間経験後、独立。企業や教育機関での講義活動、ウェブサイトVisualizing.JPにおける情報発信、コミュニティData Visualization Japanにおけるコミュニティ活動など、データ可視化の実践と普及に関するさまざまな活動をおこなっている。共著書に『RESASの教科書』(日経BP、2016)がある。千葉工業大学デザイン科学修士修了。データ・ビジュアライゼーション・ジャパン発起人/Yahoo!ニュース・エキスパート。
+  en:
+    languageName: English
+    weight: 2
+    languageCode: en
+    title: Data Toolbox
+    params:
+      sidebar:
+        subtitle: "Data visualization and data preparation tools"
+        author:
+          bio: "After 7 years as a UI designer and art director at Business Architects Inc., Yuichi went independent. He is active in data visualization practice and education, including lectures at companies and universities, publishing on Visualizing.JP, and community activities through Data Visualization Japan. Co-author of 'The RESAS Textbook' (Nikkei BP, 2016). M.S. in Design Science, Chiba Institute of Technology. Founder of Data Visualization Japan / Yahoo! News Expert."
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+pagination:
+  pagerSize: 20
+
+taxonomies:
+  category: categories
+  tag: tags
+
+services:
+  disqus:
+    shortname: ""
+  googleAnalytics:
+    id: "G-7NYMBRBRWZ"
+
+permalinks:
+  post: /:slug/
+  showcase: /:slug/
+  page: /:slug/
+
+params:
+  headerMode: "public"
+  authBaseURL: "https://id.data-viz-lectures.com"
+  checkoutBaseURL: "https://app.dataviz.jp/billing/checkout"
+  defaultImage:
+    opengraph:
+      enabled: true
+      local: false
+      src: img/avatar.png
+  opengraph:
+    twitter:
+      site: visualizing_jp
+      card: summary
+  mainSections:
+    - post
+    - showcase
+  featuredImageField: image
+  rssFullContent: true
+  favicon: /favicon.ico
+  widthClass: extended
+
+  footer:
+    since: 2024
+    customText: ""
+
+  dateFormat:
+    published: "2006-01-02"
+    lastUpdated: "2006-01-02"
+
+  sidebar:
+    emoji: 🧰
+    avatar:
+      enabled: false
+      local: true
+      src: img/avatar.png
+    author:
+      name: 矢崎裕一／Yuichi Yazaki
+      image: img/avatar.png
+    categories:
+      order:
+        - how-to
+        - data-visualization
+        - data-visualization-map
+        - data-visualization-parts
+        - data-visualization-color
+        - data-wrangling
+        - data-wrangling-map
+
+  widgets:
+    page:
+      - type: toc
+
+  article:
+    math: false
+    toc: true
+    readingTime: false
+    license:
+      enabled: false
+      default: ""
+
+  comments:
+    enabled: false
+    provider: disqus
+
+  colorScheme:
+    toggle: false
+    default: light
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+theme: hugo-theme-stack

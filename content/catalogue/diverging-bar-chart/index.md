@@ -1,0 +1,32 @@
+---
+title: "分岐的棒グラフ"
+title_en: "Diverging Bar Chart"
+slug: "diverging-bar-chart"
+chart_categories:
+  - time
+chart_subcategories:
+  - linear-cartesian
+weight: 460
+---
+
+このチャートを作ることができるのは...
+
+{{< external-link-card
+    url="https://rawgraphs.dataviz.jp/"
+    title="RAWGraphs2"
+    image="/images/cover_rawgraphs-db.jpg"
+    site="dataviz.jp"
+    description=""
+>}}
+{{< /external-link-card >}}
+{{< external-link-card
+    url="https://vega-editor.dataviz.jp/"
+    title="Vega Editor"
+    image="/images/cover_vega-editor.jpg"
+    site="dataviz.jp"
+    description="JSON 形式で可視化仕様を書くことで、インタラクティブなグラフやチャートをリアルタイムにレンダリング"
+>}}
+{{< /external-link-card >}}
+
+分岐的データ(対立する二者や増加と減少をあつかったデータ)で時系列による変化を棒グラフで表しています。
+

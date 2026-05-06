@@ -1,0 +1,361 @@
+# Homepage
+hero.title:
+  other: "Data Toolbox"
+hero.subtitle:
+  other: "Handy tools for data visualization & data wrangling"
+hero.notice:
+  other: "We provide over 40 nimble data visualization (charts, data maps, network diagrams) and data wrangling tools — more diverse than Excel and easier than BI tools. Everything runs in your browser, and you can use all tools as much as you want with a flat-rate subscription."
+hero.cta.primary:
+  other: "Get Started"
+hero.cta.secondary:
+  other: "Learn More"
+hero.image.alt:
+  other: "Data Visualization Image"
+hero.alert.label:
+  other: ""
+hero.alert:
+  other: ""
+hero.news.label:
+  other: "Notice"
+hero.news:
+  other: "Data visualization and data preparation services are now available."
+
+# Feature cards
+feature.dataviz.title:
+  other: "Data Visualization"
+feature.dataviz.desc:
+  other: "A collection of tools for creating charts."
+feature.dataviz-map.title:
+  other: "Data Visualization: Maps"
+feature.dataviz-map.desc:
+  other: "Data visualization tools using maps."
+feature.dataviz-parts.title:
+  other: "Data Visualization: Components"
+feature.dataviz-parts.desc:
+  other: "Resources focused on chart components and specific visualization techniques."
+feature.dataviz-color.title:
+  other: "Data Visualization: Color"
+feature.dataviz-color.desc:
+  other: "Visualization tools specialized in color scheme design and palette creation."
+feature.wrangling.title:
+  other: "Data Wrangling"
+feature.wrangling.desc:
+  other: "Tools for data processing, formatting, and transformation."
+feature.wrangling-map.title:
+  other: "Data Wrangling: Maps"
+feature.wrangling-map.desc:
+  other: "Tools for formatting, merging, and cleansing map data."
+
+# Sidebar
+sidebar.sample-data:
+  other: "Sample Data"
+sidebar.data-portal:
+  other: "Original Data"
+
+# App sub-navigation
+header.serviceSwitch:
+  other: "Service switch"
+header.serviceDataviz:
+  other: "Visualization"
+header.serviceDataprep:
+  other: "Data Prep"
+header.navTools:
+  other: "Tools"
+header.navDataLibrary:
+  other: "Data Library"
+header.navProjects:
+  other: "Saved Projects"
+header.navAccount:
+  other: "Account"
+
+# www main navigation
+header.navFeatures:
+  other: "Features"
+header.navPricing:
+  other: "Pricing"
+header.mainnavAria:
+  other: "Main navigation"
+
+# www main navigation - dropdown items
+mainnav.features.manyTools:
+  other: "Over 40 tools, unlimited use"
+mainnav.features.manyToolsDesc:
+  other: "Visualization and preparation on a flat fee"
+mainnav.features.browserOnly:
+  other: "Browser-only, no install"
+mainnav.features.browserOnlyDesc:
+  other: "Zero setup, instant access"
+mainnav.features.dataViz:
+  other: "What data viz tools can do"
+mainnav.features.dataVizDesc:
+  other: "Charts, maps, networks and more"
+mainnav.features.dataWrangling:
+  other: "What data wrangling tools can do"
+mainnav.features.dataWranglingDesc:
+  other: "Clean, transform and join data"
+mainnav.features.dataPortal:
+  other: "Data portal"
+mainnav.features.dataPortalDesc:
+  other: "Sample and practical datasets"
+mainnav.features.teamShare:
+  other: "Team project sharing"
+mainnav.features.teamShareDesc:
+  other: "Boost team data literacy"
+mainnav.tools.allTools:
+  other: "All tools"
+mainnav.tools.allToolsDesc:
+  other: "Browse visualization and preparation tools"
+mainnav.tools.howToViz:
+  other: "Choosing data viz tools"
+mainnav.tools.howToVizDesc:
+  other: "Pick tools by purpose"
+mainnav.tools.howToWrangling:
+  other: "Choosing data wrangling tools"
+mainnav.tools.howToWranglingDesc:
+  other: "Pick tools by purpose"
+
+# Pricing page
+pricing.title:
+  other: "Pricing Plans"
+pricing.subtitle:
+  other: "Choose the plan that fits your needs"
+pricing.standard:
+  other: "Standard Plan"
+pricing.coaching:
+  other: "Coaching Plan"
+pricing.monthly:
+  other: "Monthly"
+pricing.yearly:
+  other: "Yearly"
+pricing.per-month:
+  other: "/ month"
+pricing.per-year:
+  other: "/ year"
+pricing.recommended:
+  other: "Recommended"
+pricing.cta:
+  other: "Subscribe"
+pricing.standard.monthly.desc:
+  other: "Our most basic plan. Renewed monthly, so it's flexible and easy to use based on your needs."
+pricing.standard.yearly.desc:
+  other: "About $16.67/month (save $40/year compared to monthly)."
+pricing.standard.monthly.f1:
+  other: "Unlimited access to over 40 tools"
+pricing.standard.monthly.f2:
+  other: "No installation — runs in your browser"
+pricing.standard.monthly.f3:
+  other: "Covers data visualization & data wrangling"
+pricing.standard.monthly.f4:
+  other: "Sample data & original data included"
+pricing.standard.monthly.f5:
+  other: "Cancel anytime"
+pricing.standard.yearly.f1:
+  other: "Unlimited access to over 40 tools"
+pricing.standard.yearly.f2:
+  other: "No installation — runs in your browser"
+pricing.standard.yearly.f3:
+  other: "Covers data visualization & data wrangling"
+pricing.standard.yearly.f4:
+  other: "Sample data & original data included"
+pricing.standard.yearly.f5:
+  other: "About $16.67/month (save $40/year)"
+pricing.coaching.desc:
+  other: "Bundle of this tool and monthly <a href=\"https://personal.data-viz-lectures.com/\">1-on-1 coaching</a>. Save ¥1,000/month."
+pricing.coaching.yearly.desc:
+  other: "Bundle of this tool and <a href=\"https://personal.data-viz-lectures.com/\">1-on-1 coaching</a>. Save ¥1,000/month."
+pricing.coaching.f1:
+  other: "Same tool service as Standard Plan (¥2,480)"
+pricing.coaching.f2:
+  other: "1-on-1 coaching (¥5,500 → ¥4,500)"
+pricing.coaching.monthly.f3:
+  other: "¥1,000 discount from total"
+pricing.coaching.yearly.f3:
+  other: "Save 2 months compared to monthly"
+pricing.refund:
+  other: "Free to use for 14 days from account registration."
+pricing.receipt:
+  other: "We issue receipts (Stripe)."
+
+# Pricing tabs
+pricing.tab.individual:
+  other: "For Individuals"
+pricing.tab.team:
+  other: "For Teams"
+
+# Team plans
+pricing.team.subtitle:
+  other: "The subscriber becomes the leader and can share project files with other members. Accounts for other members will be issued after subscription (migration of existing users is also available). For individual consultation, please <a href=\"/en/contact/\">contact us</a>."
+pricing.team.small.name:
+  other: "Small Team Plan (Up to 5)"
+pricing.team.small.desc:
+  other: "Perfect for small teams. Leaders share projects that all members can view and use."
+pricing.team.small.f1:
+  other: "Up to 5 members"
+pricing.team.small.f2:
+  other: "Unlimited access to over 40 tools"
+pricing.team.small.f3:
+  other: "Leader shares projects with the team"
+pricing.team.small.f4:
+  other: "Members can view and copy shared projects"
+pricing.team.standard.name:
+  other: "Team Plan (Up to 10)"
+pricing.team.standard.desc:
+  other: "For mid-size teams. Ideal for department or project-level use."
+pricing.team.standard.f1:
+  other: "Up to 10 members"
+pricing.team.standard.f2:
+  other: "Unlimited access to over 40 tools"
+pricing.team.standard.f3:
+  other: "Leader shares projects with the team"
+pricing.team.standard.f4:
+  other: "Members can view and copy shared projects"
+pricing.team.enterprise.name:
+  other: "Group Plan (Up to 30)"
+pricing.team.enterprise.desc:
+  other: "For large organizations. Ideal for training and internal education."
+pricing.team.enterprise.f1:
+  other: "Up to 30 members"
+pricing.team.enterprise.f2:
+  other: "Unlimited access to over 40 tools"
+pricing.team.enterprise.f3:
+  other: "Leader shares projects with the team"
+pricing.team.enterprise.f4:
+  other: "Members can view and copy shared projects"
+pricing.team.enterprise.f5:
+  other: "Onboarding support"
+pricing.team.per-year:
+  other: "/ year (save 2 months)"
+pricing.team.contact:
+  other: "Contact Us"
+
+# Catalogue
+catalogue.filter.all:
+  other: "All"
+catalogue.filter.aria:
+  other: "Chart category filter"
+catalogue.count:
+  other: " charts"
+
+# Catalogue categories
+cat.numeric:
+  other: "Numeric"
+cat.text:
+  other: "Text"
+cat.time:
+  other: "Time"
+cat.location:
+  other: "Location"
+cat.structure:
+  other: "Structure"
+cat.relationship:
+  other: "Relationship"
+
+# Catalogue subcategories
+subcat.distribution-summary:
+  other: "Distribution (Summary)"
+subcat.distribution-individual:
+  other: "Distribution (Individual)"
+subcat.breakdown:
+  other: "Breakdown"
+subcat.comparison:
+  other: "Comparison"
+subcat.multivariate:
+  other: "Multivariate Comparison"
+subcat.correlation:
+  other: "Correlation"
+subcat.text-frequency:
+  other: "Text Frequency"
+subcat.text-sets:
+  other: "Text Sets"
+subcat.typographic:
+  other: "Typographic Symbols"
+subcat.paragraphs:
+  other: "Paragraph-centric"
+subcat.linear-cartesian:
+  other: "Linear Time × Cartesian"
+subcat.cyclic-cartesian:
+  other: "Cyclic Time × Cartesian"
+subcat.linear-polar:
+  other: "Linear Time × Polar"
+subcat.cyclic-polar:
+  other: "Cyclic Time × Polar"
+subcat.point-geometry:
+  other: "Point Geometry"
+subcat.line-geometry:
+  other: "Line Geometry"
+subcat.area-geometry:
+  other: "Area Geometry"
+subcat.multivariate-geometry:
+  other: "Multivariate Geometry"
+subcat.tree-connection:
+  other: "Tree: Connection"
+subcat.tree-juxtaposition:
+  other: "Tree: Juxtaposition"
+subcat.tree-nested:
+  other: "Tree: Nested"
+subcat.network-connection:
+  other: "Network: Connection"
+subcat.network-flow:
+  other: "Network: Flow"
+subcat.network-matrix:
+  other: "Network: Matrix"
+
+# Chart detail page
+chart.back:
+  other: "← Back to Catalogue"
+chart.category:
+  other: "Category"
+chart.related:
+  other: "Related Charts"
+
+# Tools page
+tools.title:
+  other: "Tools"
+tools.subtitle:
+  other: "Browse tools by category"
+tools.count:
+  other: " tools"
+
+# Post card buttons
+post.detail:
+  other: "Learn More"
+post.use-tool:
+  other: "Use Tool"
+
+# Tools page banners
+tools.banners.aria:
+  other: "Related content"
+tools.banner.showcase:
+  other: "Showcase"
+tools.banner.catalogue:
+  other: "Chart Catalogue"
+tools.banner.visualizing:
+  other: "Chart Explanations"
+
+# Fat footer
+footer.nav.aria:
+  other: "Footer navigation"
+footer.col.service:
+  other: "Service"
+footer.col.legal:
+  other: "Legal"
+footer.col.other:
+  other: "Other"
+footer.link.pricing:
+  other: "Pricing"
+footer.link.faq:
+  other: "FAQ"
+footer.link.changelog:
+  other: "Changelog"
+footer.link.terms:
+  other: "Terms of Service"
+footer.link.privacy:
+  other: "Privacy Policy"
+footer.link.transaction:
+  other: "Specified Commercial Transactions Act"
+footer.link.contact:
+  other: "Contact"
+footer.link.about:
+  other: "About"
+footer.link.license:
+  other: "License"

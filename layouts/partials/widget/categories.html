@@ -1,0 +1,44 @@
+{{- $context := .Context -}}
+{{- $siteOrder := default (slice) $context.Site.Params.sidebar.categories.order -}}
+{{- $paramOrder := slice -}}
+{{- if and .Params (isset .Params "order") -}}
+  {{- $paramOrder = default (slice) .Params.order -}}
+{{- end -}}
+{{- $order := $siteOrder -}}
+{{- if gt (len $paramOrder) 0 -}}
+  {{- $order = $paramOrder -}}
+{{- end -}}
+{{- $limit := default 10 .Params.limit -}}
+
+{{- $orderedTerms := slice -}}
+{{- range $slug := $order -}}
+  {{- with $context.Site.GetPage (printf "categories/%s" $slug) -}}
+    {{- $orderedTerms = $orderedTerms | append . -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if and (eq (len $orderedTerms) 0) $context.Site.Taxonomies.categories -}}
+  {{- range $context.Site.Taxonomies.categories.ByCount }}
+    {{- $orderedTerms = $orderedTerms | append .Page -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if gt (len $orderedTerms) 0 -}}
+  <section class="widget tagCloud categories-widget">
+    <div class="widget-icon">
+      {{ partial "helper/icon" "categories" }}
+    </div>
+    <h2 class="widget-title section-title">{{ T "widget.categoriesCloud.title" }}</h2>
+
+    <div class="tagCloud-tags">
+      {{- range $index, $term := $orderedTerms -}}
+        {{- if lt $index $limit -}}
+          <a href="{{ $term.RelPermalink }}" class="category-pill">
+            <span class="category-pill__name">{{ $term.Title }}</span>
+            <span class="category-pill__count">{{ len $term.Pages }}</span>
+          </a>
+        {{- end -}}
+      {{- end -}}
+    </div>
+  </section>
+{{- end -}}

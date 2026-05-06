@@ -1,0 +1,216 @@
+{{ define "body-class" }}
+    article-page
+    {{- .Scratch.Set "hasWidget" true -}}
+{{ end }}
+
+{{ define "main" }}
+<style>
+  .chart-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 0;
+    color: var(--card-text-color-main);
+  }
+
+  .chart-detail__back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.4rem;
+    color: var(--accent-color);
+    text-decoration: none;
+  }
+
+  .chart-detail__back:hover {
+    text-decoration: underline;
+  }
+
+  .chart-detail__header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .chart-detail__title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  .chart-detail__title-en {
+    font-size: 1.6rem;
+    color: var(--card-text-color-secondary);
+    margin: 0;
+  }
+
+  .chart-detail__description {
+    font-size: 1.6rem;
+    color: var(--card-text-color-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .chart-detail__categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .chart-detail__category-badge {
+    display: inline-flex;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: rgba(16, 185, 129, 0.1);
+    color: #10B981;
+  }
+
+  .chart-detail__image {
+    width: 150px;
+    height: 150px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-l1);
+    background-color: #FFFFFF;
+  }
+
+  .chart-detail__content {
+    line-height: 1.8;
+    font-size: 1.6rem;
+  }
+
+  .chart-detail__content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .chart-detail__content h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .chart-detail__content ul,
+  .chart-detail__content ol {
+    padding-left: 1.5rem;
+  }
+
+  .chart-detail__content li {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Related Charts */
+  .chart-detail__related-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .chart-detail__related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+
+  .chart-detail__related-card {
+    background: var(--card-background);
+    border-radius: 8px;
+    box-shadow: var(--shadow-l1);
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .chart-detail__related-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-l2);
+  }
+
+  .chart-detail__related-card img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+  }
+
+  .chart-detail__related-card-name {
+    padding: 0.75rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-align: center;
+  }
+</style>
+
+<div class="chart-detail">
+  <a href="{{ "catalogue/" | relLangURL }}" class="chart-detail__back">{{ T "chart.back" }}</a>
+
+  <div class="chart-detail__header">
+    <h1 class="chart-detail__title">{{ .Title }}</h1>
+    {{ with .Params.title_en }}
+      <p class="chart-detail__title-en">{{ . }}</p>
+    {{ end }}
+    {{ with .Params.description }}
+      <p class="chart-detail__description">{{ . }}</p>
+    {{ end }}
+
+    {{ with .Params.chart_categories }}
+      <div class="chart-detail__categories">
+        {{ range . }}
+          <span class="chart-detail__category-badge">
+            {{ T (printf "cat.%s" .) }}
+          </span>
+        {{ end }}
+      </div>
+    {{ end }}
+  </div>
+
+  {{ $image := .Resources.GetMatch "images/thumbnail.*" }}
+  {{ if $image }}
+    <img class="chart-detail__image"
+         src="{{ $image.RelPermalink }}"
+         alt="{{ .Title }}"
+         width="{{ $image.Width }}"
+         height="{{ $image.Height }}">
+  {{ end }}
+
+  {{ if .Content }}
+    <div class="chart-detail__content">
+      {{ .Content }}
+    </div>
+  {{ end }}
+
+  {{ with .Params.related_charts }}
+    <section>
+      <h2 class="chart-detail__related-title">{{ T "chart.related" }}</h2>
+      <div class="chart-detail__related-grid">
+        {{ range . }}
+          {{ with $.Site.GetPage (printf "/catalogue/%s" .) }}
+            <a href="{{ .RelPermalink }}" class="chart-detail__related-card">
+              {{ $relImage := .Resources.GetMatch "images/thumbnail.*" }}
+              {{ if $relImage }}
+                {{ $relThumb := $relImage.Fill "320x240" }}
+                <img src="{{ $relThumb.RelPermalink }}"
+                     alt="{{ .Title }}"
+                     width="{{ $relThumb.Width }}"
+                     height="{{ $relThumb.Height }}"
+                     loading="lazy">
+              {{ end }}
+              <div class="chart-detail__related-card-name">{{ .Title }}</div>
+            </a>
+          {{ end }}
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
+</div>
+
+{{ partialCached "footer/footer" . }}
+{{ end }}
+
