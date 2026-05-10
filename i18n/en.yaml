@@ -11,6 +11,18 @@ hero.cta.secondary:
   other: "Learn More"
 hero.image.alt:
   other: "Data Visualization Image"
+hero.tool.dataviz.name:
+  other: "Data Visualization Tools"
+hero.tool.dataviz.alt:
+  other: "Data visualization tool overview"
+hero.tool.dataviz.desc:
+  other: "Browse chart, map, and network visualization tools by purpose."
+hero.tool.wrangling.name:
+  other: "Data Wrangling Tools"
+hero.tool.wrangling.alt:
+  other: "Data wrangling tool overview"
+hero.tool.wrangling.desc:
+  other: "Browse cleansing, transformation, and data prep tools by purpose."
 hero.alert.label:
   other: ""
 hero.alert:

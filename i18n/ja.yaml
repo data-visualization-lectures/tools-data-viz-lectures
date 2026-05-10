@@ -11,6 +11,18 @@ hero.cta.secondary:
   other: "もっと詳しく"
 hero.image.alt:
   other: "データ可視化イメージ"
+hero.tool.dataviz.name:
+  other: "データ可視化ツール"
+hero.tool.dataviz.alt:
+  other: "データ可視化ツール一覧"
+hero.tool.dataviz.desc:
+  other: "チャート、地図、ネットワーク図などの可視化ツールを目的別に探せます。"
+hero.tool.wrangling.name:
+  other: "データ加工ツール"
+hero.tool.wrangling.alt:
+  other: "データ加工ツール一覧"
+hero.tool.wrangling.desc:
+  other: "クレンジング、変換、結合などの前処理ツールを目的別に探せます。"
 hero.alert.label:
   other: ""
 hero.alert:
