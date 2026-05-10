@@ -158,36 +158,6 @@
     gap: 0.5rem;
   }
 
-  .hero-banners {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-
-  @media (max-width: 768px) {
-    .hero-banners {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  .hero-banner {
-    display: block;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: var(--shadow-l1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .hero-banner:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-l2);
-  }
-
-  .hero-banner img {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
 </style>
 
 <div class="lp-container">
@@ -227,12 +197,6 @@
     </div>
     {{ end }}
   </div>
-
-  <nav class="hero-banners" aria-label="{{ T "tools.banners.aria" }}">
-    <a href="{{ "categories/showcase/" | relLangURL }}" class="hero-banner"><img src="/banners/banner_showcase{{ if eq .Lang "en" }}_en{{ end }}_v2.jpg" alt="{{ T "tools.banner.showcase" }}" width="372" height="80" loading="lazy"></a>
-    <a href="{{ "catalogue/" | relLangURL }}" class="hero-banner"><img src="/banners/banner_chart-catalogue{{ if eq .Lang "en" }}_en{{ end }}_v2.jpg" alt="{{ T "tools.banner.catalogue" }}" width="372" height="80" loading="lazy"></a>
-    <a href="https://visualizing.jp/" class="hero-banner" target="_blank" rel="noopener"><img src="/banners/banner_visualizing{{ if eq .Lang "en" }}_en{{ end }}_v2.jpg" alt="{{ T "tools.banner.visualizing" }}" width="372" height="80" loading="lazy"></a>
-  </nav>
 
   {{ with .Content }}
   <section class="overview-content article-content">

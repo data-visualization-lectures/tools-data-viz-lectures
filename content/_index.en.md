@@ -17,53 +17,6 @@ menu:
 - Seamlessly switch between visualization and processing
 
 
-## What can you create?
-
-
-### 2023 Advertising Spending by Industry (Four Major Media)
-
-View the advertising spend scale across 21 industries and 4 major media types in a single chart.
-This type of chart is called a mosaic plot (or Mekko chart), which allows you to cross-tabulate two variables in one chart.
-
-{{< figure src="/images/koukokuhi_2023.png" caption="Mosaic Plot / RawGraphs" >}}
-
-
-### Distribution of Home Middle Schools by Prefecture for Koshien Tournament Players (Tohoku Region)
-
-The left side shows Koshien participating schools, the right shows the home prefectures, and line thickness represents the number of players.
-Colored lines indicate movement within Tohoku, while gray lines indicate movement from outside the region.
-It can be created with a simple data format.
-
-{{< figure src="/images/sankey_diagram.png" caption="Sankey Diagram / Sankeymatic" >}}
-
-
-### Popular Dog Breeds
-
-Dog breeds are classified in a phylogenetic tree, with the size of the circles at the tips representing popularity.
-This is one of the chart types for expressing tree (hierarchical) structures. The beautiful data-driven curves are difficult to draw manually with design tools.
-
-{{< figure src="/images/kaiinu.png" caption="Linear Dendrogram / RawGraphs" >}}
-
-
-### AirBnB Property Types and Accommodation Costs
-
-3D maps are also easy to visualize. By simultaneously expressing multiple variables through color, size, and height, it becomes easier to grasp multiple aspects at once.
-
-{{< figure src="/images/kepler-gl.png" caption="3D Bar Chart Map / Kepler-GL" >}}
-
-
-### Efficiently Cleansing Name (Text) Data
-
-You can cleanse data while viewing the full picture of variables.
-
-{{< figure src="/images/openrefine.png" caption="Cleansing with OpenRefine" >}}
-
-### Extract Table Data from a PDF by Specifying a Range
-
-Easily convert PDFs published by government agencies and others into table data.
-
-{{< figure src="/images/tabula.png" caption="Data extraction with Tabula" >}}
-
 ## Does this sound like your data workflow?
 
 * You discover useful chart types, but your current tools don't support them
