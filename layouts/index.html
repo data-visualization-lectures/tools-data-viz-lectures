@@ -304,22 +304,10 @@
       (cond $isEn "Quickly generate map data for buffer zones around POIs such as stations" "駅などのPOIからの半径*mや徒歩*分をすばやく地図データ化したい")
     }}
     {{ $dataVizLinks := slice
-      (dict "url" "https://rawgraphs.dataviz.jp/" "label" "RAWGraphs2")
-      (dict "url" "https://data-illustrator.dataviz.jp/" "label" "Data Illustrator")
-      (dict "url" "https://voyager2.dataviz.jp/" "label" "Voyager2")
-      (dict "url" "https://kepler-gl.dataviz.jp/" "label" "kepler.gl")
-      (dict "url" "https://choropleth-japan.dataviz.jp/" "label" (cond $isEn "Japan Choropleth Map" "日本地図コロプレス"))
-      (dict "url" "https://sankeymatic.dataviz.jp/" "label" "Sankeymatic")
-      (dict "url" "https://word-cloud.dataviz.jp/" "label" "Word Cloud")
+      (dict "url" "https://www.dataviz.jp/" "label" "www.dataviz.jp")
     }}
     {{ $dataWranglingLinks := slice
-      (dict "url" "https://open-refine.dataviz.jp/" "label" "OpenRefine")
-      (dict "url" "https://geo-data-merger.dataprep.jp/" "label" "(Geo) DataMerger")
-      (dict "url" "https://jsoncrack.dataprep.jp/" "label" "JSON Crack")
-      (dict "url" "https://change-character-encoding.dataprep.jp/" "label" (cond $isEn "Shift JIS ⇄ UTF-8 Converter" "Shift JIS ⇄ UTF-8 文字コード変換ツール"))
-      (dict "url" "https://address-to-latlon.dataprep.jp/" "label" (cond $isEn "Address to Lat/Lon Converter" "住所 → 緯度経度 変換ツール"))
-      (dict "url" "https://tabula-pdf.dataprep.jp/" "label" "Tabula PDF")
-      (dict "url" "https://turf-buffer.dataprep.jp/" "label" (cond $isEn "Turf Buffer" "バッファ生成ツール"))
+      (dict "url" "https://www.dataprep.jp/" "label" "www.dataprep.jp")
     }}
     <div class="hero-content">
       <h1 class="hero-title">{{ T "hero.title" }}</h1>

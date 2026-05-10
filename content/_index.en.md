@@ -154,5 +154,3 @@ You can use the tool free for 14 days after creating your account. Give it a try
   {{< auth-link path="/auth/sign-up" class="button primary" >}}Get Started{{< /auth-link >}}
   <a href="/en/pricing/" class="button secondary">Pricing</a>
 </div>
-
-※ The 14-day money-back guarantee has been discontinued.
