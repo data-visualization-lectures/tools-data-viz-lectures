@@ -155,5 +155,3 @@ Excelよりも多様に、B.I.ツールよりも簡単に、小回りの利く�
   {{< auth-link path="/auth/sign-up" class="button primary" >}}今すぐはじめる{{< /auth-link >}}
   <a href="/pricing/" class="button secondary">料金プラン</a>
 </div>
-
-※ 初回2週間以内であれば返金保証対応は終了いたしました。
