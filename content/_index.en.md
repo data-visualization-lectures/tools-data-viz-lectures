@@ -67,21 +67,6 @@ To tackle various visualizations, you need to prepare data suited to each purpos
 
 
 
-## Workflow supported by this service
-
-### Data Acquisition
-
-We provide sample data and commonly used datasets in a pre-cleansed state.
-
-### Data Wrangling
-
-Data that works in Excel doesn't always work in other tools. We support both basic cleansing to meet minimum requirements and proactive wrangling tailored to your goals.
-
-### Data Visualization
-
-Even when you know about useful chart types, your existing tools often can't create them. We focus on such charts and make them easy to create through templates.
-
-
 ## Data Portal
 
 We provide a data portal with sample data for learning, and another with original datasets for practical use.
@@ -128,7 +113,13 @@ See the <a href="/en/about/">About</a> page for details.
 
 ## Pricing
 
-### Standard Plan: $20/month
+### Monthly Plans
+
+- VIZ (visualization tools only): $8/month
+- PREP (data preparation tools only): $12/month
+- BUNDLE (visualization + data preparation): $19/month
+
+Visualization and data preparation can be subscribed to separately by service. A bundled plan for using both is also available.
 
 See the <a href="/en/pricing/">Pricing</a> page for all plans.
 
