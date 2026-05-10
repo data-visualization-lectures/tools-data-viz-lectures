@@ -132,6 +132,52 @@
     color: var(--body-text-color);
   }
 
+  .hero-tool-section {
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--card-separator-color);
+  }
+
+  .hero-tool-section-title {
+    margin: 0 0 0.75rem;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #183d8a;
+  }
+
+  .hero-tool-capabilities {
+    margin: 0;
+    padding-left: 1.5em;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    color: var(--body-text-color);
+    font-size: 1.35rem;
+    line-height: 1.6;
+  }
+
+  .hero-tool-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .hero-tool-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(24, 61, 138, 0.08);
+    color: #183d8a;
+    text-decoration: none;
+    font-size: 1.3rem;
+    line-height: 1.4;
+  }
+
+  .hero-tool-link:hover {
+    background: rgba(24, 61, 138, 0.14);
+  }
+
   /* Features Section */
   .features {
     display: grid;
@@ -239,8 +285,46 @@
 <div class="lp-container">
   <!-- Hero -->
   <section class="hero">
+    {{ $isEn := eq .Lang "en" }}
+    {{ $capabilitiesTitle := cond $isEn "What you can do" "できること" }}
+    {{ $toolsLabel := cond $isEn "Go to tools" "ツールへいく" }}
     {{ $dataVizURL := "how-to-use-data-viz/" | absLangURL }}
     {{ $dataWranglingURL := "how-to-use-data-wrangling/" | absLangURL }}
+    {{ $dataVizCapabilities := slice
+      (cond $isEn "Create various types of charts" "さまざまなチャートを作りたい")
+      (cond $isEn "Perform exploratory data visualization" "探索的なデータ可視化をしたい場合")
+      (cond $isEn "Visualize data on 3D maps" "3D地図の可視化をしたい")
+      (cond $isEn "Create data maps at the prefecture or municipality level" "都道府県や市区町村単位でデータ地図をつくりたい")
+      (cond $isEn "Visualize networks" "ネットワークの可視化をしたい場合")
+      (cond $isEn "Visualize text data" "テキストの可視化をしたい場合")
+    }}
+    {{ $dataWranglingCapabilities := slice
+      (cond $isEn "Visually cleanse data in an intuitive way" "ビジュアルにわかりやすくデータをクレンジングしたい")
+      (cond $isEn "Easily merge geographic data with thematic data" "地図データとテーマデータを簡単に結合したい")
+      (cond $isEn "Quickly understand the structure of JSON" "JSONの構造をいち早く把握したい")
+      (cond $isEn "Fix character encoding issues" "文字化けを解消したい")
+      (cond $isEn "Easily calculate latitude and longitude from addresses" "住所から緯度経度を簡単に算出したい")
+      (cond $isEn "Extract table data from PDFs with ease" "PDFから表データを簡単に取り出したい")
+      (cond $isEn "Quickly generate map data for buffer zones around POIs such as stations" "駅などのPOIからの半径*mや徒歩*分をすばやく地図データ化したい")
+    }}
+    {{ $dataVizLinks := slice
+      (dict "url" "https://rawgraphs.dataviz.jp/" "label" "RAWGraphs2")
+      (dict "url" "https://data-illustrator.dataviz.jp/" "label" "Data Illustrator")
+      (dict "url" "https://voyager2.dataviz.jp/" "label" "Voyager2")
+      (dict "url" "https://kepler-gl.dataviz.jp/" "label" "kepler.gl")
+      (dict "url" "https://choropleth-japan.dataviz.jp/" "label" (cond $isEn "Japan Choropleth Map" "日本地図コロプレス"))
+      (dict "url" "https://sankeymatic.dataviz.jp/" "label" "Sankeymatic")
+      (dict "url" "https://word-cloud.dataviz.jp/" "label" "Word Cloud")
+    }}
+    {{ $dataWranglingLinks := slice
+      (dict "url" "https://open-refine.dataviz.jp/" "label" "OpenRefine")
+      (dict "url" "https://geo-data-merger.dataprep.jp/" "label" "(Geo) DataMerger")
+      (dict "url" "https://jsoncrack.dataprep.jp/" "label" "JSON Crack")
+      (dict "url" "https://change-character-encoding.dataprep.jp/" "label" (cond $isEn "Shift JIS ⇄ UTF-8 Converter" "Shift JIS ⇄ UTF-8 文字コード変換ツール"))
+      (dict "url" "https://address-to-latlon.dataprep.jp/" "label" (cond $isEn "Address to Lat/Lon Converter" "住所 → 緯度経度 変換ツール"))
+      (dict "url" "https://tabula-pdf.dataprep.jp/" "label" "Tabula PDF")
+      (dict "url" "https://turf-buffer.dataprep.jp/" "label" (cond $isEn "Turf Buffer" "バッファ生成ツール"))
+    }}
     <div class="hero-content">
       <h1 class="hero-title">{{ T "hero.title" }}</h1>
       <p class="hero-subtitle">{{ T "hero.subtitle" }}</p>
@@ -256,6 +340,22 @@
             <h2 class="hero-tool-name"><a href="{{ $dataVizURL }}">{{ T "hero.tool.dataviz.name" }}</a></h2>
             <p class="hero-tool-url"><a href="{{ $dataVizURL }}">{{ $dataVizURL }}</a></p>
             <p class="hero-tool-desc">{{ T "hero.tool.dataviz.desc" }}</p>
+            <div class="hero-tool-section">
+              <p class="hero-tool-section-title">{{ $capabilitiesTitle }}</p>
+              <ul class="hero-tool-capabilities">
+                {{ range $dataVizCapabilities }}
+                <li>{{ . }}</li>
+                {{ end }}
+              </ul>
+            </div>
+            <div class="hero-tool-section">
+              <p class="hero-tool-section-title">{{ $toolsLabel }}</p>
+              <div class="hero-tool-links">
+                {{ range $dataVizLinks }}
+                <a class="hero-tool-link" href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a>
+                {{ end }}
+              </div>
+            </div>
           </div>
         </article>
 
@@ -267,6 +367,22 @@
             <h2 class="hero-tool-name"><a href="{{ $dataWranglingURL }}">{{ T "hero.tool.wrangling.name" }}</a></h2>
             <p class="hero-tool-url"><a href="{{ $dataWranglingURL }}">{{ $dataWranglingURL }}</a></p>
             <p class="hero-tool-desc">{{ T "hero.tool.wrangling.desc" }}</p>
+            <div class="hero-tool-section">
+              <p class="hero-tool-section-title">{{ $capabilitiesTitle }}</p>
+              <ul class="hero-tool-capabilities">
+                {{ range $dataWranglingCapabilities }}
+                <li>{{ . }}</li>
+                {{ end }}
+              </ul>
+            </div>
+            <div class="hero-tool-section">
+              <p class="hero-tool-section-title">{{ $toolsLabel }}</p>
+              <div class="hero-tool-links">
+                {{ range $dataWranglingLinks }}
+                <a class="hero-tool-link" href="{{ .url }}" target="_blank" rel="noopener">{{ .label }}</a>
+                {{ end }}
+              </div>
+            </div>
           </div>
         </article>
       </div>
