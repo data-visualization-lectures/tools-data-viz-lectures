@@ -30,7 +30,7 @@ hero.alert:
 hero.news.label:
   other: "お知らせ"
 hero.news:
-  other: "データ可視化とデータ加工の各サービスを公開中です。"
+  other: "データ可視化とデータ加工を別サービスとして扱う新しい料金体系へ移行しました。"
 
 # Feature cards
 feature.dataviz.title:

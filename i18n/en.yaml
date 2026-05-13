@@ -30,7 +30,7 @@ hero.alert:
 hero.news.label:
   other: "Notice"
 hero.news:
-  other: "Data visualization and data preparation services are now available."
+  other: "Moved to a new pricing structure that treats data visualization and data preparation as separate service scopes."
 
 # Feature cards
 feature.dataviz.title:

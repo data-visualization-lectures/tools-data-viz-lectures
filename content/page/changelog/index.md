@@ -22,9 +22,18 @@ date: 2026-03-10
 
 データ可視化・データ加工ツール群の総合案内サイトとして `tools.data-viz-lectures.com` を準備しました。
 
+かつては1つのドメインを中心にご案内していたサービスの入口を整理し、以下のように役割ごとの導線を明確にしています。
+
+- **トップページ**は [https://tools.data-viz-lectures.com/](https://tools.data-viz-lectures.com/) です。
+- **共通のログインページ**は [https://id.data-viz-lectures.com/auth/login](https://id.data-viz-lectures.com/auth/login) です。
+- **データ可視化の道具箱**は [https://www.dataviz.jp/](https://www.dataviz.jp/) です。
+- **データ加工の道具箱**は [https://www.dataprep.jp/](https://www.dataprep.jp/) です。
+
 ### 2026年5月4日
 
 データ可視化とデータ加工を別サービスとして扱う新しい料金体系へ移行しました。
+
+これにより、データ可視化とデータ加工をそれぞれ独立したプランとして、必要なサービスだけ個別にご契約いただけるようになりました。
 
 ### 2026年4月21日
 

@@ -22,9 +22,18 @@ And more. This list will be updated as needed.
 
 Prepared `tools.data-viz-lectures.com` as the public overview site for the data visualization and data preparation tool services.
 
+What used to be presented mainly under a single domain is now organized into clearer entry points for each role:
+
+- **Top page**: [https://tools.data-viz-lectures.com/](https://tools.data-viz-lectures.com/)
+- **Shared login page**: [https://id.data-viz-lectures.com/auth/login](https://id.data-viz-lectures.com/auth/login)
+- **Data Visualization Toolbox**: [https://www.dataviz.jp/](https://www.dataviz.jp/)
+- **Data Preparation Toolbox**: [https://www.dataprep.jp/](https://www.dataprep.jp/)
+
 ### May 4, 2026
 
 Moved to a new pricing structure that treats data visualization and data preparation as separate service scopes.
+
+This means the Data Visualization Toolbox and the Data Preparation Toolbox can now be subscribed to separately, so you can choose only the service you need.
 
 ### April 21, 2026
 
