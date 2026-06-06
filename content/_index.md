@@ -146,12 +146,10 @@ Excelよりも多様に、B.I.ツールよりも簡単に、小回りの利く�
 
 
 
-## 今すぐ使う
+## 現在の運用状況
 
-アカウント作成後14日間、無料でご使用いただけます。
-ぜひお試しください。
+現在メンテナンスモードのため、dataviz.jp / dataprep.jp のツールはご利用いただけません。
 
 <div class="hero-buttons" style="margin-top: 2rem;">
-  {{< auth-link path="/auth/sign-up" class="button primary" >}}今すぐはじめる{{< /auth-link >}}
-  <a href="/pricing/" class="button secondary">料金プラン</a>
+  <a href="/maintenance-mode/" class="button primary">メンテナンスのお知らせを見る</a>
 </div>

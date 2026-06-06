@@ -146,11 +146,10 @@ See the <a href="/en/faq/">FAQ</a> page for all frequently asked questions.
 
 
 
-## Get Started Now
+## Current service status
 
-You can use the tool free for 14 days after creating your account. Give it a try.
+dataviz.jp and dataprep.jp are currently in maintenance mode, and the tools are unavailable.
 
 <div class="hero-buttons" style="margin-top: 2rem;">
-  {{< auth-link path="/auth/sign-up" class="button primary" >}}Get Started{{< /auth-link >}}
-  <a href="/en/pricing/" class="button secondary">Pricing</a>
+  <a href="/en/maintenance-mode/" class="button primary">Read maintenance notice</a>
 </div>

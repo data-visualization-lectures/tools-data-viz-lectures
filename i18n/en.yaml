@@ -6,7 +6,9 @@ hero.subtitle:
 hero.notice:
   other: "We provide over 40 nimble data visualization (charts, data maps, network diagrams) and data wrangling tools — more diverse than Excel and easier than BI tools. Everything runs in your browser, and you can use all tools as much as you want with a flat-rate subscription."
 hero.cta.primary:
-  other: "Get Started"
+  other: "Read maintenance notice"
+hero.cta.primary.url:
+  other: "/en/maintenance-mode/"
 hero.cta.secondary:
   other: "Learn More"
 hero.image.alt:
@@ -24,9 +26,11 @@ hero.tool.wrangling.alt:
 hero.tool.wrangling.desc:
   other: "Browse cleansing, transformation, and data prep tools by purpose."
 hero.alert.label:
-  other: ""
+  other: "Important"
 hero.alert:
-  other: ""
+  other: "dataviz.jp / dataprep.jp are in maintenance mode, and the tools are currently unavailable. Learn more."
+hero.alert.url:
+  other: "/en/maintenance-mode/"
 hero.news.label:
   other: "Notice"
 hero.news:

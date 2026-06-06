@@ -374,7 +374,11 @@
   </section>
 
   <section class="hero-buttons hero-cta">
-    <a href="{{ site.Params.authBaseURL }}/auth/sign-up?lang={{ .Lang }}" class="button primary">{{ T "hero.cta.primary" }}</a>
+    {{ $primaryCTAURL := T "hero.cta.primary.url" }}
+    {{ if not $primaryCTAURL }}
+      {{ $primaryCTAURL = printf "%s/auth/sign-up?lang=%s" site.Params.authBaseURL .Lang }}
+    {{ end }}
+    <a href="{{ $primaryCTAURL }}" class="button primary">{{ T "hero.cta.primary" }}</a>
     <a href="{{ "pricing/" | relLangURL }}" class="button secondary">{{ T "footer.link.pricing" }}</a>
   </section>
 
@@ -382,7 +386,12 @@
     {{ with T "hero.alert" }}
     <div class="hero-news">
       <span class="hero-news-label hero-news-label--alert">{{ T "hero.alert.label" }}</span>
+      {{ $alertURL := T "hero.alert.url" }}
+      {{ if $alertURL }}
+      <span><a href="{{ $alertURL }}">{{ . }}</a></span>
+      {{ else }}
       <span>{{ . }}</span>
+      {{ end }}
     </div>
     {{ end }}
 
