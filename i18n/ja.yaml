@@ -6,9 +6,7 @@ hero.subtitle:
 hero.notice:
   other: "Excelよりも多様に、B.I.ツールよりも簡単に、小回りの利くデータ可視化（チャートやデータ地図、ネットワーク図）作成・データ加工ツールを40種類以上用意しています。ブラウザですべて完結し、定額で使い放題で利用いただけます。"
 hero.cta.primary:
-  other: "メンテナンスのお知らせを見る"
-hero.cta.primary.url:
-  other: "/maintenance-mode/"
+  other: "今すぐはじめる"
 hero.cta.secondary:
   other: "もっと詳しく"
 hero.image.alt:
@@ -26,9 +24,9 @@ hero.tool.wrangling.alt:
 hero.tool.wrangling.desc:
   other: "クレンジング、変換、結合などの前処理ツールを目的別に探せます。"
 hero.alert.label:
-  other: "重要"
+  other: "お知らせ"
 hero.alert:
-  other: "dataviz.jp / dataprep.jp は現在メンテナンスモードのため、ツールはご利用いただけません。詳しくはこちら。"
+  other: "dataviz.jp / dataprep.jp のメンテナンスは終了し、現在ツールをご利用いただけます。詳しくはこちら。"
 hero.alert.url:
   other: "/maintenance-mode/"
 hero.news.label:
