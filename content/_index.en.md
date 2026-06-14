@@ -148,8 +148,9 @@ See the <a href="/en/faq/">FAQ</a> page for all frequently asked questions.
 
 ## Current service status
 
-dataviz.jp and dataprep.jp are currently in maintenance mode, and the tools are unavailable.
+Maintenance has ended, and the tools on dataviz.jp and dataprep.jp are now available.
 
 <div class="hero-buttons" style="margin-top: 2rem;">
-  <a href="/en/maintenance-mode/" class="button primary">Read maintenance notice</a>
+  {{< auth-link path="/auth/sign-up" class="button primary" >}}Get Started{{< /auth-link >}}
+  <a href="/en/maintenance-mode/" class="button secondary">Read maintenance completion notice</a>
 </div>
