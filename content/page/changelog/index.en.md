@@ -1,7 +1,7 @@
 ---
 title: "Changelog"
 slug: "changelog"
-date: 2026-03-10
+date: 2026-06-18
 ---
 
 
@@ -17,6 +17,18 @@ And more. This list will be updated as needed.
 
 
 ## Changelog
+
+### June 18, 2026 (Preparation)
+
+- Removed the map tile browser "What the Tile." What the Tile has moved to Explorable Explanations: [https://explorable-explanations.com/p/what-the-tile/](https://explorable-explanations.com/p/what-the-tile/)
+
+### May 31, 2026 (Visualization)
+
+- Removed the "Data Visualization: Parts" category. Removed the Easing Function Cheat Sheet, SVG Gradient Editor, and SVG Texture Editor. The Easing Function Cheat Sheet has moved to Explorable Explanations: [https://easings.explorable-explanations.com/ja](https://easings.explorable-explanations.com/ja)
+
+### May 31, 2026 (Preparation)
+
+- Removed the "Choosing Tools" category from the in-app sidebar and tools listing.
 
 ### May 7, 2026 (Shared)
 
