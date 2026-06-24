@@ -1,7 +1,7 @@
 ---
 title: "更新情報"
 slug: "changelog"
-date: 2026-03-10
+date: 2026-06-18
 ---
 
 
@@ -17,6 +17,18 @@ date: 2026-03-10
 
 
 ## 更新情報
+
+### 2026年6月18日（加工）
+
+- 地図タイル・ブラウザー「What the Tile」を削除しました。What the Tile は Explorable Explanations へ移動しました: [https://explorable-explanations.com/p/what-the-tile/](https://explorable-explanations.com/p/what-the-tile/)
+
+### 2026年5月31日（可視化）
+
+- カテゴリー「データ可視化：個別」を撤廃しました。イージング関数チートシート、SVGグラデーションエディタ、SVGテクスチャエディタを削除しました。イージング関数チートシートはウェブサイト Explorable Explanations へ移動しました: [https://easings.explorable-explanations.com/ja](https://easings.explorable-explanations.com/ja)
+
+### 2026年5月31日（加工）
+
+- アプリ内のサイドバーとツール一覧から、カテゴリー「使い分け」を撤廃しました。
 
 ### 2026年5月7日（共通）
 
