@@ -1,7 +1,7 @@
 ---
 title: "Changelog"
 slug: "changelog"
-date: 2026-06-18
+date: 2026-06-20
 ---
 
 
@@ -17,6 +17,11 @@ And more. This list will be updated as needed.
 
 
 ## Changelog
+
+### June 20, 2026 (Visualization)
+
+- Choropleth and cartogram tools now let you choose the map scope inside the tool. You no longer need to open separate entry points for Japan-wide maps and maps within a prefecture.
+- Added support for multivariate choropleth maps.
 
 ### June 18, 2026 (Preparation)
 
