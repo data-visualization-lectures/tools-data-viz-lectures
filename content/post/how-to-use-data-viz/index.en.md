@@ -187,30 +187,6 @@ Here is a guide to the data visualization tools available, organized by purpose.
     description="Generate chart images with just a URL"
 >}}
 {{< /external-link-card >}}
-{{< external-link-card
-    url="https://svg-gradient.dataviz.jp/"
-    title="SVG Gradient Editor"
-    image="/images/cover-svg-gradient.png"
-    site="dataviz.jp"
-    description="Design gradients for your charts"
->}}
-{{< /external-link-card >}}
-{{< external-link-card
-    url="https://svg-tectures.dataviz.jp/"
-    title="SVG Texture Editor"
-    image="/images/cover-svg-texture.jpg"
-    site="dataviz.jp"
-    description="Design textures for your charts"
->}}
-{{< /external-link-card >}}
-{{< external-link-card
-    url="https://easings.dataviz.jp/"
-    title="Easing Functions Cheat Sheet"
-    image="/images/cover_easings.png"
-    site="dataviz.jp"
-    description="Visualize parameter changes over time"
->}}
-{{< /external-link-card >}}
 
 ## Animate aircraft and ship trajectories
 

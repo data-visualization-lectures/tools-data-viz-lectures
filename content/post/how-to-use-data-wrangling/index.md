@@ -190,14 +190,3 @@ image: ""
     description="GeoJSON と SVG の相互変換を支援"
 >}}
 {{< /external-link-card >}}
-
-## 地図タイルが示す位置名を簡単に知りたい
-
-{{< external-link-card
-    url="https://what-the-tile.dataprep.jp/"
-    title="地図タイル・ブラウザー"
-    image="/images/cover_what-the-tile.png"
-    site="dataprep.jp"
-    description="オープンな地図タイル数種類を切り替えて、XYZ タイル方式のタイル座標が確認"
->}}
-{{< /external-link-card >}}

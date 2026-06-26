@@ -43,10 +43,6 @@ feature.dataviz-map.title:
   other: "Data Visualization: Maps"
 feature.dataviz-map.desc:
   other: "Data visualization tools using maps."
-feature.dataviz-parts.title:
-  other: "Data Visualization: Components"
-feature.dataviz-parts.desc:
-  other: "Resources focused on chart components and specific visualization techniques."
 feature.dataviz-color.title:
   other: "Data Visualization: Color"
 feature.dataviz-color.desc:

@@ -43,10 +43,6 @@ feature.dataviz-map.title:
   other: "データ可視化：地図"
 feature.dataviz-map.desc:
   other: "地図を使ったデータ可視化ツールをまとめています。"
-feature.dataviz-parts.title:
-  other: "データ可視化：個別"
-feature.dataviz-parts.desc:
-  other: "チャートの一部や特定の可視化表現に焦点を当てたリソースをまとめています。"
 feature.dataviz-color.title:
   other: "データ可視化：色"
 feature.dataviz-color.desc:

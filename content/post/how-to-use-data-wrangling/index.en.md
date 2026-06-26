@@ -190,14 +190,3 @@ Here is a guide to the data wrangling tools available, organized by purpose.
     description="Convert between GeoJSON and SVG formats"
 >}}
 {{< /external-link-card >}}
-
-## Easily identify map tile locations
-
-{{< external-link-card
-    url="https://what-the-tile.dataprep.jp/"
-    title="Map Tile Browser"
-    image="/images/cover_what-the-tile.png"
-    site="dataprep.jp"
-    description="Browse multiple open map tile types and check XYZ tile coordinates"
->}}
-{{< /external-link-card >}}
