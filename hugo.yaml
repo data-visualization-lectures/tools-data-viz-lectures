@@ -88,7 +88,6 @@ params:
       image: img/avatar.png
     categories:
       order:
-        - how-to
         - data-visualization
         - data-visualization-map
         - data-visualization-color

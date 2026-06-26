@@ -1,37 +1,37 @@
 ---
-title: データ可視化ツールの使い分け
+title: Choosing the Right Data Visualization Tool
 description:
 slug: "how-to-use-data-viz"
 weight: 1
-categories: "how-to"
+sidebarVariant: "search-only"
 address:
 image: ""
 ---
 
-本ツールで利用可能なデータ可視化ツールについて、目的別にご案内します。
+Here is a guide to the data visualization tools available, organized by purpose.
 
-- [さまざまなチャートを作りたい](#さまざまなチャートを作りたい)
-- [探索的なデータ可視化をしたい場合](#探索的なデータ可視化をしたい場合)
-- [3Dの可視化をしたい](#3Dの可視化をしたい)
-- [3D地図の可視化をしたい](#3D地図の可視化をしたい)
-- [都道府県や市区町村単位でデータ地図をつくりたい](#都道府県や市区町村単位でデータ地図をつくりたい)
-- [世界地図でデータ地図をつくりたい](#世界地図でデータ地図をつくりたい)
-- [ネットワークの可視化をしたい場合](#ネットワークの可視化をしたい場合)
-- [テキストの可視化をしたい場合](#テキストの可視化をしたい場合)
-- [コードベースで手軽に可視化したい](#コードベースで手軽に可視化したい)
-- [飛行機や船の軌跡を動画化したい](#飛行機や船の軌跡を動画化したい)
-
-
+- [Create various charts](#create-various-charts)
+- [Exploratory data visualization](#exploratory-data-visualization)
+- [3D visualization](#3d-visualization)
+- [3D map visualization](#3d-map-visualization)
+- [Create data maps by prefecture or municipality](#create-data-maps-by-prefecture-or-municipality)
+- [Create world data maps](#create-world-data-maps)
+- [Network visualization](#network-visualization)
+- [Text visualization](#text-visualization)
+- [Code-based quick visualization](#code-based-quick-visualization)
+- [Animate aircraft and ship trajectories](#animate-aircraft-and-ship-trajectories)
 
 
-## さまざまなチャートを作りたい
+
+
+## Create various charts
 
 {{< external-link-card
     url="https://rawgraphs.dataviz.jp/"
     title="RAWGraphs2"
     image="/images/cover_rawgraphs-db.jpg"
     site="dataviz.jp"
-    description="多様なチャートを手軽に作成"
+    description="Create diverse charts with ease"
 >}}
 {{< /external-link-card >}}
 {{< external-link-card
@@ -39,18 +39,18 @@ image: ""
     title="Data Illustrator"
     image="/images/cover_data-illustrator.jpg"
     site="dataviz.jp"
-    description="多様なチャートを手軽に作成"
+    description="Create diverse charts with ease"
 >}}
 {{< /external-link-card >}}
 
-## 探索的なデータ可視化をしたい場合
+## Exploratory data visualization
 
 {{< external-link-card
     url="https://voyager2.dataviz.jp/"
     title="Voyager2"
     image="/images/cover_voyager2.jpg"
     site="dataviz.jp"
-    description="データ探索（Exploratory Data Analysis, EDA）を支援するビジュアライゼーションツール"
+    description="A visualization tool for Exploratory Data Analysis (EDA)"
 >}}
 {{< /external-link-card >}}
 
@@ -63,82 +63,82 @@ image: ""
 >}}
 {{< /external-link-card >}}
 
-## 3Dの可視化をしたい
+## 3D visualization
 
 {{< external-link-card
     url="https://3d-surface-chart.dataviz.jp/"
-    title="3Dサーフェイス・チャート"
+    title="3D Surface Chart"
     image="/images/cover_3d-surface-chart.png"
     site="dataviz.jp"
-    description="「行 × 列 × 値」の3次元データを、色付きの曲面として地形図のように立体表示"
+    description="Display 3D data (row × column × value) as a colored surface, like a topographic map"
 >}}
 {{< /external-link-card >}}
 
-## 3D地図の可視化をしたい
+## 3D map visualization
 
 {{< external-link-card
     url="https://kepler-gl.dataviz.jp/"
     title="kepler.gl"
     image="/images/cover_kepler-gl.jpg"
     site="dataviz.jp"
-    description="大規模地理空間データの可視化・探索ツール"
+    description="Visualization and exploration tool for large-scale geospatial data"
 >}}
 {{< /external-link-card >}}
 
-## 都道府県や市区町村単位でデータ地図をつくりたい
+## Create data maps by prefecture or municipality
 
 {{< external-link-card
     url="https://choropleth-japan.dataviz.jp/"
-    title="日本地図コロプレス"
+    title="Japan Choropleth Map"
     image="/images/cover_choropleth-japan.png"
     site="dataviz.jp"
-    description="日本地図コロプレスを手軽に作成できるツール"
+    description="Easily create choropleth maps of Japan"
 >}}
 {{< /external-link-card >}}
 {{< external-link-card
     url="https://cartogram-japan.dataviz.jp/"
-    title="日本地図カルトグラム"
+    title="Japan Cartogram"
     image="/images/cover_cartogram-japan.png"
     site="dataviz.jp"
-    description="日本地図カルトグラムを手軽に作成できるツール"
+    description="Easily create cartograms of Japan"
 >}}
 {{< /external-link-card >}}
 {{< external-link-card
     url="https://choropleth-prefectures.dataviz.jp/"
-    title="都道府県地図コロプレス"
+    title="Prefecture Choropleth Map"
     image="/images/cover_choropleth-prefectures.png"
     site="dataviz.jp"
-    description="都道府県地図コロプレスを手軽に作成できるツール"
+    description="Easily create choropleth maps of prefectures"
 >}}
 {{< /external-link-card >}}
 {{< external-link-card
     url="https://cartogram-prefectures.dataviz.jp/"
-    title="都道府県地図カルトグラム"
+    title="Prefecture Cartogram"
     image="/images/cover_cartogram-prefectures.png"
     site="dataviz.jp"
-    description="都道府県地図カルトグラムを手軽に作成できるツール"
+    description="Easily create cartograms of prefectures"
 >}}
 {{< /external-link-card >}}
 
-## 世界地図でデータ地図をつくりたい
+## Create world data maps
 
 {{< external-link-card
     url="https://tilegrams.dataviz.jp/"
     title="Tilegrams"
     image="/images/cover_tilegrams.png"
     site="dataviz.jp"
-    description="タイル地図を作成できるツール"
+    description="Create tile maps"
 >}}
 {{< /external-link-card >}}
 
-## ネットワークの可視化をしたい場合
+## Network visualization
 
 {{< external-link-card
     url="https://sankeymatic.dataviz.jp/"
     title="Sankeymatic"
     image="/images/cover_sankeymatic.png"
     site="dataviz.jp"
-    description="サンキー・ダイアグラムを手軽に"
+    description="Create Sankey diagrams with ease"
 >}}
 {{< /external-link-card >}}
 {{< external-link-card
@@ -146,7 +146,7 @@ image: ""
     title="Cytoscape"
     image="/images/cover_cytoscape.jpg"
     site="dataviz.jp"
-    description="Cytoscapeのウェブ版"
+    description="Web version of Cytoscape"
 >}}
 {{< /external-link-card >}}
 {{< external-link-card
@@ -154,29 +154,29 @@ image: ""
     title="Gephi Lite"
     image="/images/cover_gephi-lite.jpg"
     site="dataviz.jp"
-    description="ネットワークグラフを手軽に作成"
+    description="Create network graphs with ease"
 >}}
 {{< /external-link-card >}}
 
-## テキストの可視化をしたい場合
+## Text visualization
 
 {{< external-link-card
     url="https://word-cloud.dataviz.jp/"
     title="Word Cloud"
     image="/images/cover_wordcloud.png"
     site="dataviz.jp"
-    description="日本語に特化したWord Cloud"
+    description="Word Cloud specialized for Japanese"
 >}}
 {{< /external-link-card >}}
 
-## コードベースで手軽に可視化したい
+## Code-based quick visualization
 
 {{< external-link-card
     url="https://vega-editor.dataviz.jp/"
     title="Vega Editor"
     image="/images/cover_vega-editor.jpg"
     site="dataviz.jp"
-    description="JSON 形式で可視化仕様を書くことで、インタラクティブなグラフやチャートをリアルタイムにレンダリング"
+    description="Write visualization specs in JSON to render interactive graphs and charts in real time"
 >}}
 {{< /external-link-card >}}
 {{< external-link-card
@@ -184,17 +184,17 @@ image: ""
     title="QuickChart UI"
     image="/images/cover-quickchart.png"
     site="dataviz.jp"
-    description="URLだけでチャート画像生成"
+    description="Generate chart images with just a URL"
 >}}
 {{< /external-link-card >}}
 
-## 飛行機や船の軌跡を動画化したい
+## Animate aircraft and ship trajectories
 
 {{< external-link-card
     url="https://bbts.dataviz.jp/"
-    title="ADS-B / AIS 可視化"
+    title="ADS-B / AIS Visualization"
     image="/images/cover_broadcast-tracking-system.jpg"
     site="dataviz.jp"
-    description="飛行機や船の移動データを手軽に動画化"
+    description="Easily animate aircraft and ship movement data"
 >}}
 {{< /external-link-card >}}

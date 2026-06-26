@@ -18,13 +18,11 @@
 {{- $toolPages := slice -}}
 
 {{- range $slug := $order -}}
-  {{- if ne $slug "how-to" -}}
-    {{- with site.GetPage (printf "categories/%s" $slug) -}}
-      {{- $categoryPage := . -}}
-      {{- $toolCategories = $toolCategories | append (dict "slug" $slug "page" . "icon" (index $icons $slug) "count" (len .Pages)) -}}
-      {{- range .Pages.ByWeight -}}
-        {{- $toolPages = $toolPages | append (dict "page" . "category" $slug "categoryTitle" $categoryPage.Title "icon" (index $icons $slug)) -}}
-      {{- end -}}
+  {{- with site.GetPage (printf "categories/%s" $slug) -}}
+    {{- $categoryPage := . -}}
+    {{- $toolCategories = $toolCategories | append (dict "slug" $slug "page" . "icon" (index $icons $slug) "count" (len .Pages)) -}}
+    {{- range .Pages.ByWeight -}}
+      {{- $toolPages = $toolPages | append (dict "page" . "category" $slug "categoryTitle" $categoryPage.Title "icon" (index $icons $slug)) -}}
     {{- end -}}
   {{- end -}}
 {{- end -}}

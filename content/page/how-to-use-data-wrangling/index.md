@@ -3,7 +3,7 @@ title: データ加工ツールの使い分け
 description:
 slug: "how-to-use-data-wrangling"
 weight: 1
-categories: "how-to"
+sidebarVariant: "search-only"
 address:
 image: ""
 ---

@@ -140,32 +140,14 @@
 
   <div class="tools-grid">
     {{- range $slug := $order -}}
-      {{- if ne $slug "how-to" -}}
-        {{- with site.GetPage (printf "categories/%s" $slug) -}}
-          <a href="{{ .RelPermalink }}" class="tools-card">
-            <div class="tools-card__icon">{{ index $icons $slug }}</div>
-            <h2 class="tools-card__title">{{ .Title }}</h2>
-            <p class="tools-card__desc">{{ .Params.description }}</p>
-            <span class="tools-card__count">{{ len .Pages }} {{ T "tools.count" }}</span>
-          </a>
-        {{- end -}}
+      {{- with site.GetPage (printf "categories/%s" $slug) -}}
+        <a href="{{ .RelPermalink }}" class="tools-card">
+          <div class="tools-card__icon">{{ index $icons $slug }}</div>
+          <h2 class="tools-card__title">{{ .Title }}</h2>
+          <p class="tools-card__desc">{{ .Params.description }}</p>
+          <span class="tools-card__count">{{ len .Pages }} {{ T "tools.count" }}</span>
+        </a>
       {{- end -}}
     {{- end -}}
   </div>
-
-  {{ with site.GetPage "categories/how-to" }}
-  <header class="tools-header" style="margin-top: 2rem;">
-    <h2 class="tools-header__title">{{ .Title }}</h2>
-    <p class="tools-header__subtitle">{{ .Params.description }}</p>
-  </header>
-  <div class="tools-grid">
-    {{- range .Pages.ByWeight -}}
-      <a href="{{ .RelPermalink }}" class="tools-card">
-        <div class="tools-card__icon">📖</div>
-        <h3 class="tools-card__title">{{ .Title }}</h3>
-        <p class="tools-card__desc">{{ .Description }}</p>
-      </a>
-    {{- end -}}
-  </div>
-  {{ end }}
 </div>

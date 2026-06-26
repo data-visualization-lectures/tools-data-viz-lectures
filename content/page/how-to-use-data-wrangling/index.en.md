@@ -3,7 +3,7 @@ title: Choosing the Right Data Wrangling Tool
 description:
 slug: "how-to-use-data-wrangling"
 weight: 1
-categories: "how-to"
+sidebarVariant: "search-only"
 address:
 image: ""
 ---
