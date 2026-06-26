@@ -30,8 +30,6 @@ date: 2026-03-04
 - **Tilegrams** — ISC License（Pitch Interactive）
 - **Vega Editor** — BSD-3-Clause License（UW Interactive Data Lab）
 - **Voyager 2** — BSD-3-Clause License（UW Interactive Data Lab）
-- **イージング関数チートシート** — GPL-3.0 License（Andrey Sitnik, Ivan Solovev）
-- **地図タイル・ブラウザー** — MIT License
 
 ## データの道具箱 オリジナル・ツール
 
@@ -43,8 +41,6 @@ date: 2026-03-04
 - **QuickChart UI**
 - **Shift JIS ⇄ UTF-8 文字コード変換ツール**
 - **SVG ⇄ GeoJSON 変換ツール**
-- **SVG グラデーションエディタ**
-- **SVG テクスチャエディタ**
 - **Word Cloud**
 - **住所 → 緯度経度 変換ツール**
 - **座標系 変換ツール**
@@ -60,4 +56,3 @@ date: 2026-03-04
 
 - <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> で構築されています。
 - テーマ <a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener">Stack</a> は <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a> によって設計されています。
-

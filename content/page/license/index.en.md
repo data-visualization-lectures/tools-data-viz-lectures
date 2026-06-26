@@ -30,8 +30,6 @@ The following tools are based on original open source projects. We are grateful 
 - **Tilegrams** — ISC License (Pitch Interactive)
 - **Vega Editor** — BSD-3-Clause License (UW Interactive Data Lab)
 - **Voyager 2** — BSD-3-Clause License (UW Interactive Data Lab)
-- **Easings Cheat Sheet** — GPL-3.0 License (Andrey Sitnik, Ivan Solovev)
-- **Map Tile Browser** — MIT License
 
 ## dataviz.jp Original Tools
 
@@ -52,8 +50,6 @@ The following tools are originally developed by dataviz.jp.
 - **QuickChart UI**
 - **Shift JIS / UTF-8 Encoding Converter**
 - **SVG / GeoJSON Converter**
-- **SVG Gradient Editor**
-- **SVG Texture Editor**
 - **Word Cloud**
 
 ## Site

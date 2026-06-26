@@ -1,5 +1,5 @@
 ---
-title: "ツール一覧"
+title: "全ツール一覧"
 slug: "tools"
 layout: "tools"
 ---

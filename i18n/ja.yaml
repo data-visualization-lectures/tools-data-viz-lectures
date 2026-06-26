@@ -24,11 +24,11 @@ hero.tool.wrangling.alt:
 hero.tool.wrangling.desc:
   other: "クレンジング、変換、結合などの前処理ツールを目的別に探せます。"
 hero.alert.label:
-  other: "お知らせ"
+  other: ""
 hero.alert:
-  other: "dataviz.jp / dataprep.jp のメンテナンスは終了し、現在ツールをご利用いただけます。詳しくはこちら。"
+  other: ""
 hero.alert.url:
-  other: "/maintenance-mode/"
+  other: ""
 hero.news.label:
   other: "お知らせ"
 hero.news:
@@ -43,10 +43,6 @@ feature.dataviz-map.title:
   other: "データ可視化：地図"
 feature.dataviz-map.desc:
   other: "地図を使ったデータ可視化ツールをまとめています。"
-feature.dataviz-parts.title:
-  other: "データ可視化：個別"
-feature.dataviz-parts.desc:
-  other: "チャートの一部や特定の可視化表現に焦点を当てたリソースをまとめています。"
 feature.dataviz-color.title:
   other: "データ可視化：色"
 feature.dataviz-color.desc:
@@ -323,12 +319,28 @@ chart.related:
   other: "関連するチャート"
 
 # Tools page
+tools.eyebrow:
+  other: "Tools"
 tools.title:
-  other: "ツール一覧"
+  other: "全ツール一覧"
 tools.subtitle:
-  other: "カテゴリーからツールを探す"
+  other: "ツール名、用途、カテゴリから目的に合うツールを探せます。"
 tools.count:
   other: "件"
+tools.controls.aria:
+  other: "ツール検索とカテゴリ絞り込み"
+tools.search.label:
+  other: "検索"
+tools.search.placeholder:
+  other: "ツール名、用途、カテゴリで検索"
+tools.filter.aria:
+  other: "カテゴリで絞り込む"
+tools.filter.all:
+  other: "すべて"
+tools.results.suffix:
+  other: "件表示"
+tools.empty:
+  other: "条件に合うツールが見つかりません。"
 
 # Post card buttons
 post.detail:

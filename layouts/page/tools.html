@@ -1,119 +1,172 @@
+{{ define "body-class" }}tools-page{{ end }}
+
+{{ define "left-sidebar" }}
+<!-- tools directory has no global left sidebar -->
+{{ end }}
+
 {{ define "main" }}
-<style>
-  .tools-container {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 2rem 0;
-    color: var(--card-text-color-main);
-  }
-
-  .tools-header {
-    text-align: center;
-  }
-
-  .tools-header__title {
-    font-size: 3rem;
-    font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 0.75rem;
-  }
-
-  .tools-header__subtitle {
-    font-size: 1.6rem;
-    color: var(--card-text-color-secondary);
-    line-height: 1.6;
-    margin: 0;
-  }
-
-  .tools-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-  }
-
-  @media (max-width: 768px) {
-    .tools-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-
-  .tools-card {
-    background: var(--card-background);
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: var(--shadow-l1);
-    transition: transform 0.2s;
-    text-decoration: none;
-    color: inherit;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .tools-card:hover {
-    transform: translateY(-5px);
-  }
-
-  .tools-card__icon {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    display: inline-block;
-    padding: 0.5rem;
-    background: rgba(16, 185, 129, 0.1);
-    border-radius: 8px;
-    color: #10B981;
-  }
-
-  .tools-card__title {
-    font-size: 1.5rem;
-    font-weight: 700;
-  }
-
-  .tools-card__desc {
-    line-height: 1.6;
-    color: var(--body-text-color);
-    flex: 1;
-  }
-
-  .tools-card__count {
-    font-size: 1.3rem;
-    color: var(--card-text-color-tertiary);
-    margin-top: 0.5rem;
-  }
-</style>
-
 {{- $icons := dict
   "data-visualization" "📊"
   "data-visualization-map" "🌍"
-  "data-visualization-parts" "🎨"
   "data-visualization-color" "🎨"
   "data-wrangling" "🔧"
-  "data-wrangling-map" "🔧"
+  "data-wrangling-map" "🗺️"
 -}}
 
 {{- $order := default (slice) .Site.Params.sidebar.categories.order -}}
+{{- $toolCategories := slice -}}
+{{- $toolPages := slice -}}
 
-<div class="tools-container">
-  <header class="tools-header">
-    <h1 class="tools-header__title">{{ T "tools.title" }}</h1>
-    <p class="tools-header__subtitle">{{ T "tools.subtitle" }}</p>
+{{- range $slug := $order -}}
+  {{- with site.GetPage (printf "categories/%s" $slug) -}}
+    {{- $categoryPage := . -}}
+    {{- $toolCategories = $toolCategories | append (dict "slug" $slug "page" . "icon" (index $icons $slug) "count" (len .Pages)) -}}
+    {{- range .Pages.ByWeight -}}
+      {{- $toolPages = $toolPages | append (dict "page" . "category" $slug "categoryTitle" $categoryPage.Title "icon" (index $icons $slug)) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+<section class="tools-directory" data-tools-directory data-results-suffix="{{ T "tools.results.suffix" }}">
+  <header class="tools-directory__header">
+    <div>
+      <p class="tools-directory__eyebrow">{{ T "tools.eyebrow" }}</p>
+      <h1 class="tools-directory__title">{{ T "tools.title" }}</h1>
+    </div>
+    <p class="tools-directory__subtitle">{{ T "tools.subtitle" }}</p>
   </header>
 
-  <div class="tools-grid">
-    {{- range $slug := $order -}}
-      {{- if ne $slug "how-to" -}}
-        {{- with site.GetPage (printf "categories/%s" $slug) -}}
-          <a href="{{ .RelPermalink }}" class="tools-card">
-            <div class="tools-card__icon">{{ index $icons $slug }}</div>
-            <h2 class="tools-card__title">{{ .Title }}</h2>
-            <p class="tools-card__desc">{{ .Params.description }}</p>
-            <span class="tools-card__count">{{ len .Pages }} {{ T "tools.count" }}</span>
+  <div class="tools-directory__controls" aria-label="{{ T "tools.controls.aria" }}">
+    <label class="tools-directory__search">
+      <span class="tools-directory__search-label">{{ T "tools.search.label" }}</span>
+      <input
+        type="search"
+        class="tools-directory__search-input"
+        placeholder="{{ T "tools.search.placeholder" }}"
+        autocomplete="off"
+        data-tool-search>
+    </label>
+
+    <div class="tools-directory__filters" aria-label="{{ T "tools.filter.aria" }}">
+      <button type="button" class="tools-directory__filter is-active" data-category-filter="all">
+        <span>{{ T "tools.filter.all" }}</span>
+        <span class="tools-directory__filter-count">{{ len $toolPages }}</span>
+      </button>
+      {{- range $toolCategories -}}
+        <button type="button" class="tools-directory__filter" data-category-filter="{{ .slug }}">
+          <span class="tools-directory__filter-icon" aria-hidden="true">{{ .icon }}</span>
+          <span>{{ .page.Title }}</span>
+          <span class="tools-directory__filter-count">{{ .count }}</span>
+        </button>
+      {{- end -}}
+    </div>
+  </div>
+
+  <div class="tools-directory__summary" aria-live="polite">
+    <span data-tool-result-count>{{ len $toolPages }}{{ T "tools.results.suffix" }}</span>
+  </div>
+
+  <div class="tools-directory__grid" data-tool-grid>
+    {{- range $toolPages -}}
+      {{- $tool := .page -}}
+      {{- $categorySlug := .category -}}
+      {{- $categoryTitle := .categoryTitle -}}
+      {{- $icon := .icon -}}
+      {{- $address := default "" $tool.Params.address -}}
+      {{- $service := "dataviz.jp" -}}
+      {{- if in $address "dataprep.jp" -}}
+        {{- $service = "dataprep.jp" -}}
+      {{- end -}}
+      {{- $searchText := printf "%s %s %s %s %s" $tool.Title $tool.Description $categoryTitle $service $address | plainify | lower -}}
+      <article class="tool-directory-card" data-tool-card data-tool-category="{{ $categorySlug }}" data-tool-search-text="{{ $searchText }}">
+        {{- $image := partialCached "helper/image" (dict "Context" $tool "Type" "articleList") $tool.RelPermalink "toolsDirectory" -}}
+        {{- if $image.exists -}}
+          <a class="tool-directory-card__media" href="{{ $tool.RelPermalink }}" aria-label="{{ $tool.Title }}">
+            {{- if $image.resource -}}
+              {{- $thumbnail := $image.resource.Fill "640x360" -}}
+              <img src="{{ $thumbnail.RelPermalink }}" width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}" alt="{{ $tool.Title }}" loading="lazy">
+            {{- else -}}
+              <img src="{{ $image.permalink }}" alt="{{ $tool.Title }}" loading="lazy">
+            {{- end -}}
           </a>
         {{- end -}}
-      {{- end -}}
+
+        <div class="tool-directory-card__body">
+          <div class="tool-directory-card__meta">
+            <span class="tool-directory-card__category"><span aria-hidden="true">{{ $icon }}</span>{{ $categoryTitle }}</span>
+            <span class="tool-directory-card__service">{{ $service }}</span>
+          </div>
+          <h2 class="tool-directory-card__title">
+            <a href="{{ $tool.RelPermalink }}">{{ $tool.Title }}</a>
+          </h2>
+          <p class="tool-directory-card__description">{{ $tool.Description }}</p>
+        </div>
+
+        <div class="tool-directory-card__actions">
+          <a class="tool-directory-card__link tool-directory-card__link--secondary" href="{{ $tool.RelPermalink }}">{{ T "post.detail" }}</a>
+          {{- with $address -}}
+            <a class="tool-directory-card__link tool-directory-card__link--primary" href="{{ . }}" target="_blank" rel="noopener">{{ T "post.use-tool" }}</a>
+          {{- end -}}
+        </div>
+      </article>
     {{- end -}}
   </div>
-</div>
-{{ end }}
 
+  <p class="tools-directory__empty" data-tool-empty hidden>{{ T "tools.empty" }}</p>
+</section>
+
+<script>
+  (function () {
+    var root = document.querySelector('[data-tools-directory]');
+    if (!root) return;
+
+    var searchInput = root.querySelector('[data-tool-search]');
+    var resultCount = root.querySelector('[data-tool-result-count]');
+    var emptyState = root.querySelector('[data-tool-empty]');
+    var cards = Array.prototype.slice.call(root.querySelectorAll('[data-tool-card]'));
+    var filters = Array.prototype.slice.call(root.querySelectorAll('[data-category-filter]'));
+    var suffix = root.getAttribute('data-results-suffix') || '';
+    var activeCategory = 'all';
+
+    function normalize(value) {
+      return String(value || '').toLowerCase().trim();
+    }
+
+    function updateResults() {
+      var query = normalize(searchInput ? searchInput.value : '');
+      var visibleCount = 0;
+
+      cards.forEach(function (card) {
+        var matchesCategory = activeCategory === 'all' || card.getAttribute('data-tool-category') === activeCategory;
+        var matchesSearch = !query || normalize(card.getAttribute('data-tool-search-text')).indexOf(query) !== -1;
+        var isVisible = matchesCategory && matchesSearch;
+
+        card.hidden = !isVisible;
+        if (isVisible) visibleCount += 1;
+      });
+
+      if (resultCount) resultCount.textContent = String(visibleCount) + suffix;
+      if (emptyState) emptyState.hidden = visibleCount !== 0;
+    }
+
+    filters.forEach(function (filter) {
+      filter.addEventListener('click', function () {
+        activeCategory = filter.getAttribute('data-category-filter') || 'all';
+        filters.forEach(function (item) {
+          var isActive = item === filter;
+          item.classList.toggle('is-active', isActive);
+          item.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        });
+        updateResults();
+      });
+      filter.setAttribute('aria-pressed', filter.classList.contains('is-active') ? 'true' : 'false');
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener('input', updateResults);
+    }
+
+    updateResults();
+  })();
+</script>
+{{ end }}

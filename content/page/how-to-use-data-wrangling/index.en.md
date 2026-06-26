@@ -3,7 +3,7 @@ title: Choosing the Right Data Wrangling Tool
 description:
 slug: "how-to-use-data-wrangling"
 weight: 1
-categories: "how-to"
+sidebarVariant: "search-only"
 address:
 image: ""
 ---
@@ -188,16 +188,5 @@ Here is a guide to the data wrangling tools available, organized by purpose.
     image="/images/cover_geojson-and-svg.jpg"
     site="dataprep.jp"
     description="Convert between GeoJSON and SVG formats"
->}}
-{{< /external-link-card >}}
-
-## Easily identify map tile locations
-
-{{< external-link-card
-    url="https://what-the-tile.dataprep.jp/"
-    title="Map Tile Browser"
-    image="/images/cover_what-the-tile.png"
-    site="dataprep.jp"
-    description="Browse multiple open map tile types and check XYZ tile coordinates"
 >}}
 {{< /external-link-card >}}

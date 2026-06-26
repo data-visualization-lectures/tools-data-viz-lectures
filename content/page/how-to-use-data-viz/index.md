@@ -3,7 +3,7 @@ title: データ可視化ツールの使い分け
 description:
 slug: "how-to-use-data-viz"
 weight: 1
-categories: "how-to"
+sidebarVariant: "search-only"
 address:
 image: ""
 ---
@@ -185,30 +185,6 @@ image: ""
     image="/images/cover-quickchart.png"
     site="dataviz.jp"
     description="URLだけでチャート画像生成"
->}}
-{{< /external-link-card >}}
-{{< external-link-card
-    url="https://svg-gradient.dataviz.jp/"
-    title="SVGグラデーションエディタ"
-    image="/images/cover-svg-gradient.png"
-    site="dataviz.jp"
-    description="チャートのグラデーションをデザイン"
->}}
-{{< /external-link-card >}}
-{{< external-link-card
-    url="https://svg-tectures.dataviz.jp/"
-    title="SVGテクスチャエディタ"
-    image="/images/cover-svg-texture.jpg"
-    site="dataviz.jp"
-    description="チャートのテクスチャをデザイン"
->}}
-{{< /external-link-card >}}
-{{< external-link-card
-    url="https://easings.dataviz.jp/"
-    title="イージング関数チートシート"
-    image="/images/cover_easings.png"
-    site="dataviz.jp"
-    description="時間の経過に伴うパラメーターの変化を可視化"
 >}}
 {{< /external-link-card >}}
 
