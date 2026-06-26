@@ -282,7 +282,7 @@
   <!-- Hero -->
   <section class="hero">
     {{ $isEn := eq .Lang "en" }}
-    {{ $capabilitiesTitle := cond $isEn "What you can do" "できること" }}
+    {{ $capabilitiesTitle := cond $isEn "Key uses" "主な用途" }}
     {{ $toolsLabel := cond $isEn "Go to tools" "ツールへいく" }}
     {{ $dataVizURL := "how-to-use-data-viz/" | absLangURL }}
     {{ $dataWranglingURL := "how-to-use-data-wrangling/" | absLangURL }}
@@ -324,15 +324,15 @@
             <h2 class="hero-tool-name"><a href="{{ $dataVizURL }}">{{ T "hero.tool.dataviz.name" }}</a></h2>
             <p class="hero-tool-url"><a href="{{ $dataVizURL }}">{{ $dataVizURL }}</a></p>
             <p class="hero-tool-desc">{{ T "hero.tool.dataviz.desc" }}</p>
-            <div class="hero-tool-section">
+            <div class="hero-tool-section hero-tool-section--capabilities">
               <p class="hero-tool-section-title">{{ $capabilitiesTitle }}</p>
               <ul class="hero-tool-capabilities">
-                {{ range $dataVizCapabilities }}
+                {{ range first 3 $dataVizCapabilities }}
                 <li>{{ . }}</li>
                 {{ end }}
               </ul>
             </div>
-            <div class="hero-tool-section">
+            <div class="hero-tool-section hero-tool-section--links">
               <p class="hero-tool-section-title">{{ $toolsLabel }}</p>
               <div class="hero-tool-links">
                 {{ range $dataVizLinks }}
@@ -351,15 +351,15 @@
             <h2 class="hero-tool-name"><a href="{{ $dataWranglingURL }}">{{ T "hero.tool.wrangling.name" }}</a></h2>
             <p class="hero-tool-url"><a href="{{ $dataWranglingURL }}">{{ $dataWranglingURL }}</a></p>
             <p class="hero-tool-desc">{{ T "hero.tool.wrangling.desc" }}</p>
-            <div class="hero-tool-section">
+            <div class="hero-tool-section hero-tool-section--capabilities">
               <p class="hero-tool-section-title">{{ $capabilitiesTitle }}</p>
               <ul class="hero-tool-capabilities">
-                {{ range $dataWranglingCapabilities }}
+                {{ range first 3 $dataWranglingCapabilities }}
                 <li>{{ . }}</li>
                 {{ end }}
               </ul>
             </div>
-            <div class="hero-tool-section">
+            <div class="hero-tool-section hero-tool-section--links">
               <p class="hero-tool-section-title">{{ $toolsLabel }}</p>
               <div class="hero-tool-links">
                 {{ range $dataWranglingLinks }}
