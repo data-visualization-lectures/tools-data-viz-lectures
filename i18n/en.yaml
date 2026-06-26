@@ -24,11 +24,11 @@ hero.tool.wrangling.alt:
 hero.tool.wrangling.desc:
   other: "Browse cleansing, transformation, and data prep tools by purpose."
 hero.alert.label:
-  other: "Notice"
+  other: ""
 hero.alert:
-  other: "Maintenance for dataviz.jp / dataprep.jp has ended, and the tools are now available. Learn more."
+  other: ""
 hero.alert.url:
-  other: "/en/maintenance-mode/"
+  other: ""
 hero.news.label:
   other: "Notice"
 hero.news:
