@@ -319,12 +319,28 @@ chart.related:
   other: "Related Charts"
 
 # Tools page
-tools.title:
+tools.eyebrow:
   other: "Tools"
+tools.title:
+  other: "All Tools"
 tools.subtitle:
-  other: "Browse tools by category"
+  other: "Search by tool name, use case, or category to find the right tool."
 tools.count:
   other: " tools"
+tools.controls.aria:
+  other: "Tool search and category filters"
+tools.search.label:
+  other: "Search"
+tools.search.placeholder:
+  other: "Search by tool name, use case, or category"
+tools.filter.aria:
+  other: "Filter by category"
+tools.filter.all:
+  other: "All"
+tools.results.suffix:
+  other: " tools shown"
+tools.empty:
+  other: "No tools match the current filters."
 
 # Post card buttons
 post.detail:

@@ -319,12 +319,28 @@ chart.related:
   other: "関連するチャート"
 
 # Tools page
+tools.eyebrow:
+  other: "Tools"
 tools.title:
-  other: "ツール一覧"
+  other: "全ツール一覧"
 tools.subtitle:
-  other: "カテゴリーからツールを探す"
+  other: "ツール名、用途、カテゴリから目的に合うツールを探せます。"
 tools.count:
   other: "件"
+tools.controls.aria:
+  other: "ツール検索とカテゴリ絞り込み"
+tools.search.label:
+  other: "検索"
+tools.search.placeholder:
+  other: "ツール名、用途、カテゴリで検索"
+tools.filter.aria:
+  other: "カテゴリで絞り込む"
+tools.filter.all:
+  other: "すべて"
+tools.results.suffix:
+  other: "件表示"
+tools.empty:
+  other: "条件に合うツールが見つかりません。"
 
 # Post card buttons
 post.detail:
