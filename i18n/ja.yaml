@@ -16,7 +16,7 @@ hero.tool.dataviz.name:
 hero.tool.dataviz.alt:
   other: "データ可視化ツール一覧"
 hero.tool.dataviz.desc:
-  other: "チャート、地図、ネットワーク図などの可視化ツールを目的別に探せます。"
+  other: "チャート、地図、ネットワーク図などのデータ可視化ツールを目的別に探せます。"
 hero.tool.wrangling.name:
   other: "データ加工ツール"
 hero.tool.wrangling.alt:
@@ -46,7 +46,7 @@ feature.dataviz-map.desc:
 feature.dataviz-color.title:
   other: "データ可視化：色"
 feature.dataviz-color.desc:
-  other: "配色設計やカラーパレット作成に特化した可視化ツール。"
+  other: "配色設計やカラーパレット作成に特化したデータ可視化ツール。"
 feature.wrangling.title:
   other: "データ加工"
 feature.wrangling.desc:
@@ -90,7 +90,7 @@ header.mainnavAria:
 mainnav.features.manyTools:
   other: "40種類以上のツールが使い放題"
 mainnav.features.manyToolsDesc:
-  other: "可視化から加工まで定額で利用可能"
+  other: "データ可視化からデータ加工まで定額で利用可能"
 mainnav.features.browserOnly:
   other: "インストール不要、ブラウザだけで完結"
 mainnav.features.browserOnlyDesc:
@@ -114,7 +114,7 @@ mainnav.features.teamShareDesc:
 mainnav.tools.allTools:
   other: "全ツール一覧"
 mainnav.tools.allToolsDesc:
-  other: "可視化・加工ツールを一覧表示"
+  other: "データ可視化・データ加工ツールを一覧表示"
 mainnav.tools.howToViz:
   other: "データ可視化ツールの使い分け"
 mainnav.tools.howToVizDesc:
