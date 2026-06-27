@@ -1,7 +1,7 @@
 ---
 title: "Changelog"
 slug: "changelog"
-date: 2026-06-20
+date: 2026-06-27
 ---
 
 
@@ -17,6 +17,11 @@ And more. This list will be updated as needed.
 
 
 ## Changelog
+
+### June 27, 2026 (Shared)
+
+- Redesigned the tools directory. You can now search by tool name, use case, or category, filter by category, and open each tool or its detail page directly from the list.
+- Updated the My Page experience for both data visualization and data preparation as workspace home screens. It is now easier to start from saved projects, sample datasets, public projects, or task-based tool entry points.
 
 ### June 20, 2026 (Visualization)
 
