@@ -3,7 +3,6 @@ title: 都道府県地図コロプレス
 description: "A tool for easily creating prefecture choropleth maps"
 slug: "choropleth-prefectures"
 weight: 1
-categories: "data-visualization-map"
 address: https://choropleth-prefectures.dataviz.jp/
 image: "images/cover_choropleth-prefectures.png"
 ---
