@@ -1,19 +1,19 @@
 ---
-title: 日本地図コロプレス
-description: 日本地図コロプレスを手軽に作成できるツール
+title: コロプレスマップ
+description: 日本地図・都道府県地図のコロプレスマップを手軽に作成できるツール
 slug: "choropleth-japan"
 weight: 1
 categories: "data-visualization-map"
-address: https://choropleth-japan.dataviz.jp/
+address: https://choropleth.dataviz.jp/
 image: "images/cover_choropleth-japan.png"
 ---
 
 {{< external-link-card
-    url="https://choropleth-japan.dataviz.jp/"
-    title="日本地図コロプレス"
+    url="https://choropleth.dataviz.jp/"
+    title="コロプレスマップ"
     image="images/cover_choropleth-japan.png"
     site="dataviz.jp"
-    description="日本地図コロプレスを手軽に作成できるツール"
+    description="日本地図・都道府県地図のコロプレスマップを手軽に作成できるツール"
 >}}
 {{< /external-link-card >}}
 
@@ -24,4 +24,3 @@ image: "images/cover_choropleth-japan.png"
 ## 使い方
 
 ## データ形式
-

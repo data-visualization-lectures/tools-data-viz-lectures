@@ -3,7 +3,6 @@ title: 都道府県地図カルトグラム
 description: "A tool for easily creating prefecture map cartograms"
 slug: "cartogram-prefectures"
 weight: 1
-categories: "data-visualization-map"
 address: https://cartogram-prefectures.dataviz.jp/
 image: "images/cover_cartogram-prefectures.png"
 ---
