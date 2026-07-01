@@ -1,11 +1,13 @@
 ---
 title: Cartogram
 description: "A tool for easily creating Japan and prefecture map cartograms"
-slug: "cartogram-japan"
+slug: "cartogram"
 weight: 1
 categories: "data-visualization-map"
 address: https://cartogram.dataviz.jp/
 image: "images/cover_cartogram-japan.png"
+aliases:
+  - /en/cartogram-japan/
 ---
 
 {{< external-link-card
