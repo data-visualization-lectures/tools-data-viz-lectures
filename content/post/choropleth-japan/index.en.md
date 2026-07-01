@@ -1,11 +1,13 @@
 ---
 title: Choropleth Map
 description: "A tool for easily creating Japan and prefecture choropleth maps"
-slug: "choropleth-japan"
+slug: "choropleth"
 weight: 1
 categories: "data-visualization-map"
 address: https://choropleth.dataviz.jp/
 image: "images/cover_choropleth-japan.png"
+aliases:
+  - /en/choropleth-japan/
 ---
 
 {{< external-link-card

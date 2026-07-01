@@ -1,11 +1,13 @@
 ---
 title: カルトグラム
 description: 日本地図・都道府県地図のカルトグラムを手軽に作成できるツール
-slug: "cartogram-japan"
+slug: "cartogram"
 weight: 1
 categories: "data-visualization-map"
 address: https://cartogram.dataviz.jp/
 image: "images/cover_cartogram-japan.png"
+aliases:
+  - /cartogram-japan/
 ---
 
 {{< external-link-card
