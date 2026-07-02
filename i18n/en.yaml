@@ -4,7 +4,7 @@ hero.title:
 hero.subtitle:
   other: "Handy tools for data visualization & data wrangling"
 hero.notice:
-  other: "We provide over 40 nimble data visualization (charts, data maps, network diagrams) and data wrangling tools — more diverse than Excel and easier than BI tools. Everything runs in your browser, and you can use all tools as much as you want with a flat-rate subscription."
+  other: "We provide a curated set of practical data visualization (charts, data maps, network diagrams) and data wrangling tools — more diverse than Excel and easier than BI tools. Everything runs in your browser with flat-rate unlimited use. We will continue adding high-value tools without raising plan prices."
 hero.cta.primary:
   other: "Get Started"
 hero.cta.secondary:
@@ -88,9 +88,9 @@ header.mainnavAria:
 
 # www main navigation - dropdown items
 mainnav.features.manyTools:
-  other: "Over 40 tools, unlimited use"
+  other: "Curated tools, unlimited use"
 mainnav.features.manyToolsDesc:
-  other: "Visualization and preparation on a flat fee"
+  other: "Practical tools on a flat fee"
 mainnav.features.browserOnly:
   other: "Browser-only, no install"
 mainnav.features.browserOnlyDesc:
@@ -150,7 +150,7 @@ pricing.standard.monthly.desc:
 pricing.standard.yearly.desc:
   other: "About $16.67/month (save $40/year compared to monthly)."
 pricing.standard.monthly.f1:
-  other: "Unlimited access to over 40 tools"
+  other: "Unlimited access to curated tools"
 pricing.standard.monthly.f2:
   other: "No installation — runs in your browser"
 pricing.standard.monthly.f3:
@@ -160,7 +160,7 @@ pricing.standard.monthly.f4:
 pricing.standard.monthly.f5:
   other: "Cancel anytime"
 pricing.standard.yearly.f1:
-  other: "Unlimited access to over 40 tools"
+  other: "Unlimited access to curated tools"
 pricing.standard.yearly.f2:
   other: "No installation — runs in your browser"
 pricing.standard.yearly.f3:
@@ -202,7 +202,7 @@ pricing.team.small.desc:
 pricing.team.small.f1:
   other: "Up to 5 members"
 pricing.team.small.f2:
-  other: "Unlimited access to over 40 tools"
+  other: "Unlimited access to curated tools"
 pricing.team.small.f3:
   other: "Leader shares projects with the team"
 pricing.team.small.f4:
@@ -214,7 +214,7 @@ pricing.team.standard.desc:
 pricing.team.standard.f1:
   other: "Up to 10 members"
 pricing.team.standard.f2:
-  other: "Unlimited access to over 40 tools"
+  other: "Unlimited access to curated tools"
 pricing.team.standard.f3:
   other: "Leader shares projects with the team"
 pricing.team.standard.f4:
@@ -226,7 +226,7 @@ pricing.team.enterprise.desc:
 pricing.team.enterprise.f1:
   other: "Up to 30 members"
 pricing.team.enterprise.f2:
-  other: "Unlimited access to over 40 tools"
+  other: "Unlimited access to curated tools"
 pricing.team.enterprise.f3:
   other: "Leader shares projects with the team"
 pricing.team.enterprise.f4:
