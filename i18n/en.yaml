@@ -130,9 +130,9 @@ pricing.title:
 pricing.subtitle:
   other: "Choose the plan that fits your needs"
 pricing.standard:
-  other: "Standard Plan"
+  other: "VIZ / PREP / BUNDLE"
 pricing.coaching:
-  other: "Coaching Plan"
+  other: "BUNDLE"
 pricing.monthly:
   other: "Monthly"
 pricing.yearly:
@@ -146,43 +146,43 @@ pricing.recommended:
 pricing.cta:
   other: "Subscribe"
 pricing.standard.monthly.desc:
-  other: "Our most basic plan. Renewed monthly, so it's flexible and easy to use based on your needs."
+  other: "Choose VIZ, PREP, or BUNDLE as a monthly plan based on your workflow."
 pricing.standard.yearly.desc:
-  other: "About $16.67/month (save $40/year compared to monthly)."
+  other: "Yearly plans are available at a lower total cost than monthly billing."
 pricing.standard.monthly.f1:
-  other: "Unlimited access to curated tools"
+  other: "VIZ: data visualization tools"
 pricing.standard.monthly.f2:
-  other: "No installation — runs in your browser"
+  other: "PREP: data preparation tools"
 pricing.standard.monthly.f3:
-  other: "Covers data visualization & data wrangling"
+  other: "BUNDLE: both services"
 pricing.standard.monthly.f4:
-  other: "Sample data & original data included"
+  other: "No installation, runs in your browser"
 pricing.standard.monthly.f5:
-  other: "Cancel anytime"
+  other: "14-day free trial"
 pricing.standard.yearly.f1:
-  other: "Unlimited access to curated tools"
+  other: "VIZ: data visualization tools"
 pricing.standard.yearly.f2:
-  other: "No installation — runs in your browser"
+  other: "PREP: data preparation tools"
 pricing.standard.yearly.f3:
-  other: "Covers data visualization & data wrangling"
+  other: "BUNDLE: both services"
 pricing.standard.yearly.f4:
-  other: "Sample data & original data included"
+  other: "No installation, runs in your browser"
 pricing.standard.yearly.f5:
-  other: "About $16.67/month (save $40/year)"
+  other: "Lower total cost than monthly"
 pricing.coaching.desc:
-  other: "Bundle of this tool and monthly <a href=\"https://personal.data-viz-lectures.com/\">1-on-1 coaching</a>. Save ¥1,000/month."
+  other: "The BUNDLE plan includes both data visualization and data preparation tools."
 pricing.coaching.yearly.desc:
-  other: "Bundle of this tool and <a href=\"https://personal.data-viz-lectures.com/\">1-on-1 coaching</a>. Save ¥1,000/month."
+  other: "The yearly BUNDLE plan includes both data visualization and data preparation tools."
 pricing.coaching.f1:
-  other: "Same tool service as Standard Plan (¥2,480)"
+  other: "VIZ + PREP access"
 pricing.coaching.f2:
-  other: "1-on-1 coaching (¥5,500 → ¥4,500)"
+  other: "$19/month"
 pricing.coaching.monthly.f3:
-  other: "¥1,000 discount from total"
+  other: "14-day free trial"
 pricing.coaching.yearly.f3:
-  other: "Save 2 months compared to monthly"
+  other: "Lower total cost than monthly"
 pricing.refund:
-  other: "Free to use for 14 days from account registration."
+  other: "Includes a 14-day free trial."
 pricing.receipt:
   other: "We issue receipts (Stripe)."
 

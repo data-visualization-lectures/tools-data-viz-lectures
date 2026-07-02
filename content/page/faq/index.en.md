@@ -70,7 +70,7 @@ We call the combination of "your data" and "your work in a tool" a "project."
 
 ### Can I start using it right away?
 
-We are currently building and testing the service. We plan to launch around March 2026.
+Yes. After creating an account, you can start using data visualization and data preparation tools right away.
 
 
 ## How to Use
@@ -103,8 +103,8 @@ We offer two types of data portals: sample data bundled with each tool, and orig
 
 ### How much does it cost?
 
-The most basic Standard Plan is $20/month.
-Annual billing ($200/year) saves you $40 compared to monthly.
+The VIZ plan for data visualization is $8/month, the PREP plan for data preparation is $12/month, and the BUNDLE plan for both services is $19/month.
+Yearly billing is available at a lower total cost than monthly billing. A 14-day free trial is included.
 
 See the <a href="/en/pricing/">Pricing</a> page for details.
 
