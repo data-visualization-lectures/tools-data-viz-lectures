@@ -130,9 +130,9 @@ pricing.title:
 pricing.subtitle:
   other: "あなたのニーズに合ったプランをお選びください。"
 pricing.standard:
-  other: "通常プラン"
+  other: "VIZ / PREP / BUNDLE"
 pricing.coaching:
-  other: "コーチングプラン"
+  other: "BUNDLE"
 pricing.monthly:
   other: "月額"
 pricing.yearly:
@@ -146,43 +146,43 @@ pricing.recommended:
 pricing.cta:
   other: "申し込む"
 pricing.standard.monthly.desc:
-  other: "一番ベーシックなプランです。一ヶ月ごとの更新ですので、ご利用状況に応じて使いやすいです。"
+  other: "VIZ、PREP、BUNDLEから用途に合わせて選べる月額プランです。"
 pricing.standard.yearly.desc:
-  other: "しっかりと本格的に取り組みたい方へ。月額よりも2ヶ月分お得です。"
+  other: "継続利用向けの年額プランです。月額よりも割安です。"
 pricing.standard.monthly.f1:
-  other: "厳選ツールが使い放題"
+  other: "VIZ: データ可視化ツール"
 pricing.standard.monthly.f2:
-  other: "インストール不要、ブラウザで完結"
+  other: "PREP: データ加工ツール"
 pricing.standard.monthly.f3:
-  other: "データ可視化＋データ加工をカバー"
+  other: "BUNDLE: 両方まとめて利用"
 pricing.standard.monthly.f4:
-  other: "サンプルデータ・オリジナルデータ付き"
-pricing.standard.monthly.f5:
-  other: "いつでも解約可能"
-pricing.standard.yearly.f1:
-  other: "厳選ツールが使い放題"
-pricing.standard.yearly.f2:
   other: "インストール不要、ブラウザで完結"
+pricing.standard.monthly.f5:
+  other: "14日間無料"
+pricing.standard.yearly.f1:
+  other: "VIZ: データ可視化ツール"
+pricing.standard.yearly.f2:
+  other: "PREP: データ加工ツール"
 pricing.standard.yearly.f3:
-  other: "データ可視化＋データ加工をカバー"
+  other: "BUNDLE: 両方まとめて利用"
 pricing.standard.yearly.f4:
-  other: "サンプルデータ・オリジナルデータ付き"
+  other: "インストール不要、ブラウザで完結"
 pricing.standard.yearly.f5:
-  other: "月あたり約¥2,067（年間約¥4,960お得）"
+  other: "月額より割安"
 pricing.coaching.desc:
-  other: "本ツール利用と月に一度の<a href=\"https://personal.data-viz-lectures.com/\">1対1でのコーチング</a>のセットです。月々1,000円お得です。"
+  other: "データ可視化とデータ加工をまとめて使えるBUNDLEプランです。"
 pricing.coaching.yearly.desc:
-  other: "本ツール利用と月に一度の<a href=\"https://personal.data-viz-lectures.com/\">1対1でのコーチング</a>のセットです。月々1,000円お得です。"
+  other: "データ可視化とデータ加工を通年で使えるBUNDLE年額プランです。"
 pricing.coaching.f1:
-  other: "通常プランと同様のツール提供サービス（2,480円）"
+  other: "VIZ + PREP を利用可能"
 pricing.coaching.f2:
-  other: "1対1でのコーチング（5,500円→4,500円）"
+  other: "月額 ¥2,480"
 pricing.coaching.monthly.f3:
-  other: "合計金額より1,000円ディスカウント"
+  other: "14日間無料"
 pricing.coaching.yearly.f3:
-  other: "月額よりも2ヶ月分を割引"
+  other: "年額で割安"
 pricing.refund:
-  other: "アカウント登録から14日間まで無料でご利用いただけます。"
+  other: "14日間無料でお試しいただけます。"
 pricing.receipt:
   other: "領収書を発行します（Stripe）。"
 
