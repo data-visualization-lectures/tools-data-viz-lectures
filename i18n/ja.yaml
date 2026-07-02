@@ -4,7 +4,7 @@ hero.title:
 hero.subtitle:
   other: "データ可視化とデータ加工の便利ツール集"
 hero.notice:
-  other: "Excelよりも多様に、B.I.ツールよりも簡単に、小回りの利くデータ可視化（チャートやデータ地図、ネットワーク図）作成・データ加工ツールを40種類以上用意しています。ブラウザですべて完結し、定額で使い放題で利用いただけます。"
+  other: "Excelよりも多様に、B.I.ツールよりも簡単に、小回りの利くデータ可視化（チャートやデータ地図、ネットワーク図）作成・データ加工ツールを、実務で価値の高いものに絞って用意しています。ブラウザですべて完結し、定額で使い放題で利用いただけます。今後も料金据え置きで、必要性の高いツールを順次追加していきます。"
 hero.cta.primary:
   other: "今すぐはじめる"
 hero.cta.secondary:
@@ -88,9 +88,9 @@ header.mainnavAria:
 
 # www main navigation - dropdown items
 mainnav.features.manyTools:
-  other: "40種類以上のツールが使い放題"
+  other: "厳選ツールが使い放題"
 mainnav.features.manyToolsDesc:
-  other: "データ可視化からデータ加工まで定額で利用可能"
+  other: "実務に役立つツールを定額で利用可能"
 mainnav.features.browserOnly:
   other: "インストール不要、ブラウザだけで完結"
 mainnav.features.browserOnlyDesc:
@@ -150,7 +150,7 @@ pricing.standard.monthly.desc:
 pricing.standard.yearly.desc:
   other: "しっかりと本格的に取り組みたい方へ。月額よりも2ヶ月分お得です。"
 pricing.standard.monthly.f1:
-  other: "40種類以上のツールが使い放題"
+  other: "厳選ツールが使い放題"
 pricing.standard.monthly.f2:
   other: "インストール不要、ブラウザで完結"
 pricing.standard.monthly.f3:
@@ -160,7 +160,7 @@ pricing.standard.monthly.f4:
 pricing.standard.monthly.f5:
   other: "いつでも解約可能"
 pricing.standard.yearly.f1:
-  other: "40種類以上のツールが使い放題"
+  other: "厳選ツールが使い放題"
 pricing.standard.yearly.f2:
   other: "インストール不要、ブラウザで完結"
 pricing.standard.yearly.f3:
@@ -202,7 +202,7 @@ pricing.team.small.desc:
 pricing.team.small.f1:
   other: "最大5名までご利用可能"
 pricing.team.small.f2:
-  other: "40種類以上のツールが使い放題"
+  other: "厳選ツールが使い放題"
 pricing.team.small.f3:
   other: "リーダーがプロジェクトをチームに共有"
 pricing.team.small.f4:
@@ -214,7 +214,7 @@ pricing.team.standard.desc:
 pricing.team.standard.f1:
   other: "最大10名までご利用可能"
 pricing.team.standard.f2:
-  other: "40種類以上のツールが使い放題"
+  other: "厳選ツールが使い放題"
 pricing.team.standard.f3:
   other: "リーダーがプロジェクトをチームに共有"
 pricing.team.standard.f4:
@@ -226,7 +226,7 @@ pricing.team.enterprise.desc:
 pricing.team.enterprise.f1:
   other: "最大30名までご利用可能"
 pricing.team.enterprise.f2:
-  other: "40種類以上のツールが使い放題"
+  other: "厳選ツールが使い放題"
 pricing.team.enterprise.f3:
   other: "リーダーがプロジェクトをチームに共有"
 pricing.team.enterprise.f4:

@@ -7,14 +7,12 @@ menu:
             icon: home
 ---
 
-## over 40 data visualization & data wrangling tools to support your data workflow
+## Curated data visualization & data wrangling tools to support your data workflow
 
-(*As of April 9, 2026)
-
-- Unlimited access to over 40 types of tools
+- A curated set of practical tools
 - No installation required — everything runs in your browser
 - Single-purpose tools that are easy to learn and use
-- Seamlessly switch between visualization and processing
+- More high-value tools will be added without raising plan prices
 
 
 ## Does this sound like your data workflow?
@@ -33,9 +31,9 @@ menu:
 {{< figure src="/images/feature_en.png" caption="Four key features" >}}
 
 
-✅ **Unlimited access to over 40 types of tools**
+✅ **Curated practical tools with unlimited access**
 
-From chart creation, map display, and color design to specialized visualization expressions. Data processing, formatting, and conversion tools are also included.
+From chart creation, map display, and color design to specialized visualization expressions. Data processing, formatting, and conversion tools are also included, focused on tools that provide real value today. We will continue adding high-value tools without raising plan prices.
 
 
 ✅ **No installation required — everything runs in your browser**
