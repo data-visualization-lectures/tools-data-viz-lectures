@@ -25,3 +25,24 @@ jobs:
 
       - name: Build
         run: hugo --minify
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install Lighthouse CI
+        continue-on-error: true
+        run: npm install -g @lhci/cli@0.15.1
+
+      - name: Lighthouse CI warnings
+        continue-on-error: true
+        run: lhci autorun --config=.lighthouserc.json
+
+      - name: Upload Lighthouse reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-report
+          path: .lighthouseci
+          if-no-files-found: ignore
