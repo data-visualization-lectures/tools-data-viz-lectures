@@ -385,3 +385,5 @@ footer.link.about:
   other: "About"
 footer.link.license:
   other: "License"
+footer.link.citation:
+  other: "Citation"
