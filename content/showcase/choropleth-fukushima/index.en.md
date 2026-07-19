@@ -16,7 +16,7 @@ Using our "Japan Choropleth Map" and "Prefecture Choropleth Map" tools, you can 
 Here we introduce how to create one using our tools.
 
 {{< external-link-card
-    url="https://choropleth-prefectures.dataviz.jp/?project_id=dbbe184f-2022-403b-a84f-525991e61725"
+    url="https://choropleth.dataviz.jp/?projectId=dbbe184f-2022-403b-a84f-525991e61725"
     title="Fukushima Prefecture: Population Change Rate 2011–2024"
     image="images/cover_choropleth-fukushima.png"
     site="dataviz.jp"

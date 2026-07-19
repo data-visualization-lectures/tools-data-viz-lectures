@@ -88,35 +88,19 @@ Here is a guide to the data visualization tools available, organized by purpose.
 ## Create data maps by prefecture or municipality
 
 {{< external-link-card
-    url="https://choropleth-japan.dataviz.jp/"
-    title="Japan Choropleth Map"
-    image="/images/cover_choropleth-japan.png"
+    url="https://choropleth.dataviz.jp/"
+    title="Choropleth Map"
+    image="/images/cover_choropleth.png"
     site="dataviz.jp"
-    description="Easily create choropleth maps of Japan"
+    description="Create Japan and prefecture maps in one builder"
 >}}
 {{< /external-link-card >}}
 {{< external-link-card
-    url="https://cartogram-japan.dataviz.jp/"
-    title="Japan Cartogram"
-    image="/images/cover_cartogram-japan.png"
+    url="https://cartogram.dataviz.jp/"
+    title="Cartogram"
+    image="/images/cover_cartogram.png"
     site="dataviz.jp"
-    description="Easily create cartograms of Japan"
->}}
-{{< /external-link-card >}}
-{{< external-link-card
-    url="https://choropleth-prefectures.dataviz.jp/"
-    title="Prefecture Choropleth Map"
-    image="/images/cover_choropleth-prefectures.png"
-    site="dataviz.jp"
-    description="Easily create choropleth maps of prefectures"
->}}
-{{< /external-link-card >}}
-{{< external-link-card
-    url="https://cartogram-prefectures.dataviz.jp/"
-    title="Prefecture Cartogram"
-    image="/images/cover_cartogram-prefectures.png"
-    site="dataviz.jp"
-    description="Easily create cartograms of prefectures"
+    description="Create Japan and prefecture maps in one builder"
 >}}
 {{< /external-link-card >}}
 

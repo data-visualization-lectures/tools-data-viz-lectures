@@ -16,7 +16,7 @@ image: "images/cover_choropleth-fukushima.png"
 ここでは本サービスのツールを用いた作成の仕方を紹介します。
 
 {{< external-link-card
-    url="https://choropleth-prefectures.dataviz.jp/?project_id=dbbe184f-2022-403b-a84f-525991e61725"
+    url="https://choropleth.dataviz.jp/?projectId=dbbe184f-2022-403b-a84f-525991e61725"
     title="福島県_人口の増減率_2011-2024"
     image="images/cover_choropleth-fukushima.png"
     site="dataviz.jp"
@@ -96,4 +96,3 @@ cell.cross('PROJECT_NAME','KEY_COLUMN_NAME').cells['COLUMN_NAME_TO_GET'].value[0
 人口の増減率が高い自治体ほど色が濃く表現されています。
 
 ![](images/cf_3_5.png)
-
