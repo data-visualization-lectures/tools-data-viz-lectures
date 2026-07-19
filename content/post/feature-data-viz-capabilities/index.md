@@ -90,19 +90,19 @@ image: "/images/features/feature-data-viz-capabilities.png"
 都道府県や市区町村などの行政単位、そしてタイル地図まで、**日本のデータ地図に特化**したツールを取り揃えています。
 
 {{< external-link-card
-    url="https://choropleth-japan.dataviz.jp/"
-    title="日本地図コロプレス"
-    image="/images/cover_choropleth-japan.png"
+    url="https://choropleth.dataviz.jp/"
+    title="コロプレスマップ"
+    image="/images/cover_choropleth.png"
     site="dataviz.jp"
-    description="日本地図コロプレスを手軽に作成できるツール"
+    description="日本地図・都道府県地図を一つのツールで作成"
 >}}
 {{< /external-link-card >}}
 {{< external-link-card
-    url="https://cartogram-japan.dataviz.jp/"
-    title="日本地図カルトグラム"
-    image="/images/cover_cartogram-japan.png"
+    url="https://cartogram.dataviz.jp/"
+    title="カルトグラム"
+    image="/images/cover_cartogram.png"
     site="dataviz.jp"
-    description="日本地図カルトグラムを手軽に作成できるツール"
+    description="日本地図・都道府県地図を一つのツールで作成"
 >}}
 {{< /external-link-card >}}
 {{< external-link-card

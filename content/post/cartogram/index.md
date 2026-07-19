@@ -5,15 +5,13 @@ slug: "cartogram"
 weight: 1
 categories: "data-visualization-map"
 address: https://cartogram.dataviz.jp/
-image: "images/cover_cartogram-japan.png"
-aliases:
-  - /cartogram-japan/
+image: "images/cover_cartogram.png"
 ---
 
 {{< external-link-card
     url="https://cartogram.dataviz.jp/"
     title="カルトグラム"
-    image="images/cover_cartogram-japan.png"
+    image="images/cover_cartogram.png"
     site="dataviz.jp"
     description="日本地図・都道府県地図のカルトグラムを手軽に作成できるツール"
 >}}
@@ -21,12 +19,13 @@ aliases:
 
 ## どんなツールか？
 
-日本の都道府県ごとの統計データを反映したカルトグラム（Cartogram）を Web 上で簡単に作成できるツールです。カルトグラムとは、地図上の地域の面積や形状を統計値（人口・票数・指標など）に応じて変形させて表示する 主題地図（Thematic map）の一種です。通常の地図では見えにくい地域差・偏りを視覚的に強調できます。 ￼
+全国の都道府県データ、または選択した都道府県内の市区町村データから、カルトグラム（Cartogram）を作成できる統合ツールです。統計値に応じて地域の面積や形状を変形し、通常の地図では見えにくい地域差や偏りを強調できます。
 
 
 ## 機能
 
-- 日本地図のカルトグラム生成：都道府県などの領域を統計値に応じて面積変形して表示します。
+- 日本地図と都道府県地図を一つのツールから選択
+- 都道府県または市区町村の領域を統計値に応じて変形
 - データ値の反映：入力したデータに基づいて地図形状を変化させられます。
 - ランキングモード：数値の大きい順にランキングデータを自動生成します。ランキングデータは着色に利用できます。
 - インタラクティブ表示：Web 上で操作・確認しながら地図を閲覧できます。
