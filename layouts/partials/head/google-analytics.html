@@ -1,0 +1,21 @@
+{{- with site.Config.Services.GoogleAnalytics.ID -}}
+<script>
+  (function () {
+    var productionHosts = ['tools.data-viz-lectures.com'];
+    if (!productionHosts.includes(window.location.hostname.toLowerCase())) return;
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+
+    var gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent('{{ . }}');
+    document.head.appendChild(gaScript);
+
+    window.gtag('js', new Date());
+    window.gtag('config', '{{ . }}', {
+      linker: { domains: ['dataviz.jp', 'dataprep.jp', 'data-viz-lectures.com'] }
+    });
+  })();
+</script>
+{{- end -}}
