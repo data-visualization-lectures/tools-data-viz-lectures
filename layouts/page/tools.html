@@ -105,7 +105,13 @@
         <div class="tool-directory-card__actions">
           <a class="tool-directory-card__link tool-directory-card__link--secondary" href="{{ $tool.RelPermalink }}">{{ T "post.detail" }}</a>
           {{- with $address -}}
+            {{- if eq site.Params.headerMode "protected" -}}
             <a class="tool-directory-card__link tool-directory-card__link--primary" href="{{ . }}" target="_blank" rel="noopener">{{ T "post.use-tool" }}</a>
+            {{- else -}}
+            {{- if partial "is-tool-editor-url.html" . -}}
+            <a class="tool-directory-card__link tool-directory-card__link--primary" href="{{ or site.Params.authHost "https://id.data-viz-lectures.com" }}/auth/sign-up?redirect_to={{ . }}&lang={{ site.Language.Lang }}">{{ T "post.trial-cta" }}</a>
+            {{- end -}}
+            {{- end -}}
           {{- end -}}
         </div>
       </article>

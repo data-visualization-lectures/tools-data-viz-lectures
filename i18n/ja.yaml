@@ -347,6 +347,8 @@ post.detail:
   other: "詳しく見る"
 post.use-tool:
   other: "ツールを使う"
+post.trial-cta:
+  other: "14日間無料ではじめる"
 
 # Tools page banners
 tools.banners.aria:

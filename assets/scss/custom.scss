@@ -1042,6 +1042,12 @@ html[data-scheme="dark"] {
   line-height: 1.35;
 }
 
+.external-link-card__cta {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
 .external-link-card__description {
   font-size: 1.5rem;
   color: var(--card-text-color-secondary);

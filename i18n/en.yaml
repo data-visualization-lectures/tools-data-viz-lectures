@@ -347,6 +347,8 @@ post.detail:
   other: "Learn More"
 post.use-tool:
   other: "Use Tool"
+post.trial-cta:
+  other: "Start 14-day free trial"
 
 # Tools page banners
 tools.banners.aria:

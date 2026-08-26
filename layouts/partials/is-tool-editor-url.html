@@ -1,0 +1,17 @@
+{{- $url := strings.TrimSpace (printf "%v" .) -}}
+{{- $isTool := false -}}
+{{- if and $url (ne site.Params.headerMode "protected") -}}
+  {{- $parsed := urls.Parse $url -}}
+  {{- $host := "" -}}
+  {{- with $parsed -}}
+    {{- $host = lower .Host -}}
+  {{- end -}}
+  {{- if strings.Contains $host "-doc." -}}
+    {{- $isTool = false -}}
+  {{- else if and (strings.HasSuffix $host ".dataviz.jp") (ne $host "www.dataviz.jp") (ne $host "app.dataviz.jp") (ne $host "id.dataviz.jp") -}}
+    {{- $isTool = true -}}
+  {{- else if and (strings.HasSuffix $host ".dataprep.jp") (ne $host "www.dataprep.jp") (ne $host "app.dataprep.jp") (ne $host "id.dataprep.jp") -}}
+    {{- $isTool = true -}}
+  {{- end -}}
+{{- end -}}
+{{- return $isTool -}}

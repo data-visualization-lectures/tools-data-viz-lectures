@@ -38,7 +38,8 @@
         {{ end }}
     </a>
     {{ with .Params.address }}
-    <a href="{{ . }}" class="article-compact__external" target="_blank" rel="noopener" title="外部サイトを開く">
+    {{- $isTrial := partial "is-tool-editor-url.html" . -}}
+    <a href="{{ if $isTrial }}{{ or site.Params.authHost "https://id.data-viz-lectures.com" }}/auth/sign-up?redirect_to={{ . }}&lang={{ site.Language.Lang }}{{ else }}{{ . }}{{ end }}" class="article-compact__external"{{ if not $isTrial }} target="_blank" rel="noopener"{{ end }} title="{{ if $isTrial }}{{ T "post.trial-cta" }}{{ else }}外部サイトを開く{{ end }}">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
     </a>
     {{ end }}
