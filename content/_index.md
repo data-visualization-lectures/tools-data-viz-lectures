@@ -145,5 +145,5 @@ Excelよりも多様に、B.I.ツールよりも簡単に、小回りの利く�
 
 
 <div class="hero-buttons" style="margin-top: 2rem;">
-  {{< auth-link path="/auth/sign-up" class="button primary" >}}今すぐはじめる{{< /auth-link >}}
+  <a href="/how-to-use-data-viz/" class="button primary">今すぐはじめる</a>
 </div>

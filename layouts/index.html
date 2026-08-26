@@ -376,7 +376,7 @@
   <section class="hero-buttons hero-cta">
     {{ $primaryCTAURL := T "hero.cta.primary.url" }}
     {{ if not $primaryCTAURL }}
-      {{ $primaryCTAURL = printf "%s/auth/sign-up?lang=%s" site.Params.authBaseURL .Lang }}
+      {{ $primaryCTAURL = "how-to-use-data-viz/" | relLangURL }}
     {{ end }}
     <a href="{{ $primaryCTAURL }}" class="button primary">{{ T "hero.cta.primary" }}</a>
     <a href="{{ "pricing/" | relLangURL }}" class="button secondary">{{ T "footer.link.pricing" }}</a>

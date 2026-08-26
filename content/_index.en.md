@@ -145,5 +145,5 @@ See the <a href="/en/faq/">FAQ</a> page for all frequently asked questions.
 
 
 <div class="hero-buttons" style="margin-top: 2rem;">
-  {{< auth-link path="/auth/sign-up" class="button primary" >}}Get Started{{< /auth-link >}}
+  <a href="/en/how-to-use-data-viz/" class="button primary">Get Started</a>
 </div>
