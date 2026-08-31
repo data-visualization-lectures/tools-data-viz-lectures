@@ -8,6 +8,12 @@
       "HUGO_ENABLEGITINFO": "true"
     }
   },
+  "rewrites": [
+    { "source": "/auth/session-bridge", "destination": "https://app.dataviz.jp/auth/session-bridge" },
+    { "source": "/auth/session-bridge/", "destination": "https://app.dataviz.jp/auth/session-bridge" },
+    { "source": "/auth/logout", "destination": "https://app.dataviz.jp/auth/logout" },
+    { "source": "/auth/logout/", "destination": "https://app.dataviz.jp/auth/logout" }
+  ],
   "redirects": [
     { "source": "/catalogue", "destination": "https://visualizing.jp/catalogue/", "permanent": true },
     { "source": "/catalogue/", "destination": "https://visualizing.jp/catalogue/", "permanent": true },
