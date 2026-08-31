@@ -1,7 +1,7 @@
 ---
 title: "Changelog"
 slug: "changelog"
-date: 2026-06-27
+date: 2026-08-31
 ---
 
 
@@ -17,6 +17,11 @@ And more. This list will be updated as needed.
 
 
 ## Changelog
+
+### August 31, 2026 (Visualization)
+
+- Cytoscape can now build network diagrams from table data. Size and color nodes by degree or community, and export with a legend.
+- Word Cloud now joins compound nouns, lets you exclude words from the list, adds word bubbles, and offers appearance presets.
 
 ### June 27, 2026 (Shared)
 
