@@ -1,7 +1,7 @@
 ---
 title: "Changelog"
 slug: "changelog"
-date: 2026-08-31
+date: 2026-09-01
 ---
 
 
@@ -17,6 +17,10 @@ And more. This list will be updated as needed.
 
 
 ## Changelog
+
+### September 1, 2026 (Visualization)
+
+- Added new tool: "Choosing a map projection." Pick a projection by deciding which property to preserve: angle, area, or distance.
 
 ### August 31, 2026 (Visualization)
 
