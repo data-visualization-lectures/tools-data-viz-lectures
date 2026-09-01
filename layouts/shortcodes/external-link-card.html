@@ -28,7 +28,7 @@
   {{- end -}}
 {{- end -}}
 <div class="external-link-card">
-  <a class="external-link-card__inner" href="{{ if $isTrial }}{{ or site.Params.authHost "https://id.data-viz-lectures.com" }}/auth/sign-up?redirect_to={{ $url }}&lang={{ site.Language.Lang }}{{ else }}{{ $url | safeURL }}{{ end }}" target="{{ $target }}" rel="{{ $rel }}">
+  <a class="external-link-card__inner" href="{{ if $isTrial }}{{ or site.Params.authHost "https://id.data-viz-lectures.com" }}/auth/sign-up?redirect_to={{ $url }}&lang={{ site.Language.Lang }}{{ else }}{{ $url | safeURL }}{{ end }}" target="{{ $target }}" rel="{{ $rel }}"{{ if $isTrial }} {{ partial "tool-cta-attrs.html" $url | safeHTMLAttr }}{{ end }}>
     <div class="external-link-card__media{{ if not $image }} external-link-card__media--placeholder{{ end }}">
       {{- with $image -}}
         {{- $resolvedImage := $.Page.Resources.GetMatch . -}}
@@ -52,7 +52,7 @@
       {{- end -}}
       <div class="external-link-card__title">{{ $title }}</div>
       {{- if $isTrial -}}
-        <div class="external-link-card__cta">{{ T "post.trial-cta" }}</div>
+        <div class="external-link-card__cta" data-dvz-tool-cta-label>{{ T "post.trial-cta" }}</div>
       {{- end -}}
       {{- with $rawDescription -}}
         <div class="external-link-card__description">{{ . }}</div>

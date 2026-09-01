@@ -109,7 +109,7 @@
             <a class="tool-directory-card__link tool-directory-card__link--primary" href="{{ . }}" target="_blank" rel="noopener">{{ T "post.use-tool" }}</a>
             {{- else -}}
             {{- if partial "is-tool-editor-url.html" . -}}
-            <a class="tool-directory-card__link tool-directory-card__link--primary" href="{{ or site.Params.authHost "https://id.data-viz-lectures.com" }}/auth/sign-up?redirect_to={{ . }}&lang={{ site.Language.Lang }}">{{ T "post.trial-cta" }}</a>
+            <a class="tool-directory-card__link tool-directory-card__link--primary" href="{{ or site.Params.authHost "https://id.data-viz-lectures.com" }}/auth/sign-up?redirect_to={{ . }}&lang={{ site.Language.Lang }}" {{ partial "tool-cta-attrs.html" . | safeHTMLAttr }}><span data-dvz-tool-cta-label>{{ T "post.trial-cta" }}</span></a>
             {{- end -}}
             {{- end -}}
           {{- end -}}

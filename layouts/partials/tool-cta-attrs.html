@@ -1,0 +1,13 @@
+{{- $url := strings.TrimSpace (printf "%v" .) -}}
+{{- $scope := "" -}}
+{{- $parsed := urls.Parse $url -}}
+{{- with $parsed -}}
+  {{- $host := lower .Host -}}
+  {{- if strings.Contains $host "-doc." -}}
+  {{- else if and (strings.HasSuffix $host ".dataprep.jp") (ne $host "www.dataprep.jp") (ne $host "app.dataprep.jp") (ne $host "id.dataprep.jp") -}}
+    {{- $scope = "prep" -}}
+  {{- else if and (strings.HasSuffix $host ".dataviz.jp") (ne $host "www.dataviz.jp") (ne $host "app.dataviz.jp") (ne $host "id.dataviz.jp") -}}
+    {{- $scope = "viz" -}}
+  {{- end -}}
+{{- end -}}
+data-dvz-tool-cta="true" data-dvz-tool-url="{{ $url }}" data-dvz-tool-scope="{{ $scope }}" data-dvz-use-tool-label="{{ T "post.use-tool" }}" data-dvz-trial-label="{{ T "post.trial-cta" }}"

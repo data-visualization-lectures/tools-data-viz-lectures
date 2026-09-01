@@ -40,8 +40,8 @@
         {{ else }}
         {{- $toolUrl := . -}}
         {{- if partial "is-tool-editor-url.html" $toolUrl -}}
-        <a href="{{ or site.Params.authHost "https://id.data-viz-lectures.com" }}/auth/sign-up?redirect_to={{ $toolUrl }}&lang={{ site.Language.Lang }}" class="article-link-btn article-link-btn--external">
-            {{ T "post.trial-cta" }}
+        <a href="{{ or site.Params.authHost "https://id.data-viz-lectures.com" }}/auth/sign-up?redirect_to={{ $toolUrl }}&lang={{ site.Language.Lang }}" class="article-link-btn article-link-btn--external" {{ partial "tool-cta-attrs.html" $toolUrl | safeHTMLAttr }}>
+            <span data-dvz-tool-cta-label>{{ T "post.trial-cta" }}</span>
         </a>
         {{- end -}}
         {{ end }}
