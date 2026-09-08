@@ -11,6 +11,7 @@ image: ""
 Here is a guide to the data visualization tools available, organized by purpose.
 
 - [Create various charts](#create-various-charts)
+- [Animate rankings and time-series change](#animate-rankings-and-time-series-change)
 - [Exploratory data visualization](#exploratory-data-visualization)
 - [3D visualization](#3d-visualization)
 - [3D map visualization](#3d-map-visualization)
@@ -40,6 +41,17 @@ Here is a guide to the data visualization tools available, organized by purpose.
     image="/images/cover_data-illustrator.jpg"
     site="dataviz.jp"
     description="Create diverse charts with ease"
+>}}
+{{< /external-link-card >}}
+
+## Animate rankings and time-series change
+
+{{< external-link-card
+    url="https://race-chart-builder.dataviz.jp/"
+    title="Race Chart Builder"
+    image="/images/cover_race-chart-builder.png"
+    site="dataviz.jp"
+    description="Build bar, bump, line, scatter, and slope race charts"
 >}}
 {{< /external-link-card >}}
 

@@ -11,6 +11,7 @@ image: ""
 本ツールで利用可能なデータ可視化ツールについて、目的別にご案内します。
 
 - [さまざまなチャートを作りたい](#さまざまなチャートを作りたい)
+- [順位や時系列の変化をアニメーションで見せたい](#順位や時系列の変化をアニメーションで見せたい)
 - [探索的なデータ可視化をしたい場合](#探索的なデータ可視化をしたい場合)
 - [3Dの可視化をしたい](#3Dの可視化をしたい)
 - [3D地図の可視化をしたい](#3D地図の可視化をしたい)
@@ -40,6 +41,17 @@ image: ""
     image="/images/cover_data-illustrator.jpg"
     site="dataviz.jp"
     description="多様なチャートを手軽に作成"
+>}}
+{{< /external-link-card >}}
+
+## 順位や時系列の変化をアニメーションで見せたい
+
+{{< external-link-card
+    url="https://race-chart-builder.dataviz.jp/"
+    title="Race Chart Builder"
+    image="/images/cover_race-chart-builder.png"
+    site="dataviz.jp"
+    description="バー・バンプ・折れ線・散布図・スロープのレースチャートを作成"
 >}}
 {{< /external-link-card >}}
 
