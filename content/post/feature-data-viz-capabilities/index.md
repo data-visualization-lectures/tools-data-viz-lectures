@@ -175,7 +175,16 @@ JSONで可視化仕様を記述したり、URLだけでチャート画像を生�
 
 ## 動く可視化をつくりたい
 
-飛行機や船の軌跡データを、**動画として可視化**できます。
+時系列の順位や値の変化を**レースチャートとしてアニメーション**したり、飛行機や船の軌跡データを**動画として可視化**したりできます。
+
+{{< external-link-card
+    url="https://race-chart-builder.dataviz.jp/"
+    title="Race Chart Builder"
+    image="/images/cover_race-chart-builder.png"
+    site="dataviz.jp"
+    description="順位の入れ替わりをアニメーションで見せるレースチャート"
+>}}
+{{< /external-link-card >}}
 
 {{< external-link-card
     url="https://bbts.dataviz.jp/"
