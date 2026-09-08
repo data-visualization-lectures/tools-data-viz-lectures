@@ -1,7 +1,7 @@
 ---
 title: "Changelog"
 slug: "changelog"
-date: 2026-09-01
+date: 2026-09-08
 ---
 
 
@@ -17,6 +17,10 @@ And more. This list will be updated as needed.
 
 
 ## Changelog
+
+### September 8, 2026 (Visualization)
+
+- Added new tool: "Race Chart Builder." Choose from bar chart race, bump chart, line chart, scatter plot race, or slope graph, then animate how rankings and values change over time.
 
 ### September 1, 2026 (Visualization)
 
