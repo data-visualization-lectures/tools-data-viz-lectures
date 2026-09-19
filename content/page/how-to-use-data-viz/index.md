@@ -87,6 +87,15 @@ image: ""
 >}}
 {{< /external-link-card >}}
 
+{{< external-link-card
+    url="https://parallel-sets.dataviz.jp/"
+    title="Parallel Sets"
+    image="/images/cover_parallel-sets.png"
+    site="dataviz.jp"
+    description="カテゴリの組み合わせと件数を帯で可視化"
+>}}
+{{< /external-link-card >}}
+
 ## 3Dの可視化をしたい
 
 {{< external-link-card

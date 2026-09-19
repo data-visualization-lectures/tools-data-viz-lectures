@@ -87,6 +87,15 @@ Here is a guide to the data visualization tools available, organized by purpose.
 >}}
 {{< /external-link-card >}}
 
+{{< external-link-card
+    url="https://parallel-sets.dataviz.jp/"
+    title="Parallel Sets"
+    image="/images/cover_parallel-sets.png"
+    site="dataviz.jp"
+    description="Visualize categorical combinations as ribbons"
+>}}
+{{< /external-link-card >}}
+
 ## 3D visualization
 
 {{< external-link-card

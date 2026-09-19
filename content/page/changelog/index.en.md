@@ -20,6 +20,7 @@ And more. This list will be updated as needed.
 
 ### September 19, 2026 (Visualization)
 
+- Added new tool: "Parallel Sets." Visualize categorical combinations and counts as ribbons across parallel axes.
 - Added new tool: "Matrix Table Chart." Visualize a crosstab without converting it to a list, using a heatmap, mosaic, stacked bar, parallel coordinates, scatterplot matrix, chord diagram, or adjacency matrix.
 
 ### September 8, 2026 (Visualization)
