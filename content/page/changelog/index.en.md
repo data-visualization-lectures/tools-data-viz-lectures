@@ -1,7 +1,7 @@
 ---
 title: "Changelog"
 slug: "changelog"
-date: 2026-09-08
+date: 2026-09-19
 ---
 
 
@@ -17,6 +17,10 @@ And more. This list will be updated as needed.
 
 
 ## Changelog
+
+### September 19, 2026 (Visualization)
+
+- Added new tool: "Matrix Table Chart." Visualize a crosstab without converting it to a list, using a heatmap, mosaic, stacked bar, parallel coordinates, scatterplot matrix, chord diagram, or adjacency matrix.
 
 ### September 8, 2026 (Visualization)
 

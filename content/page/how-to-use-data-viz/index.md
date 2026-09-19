@@ -11,6 +11,7 @@ image: ""
 本ツールで利用可能なデータ可視化ツールについて、目的別にご案内します。
 
 - [さまざまなチャートを作りたい](#さまざまなチャートを作りたい)
+- [クロス集計表を可視化したい](#クロス集計表を可視化したい)
 - [順位や時系列の変化をアニメーションで見せたい](#順位や時系列の変化をアニメーションで見せたい)
 - [探索的なデータ可視化をしたい場合](#探索的なデータ可視化をしたい場合)
 - [3Dの可視化をしたい](#3Dの可視化をしたい)
@@ -41,6 +42,17 @@ image: ""
     image="/images/cover_data-illustrator.jpg"
     site="dataviz.jp"
     description="多様なチャートを手軽に作成"
+>}}
+{{< /external-link-card >}}
+
+## クロス集計表を可視化したい
+
+{{< external-link-card
+    url="https://matrix-table-chart.dataviz.jp/"
+    title="Matrix Table Chart"
+    image="/images/cover_matrix-table-chart.png"
+    site="dataviz.jp"
+    description="行×列のクロス集計表を、リストに変換せず可視化"
 >}}
 {{< /external-link-card >}}
 

@@ -11,6 +11,7 @@ image: ""
 Here is a guide to the data visualization tools available, organized by purpose.
 
 - [Create various charts](#create-various-charts)
+- [Visualize a crosstab matrix](#visualize-a-crosstab-matrix)
 - [Animate rankings and time-series change](#animate-rankings-and-time-series-change)
 - [Exploratory data visualization](#exploratory-data-visualization)
 - [3D visualization](#3d-visualization)
@@ -41,6 +42,17 @@ Here is a guide to the data visualization tools available, organized by purpose.
     image="/images/cover_data-illustrator.jpg"
     site="dataviz.jp"
     description="Create diverse charts with ease"
+>}}
+{{< /external-link-card >}}
+
+## Visualize a crosstab matrix
+
+{{< external-link-card
+    url="https://matrix-table-chart.dataviz.jp/"
+    title="Matrix Table Chart"
+    image="/images/cover_matrix-table-chart.png"
+    site="dataviz.jp"
+    description="Visualize a row × column crosstab without converting it to a list"
 >}}
 {{< /external-link-card >}}
 

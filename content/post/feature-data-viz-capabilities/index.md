@@ -10,6 +10,7 @@ image: "/images/features/feature-data-viz-capabilities.png"
 「データの道具箱」のデータ可視化ツール群では、**一般的なチャートから専門的な可視化まで**、さまざまな表現を手軽に作成できます。
 
 - [さまざまなチャートを作りたい](#さまざまなチャートを作りたい)
+- [クロス集計表を可視化したい](#クロス集計表を可視化したい)
 - [探索的なデータ可視化をしたい](#探索的なデータ可視化をしたい)
 - [3D・3D地図の可視化をしたい](#3d3d地図の可視化をしたい)
 - [データ地図をつくりたい](#データ地図をつくりたい)
@@ -37,6 +38,20 @@ image: "/images/features/feature-data-viz-capabilities.png"
     image="/images/cover_data-illustrator.jpg"
     site="dataviz.jp"
     description="多様なチャートを手軽に作成"
+>}}
+{{< /external-link-card >}}
+
+
+## クロス集計表を可視化したい
+
+行×列のクロス集計表を、**リスト形式に直さず**ヒートマップやモザイク、コード・ダイアグラムなどで読めます。
+
+{{< external-link-card
+    url="https://matrix-table-chart.dataviz.jp/"
+    title="Matrix Table Chart"
+    image="/images/cover_matrix-table-chart.png"
+    site="dataviz.jp"
+    description="クロス集計表をリストに変換せず可視化"
 >}}
 {{< /external-link-card >}}
 
