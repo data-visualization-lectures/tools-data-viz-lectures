@@ -1,7 +1,7 @@
 ---
 title: "Changelog"
 slug: "changelog"
-date: 2026-09-19
+date: 2026-09-25
 ---
 
 
@@ -17,6 +17,10 @@ And more. This list will be updated as needed.
 
 
 ## Changelog
+
+### September 25, 2026 (Visualization)
+
+- Added new tool: "Interactive Chart Builder." Build interactive, animated charts from six templates: streamgraph, bump chart, bee swarm plot, Venn / Euler diagram, timeseries scatterplot, and circle packing.
 
 ### September 19, 2026 (Visualization)
 

@@ -44,6 +44,14 @@ image: ""
     description="多様なチャートを手軽に作成"
 >}}
 {{< /external-link-card >}}
+{{< external-link-card
+    url="https://interactive-chart-builder.dataviz.jp/"
+    title="Interactive Chart Builder"
+    image="/images/cover_interactive-chart-builder.png"
+    site="dataviz.jp"
+    description="テンプレートから動きのあるインタラクティブなチャートを作成"
+>}}
+{{< /external-link-card >}}
 
 ## クロス集計表を可視化したい
 

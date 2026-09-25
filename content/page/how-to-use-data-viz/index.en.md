@@ -44,6 +44,14 @@ Here is a guide to the data visualization tools available, organized by purpose.
     description="Create diverse charts with ease"
 >}}
 {{< /external-link-card >}}
+{{< external-link-card
+    url="https://interactive-chart-builder.dataviz.jp/"
+    title="Interactive Chart Builder"
+    image="/images/cover_interactive-chart-builder.png"
+    site="dataviz.jp"
+    description="Build interactive, animated charts from templates"
+>}}
+{{< /external-link-card >}}
 
 ## Visualize a crosstab matrix
 
