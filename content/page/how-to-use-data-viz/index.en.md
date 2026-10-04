@@ -18,6 +18,7 @@ Here is a guide to the data visualization tools available, organized by purpose.
 - [3D map visualization](#3d-map-visualization)
 - [Create data maps by prefecture or municipality](#create-data-maps-by-prefecture-or-municipality)
 - [Create world data maps](#create-world-data-maps)
+- [Map flows between places](#map-flows-between-places)
 - [Network visualization](#network-visualization)
 - [Text visualization](#text-visualization)
 - [Code-based quick visualization](#code-based-quick-visualization)
@@ -153,6 +154,17 @@ Here is a guide to the data visualization tools available, organized by purpose.
     image="/images/cover_tilegrams.png"
     site="dataviz.jp"
     description="Create tile maps"
+>}}
+{{< /external-link-card >}}
+
+## Map flows between places
+
+{{< external-link-card
+    url="https://weighted-directed-flow-map.dataviz.jp/"
+    title="Weighted Directed Flow Map"
+    image="/images/cover_weighted-directed-flow-map.png"
+    site="dataviz.jp"
+    description="Map movements and trade between places as directed, weighted flows"
 >}}
 {{< /external-link-card >}}
 

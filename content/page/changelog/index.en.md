@@ -1,7 +1,7 @@
 ---
 title: "Changelog"
 slug: "changelog"
-date: 2026-09-25
+date: 2026-10-04
 ---
 
 
@@ -17,6 +17,10 @@ And more. This list will be updated as needed.
 
 
 ## Changelog
+
+### October 4, 2026 (Visualization)
+
+- Added new tool: "Weighted Directed Flow Map." Draw movements and trade between places as directed, weighted flows on world or Japan maps. When the two directions differ, the arrows are drawn side by side so each stays readable.
 
 ### September 25, 2026 (Visualization)
 

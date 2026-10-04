@@ -18,6 +18,7 @@ image: ""
 - [3D地図の可視化をしたい](#3D地図の可視化をしたい)
 - [都道府県や市区町村単位でデータ地図をつくりたい](#都道府県や市区町村単位でデータ地図をつくりたい)
 - [世界地図でデータ地図をつくりたい](#世界地図でデータ地図をつくりたい)
+- [地点間の移動や流れを地図に描きたい](#地点間の移動や流れを地図に描きたい)
 - [ネットワークの可視化をしたい場合](#ネットワークの可視化をしたい場合)
 - [テキストの可視化をしたい場合](#テキストの可視化をしたい場合)
 - [コードベースで手軽に可視化したい](#コードベースで手軽に可視化したい)
@@ -153,6 +154,17 @@ image: ""
     image="/images/cover_tilegrams.png"
     site="dataviz.jp"
     description="タイル地図を作成できるツール"
+>}}
+{{< /external-link-card >}}
+
+## 地点間の移動や流れを地図に描きたい
+
+{{< external-link-card
+    url="https://weighted-directed-flow-map.dataviz.jp/"
+    title="重み付き有向フローマップ"
+    image="/images/cover_weighted-directed-flow-map.png"
+    site="dataviz.jp"
+    description="地点間の移動や取引を、向きと量のある流れとして地図に描く"
 >}}
 {{< /external-link-card >}}
 
