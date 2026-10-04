@@ -1,0 +1,13 @@
+# External introduction cards; no individual page is generated on this site.
+ja:
+  - title: 図形カルトグラム
+    description: 47都道府県の数値を円・正方形の面積で表し、元地図と比較できるツール
+    category: data-visualization-map
+    marketingUrl: https://www.dataviz.jp/shape-cartogram/
+    image: /images/cover_shape-cartogram.png
+en:
+  - title: Shape Cartogram
+    description: Represent values for Japan’s 47 prefectures as circle or square areas and compare them with the original map
+    category: data-visualization-map
+    marketingUrl: https://www.dataviz.jp/en/shape-cartogram/
+    image: /images/cover_shape-cartogram.png

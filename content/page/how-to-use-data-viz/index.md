@@ -145,6 +145,15 @@ image: ""
     description="日本地図・都道府県地図を一つのツールで作成"
 >}}
 {{< /external-link-card >}}
+{{< external-link-card
+    url="https://www.dataviz.jp/shape-cartogram/"
+    image="/images/cover_shape-cartogram.png"
+    title="図形カルトグラム"
+    site="dataviz.jp"
+    description="47都道府県の値を円・正方形の面積で比較"
+>}}
+{{< /external-link-card >}}
+
 
 ## 世界地図でデータ地図をつくりたい
 

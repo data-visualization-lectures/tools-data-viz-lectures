@@ -145,6 +145,15 @@ Here is a guide to the data visualization tools available, organized by purpose.
     description="Create Japan and prefecture maps in one builder"
 >}}
 {{< /external-link-card >}}
+{{< external-link-card
+    url="https://www.dataviz.jp/en/shape-cartogram/"
+    image="/images/cover_shape-cartogram.png"
+    title="Shape Cartogram"
+    site="dataviz.jp"
+    description="Compare values for Japan’s 47 prefectures using circle or square areas"
+>}}
+{{< /external-link-card >}}
+
 
 ## Create world data maps
 
