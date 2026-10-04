@@ -129,6 +129,15 @@ image: "/images/features/feature-data-viz-capabilities.png"
 >}}
 {{< /external-link-card >}}
 {{< external-link-card
+    url="https://www.dataviz.jp/shape-cartogram/"
+    image="/images/cover_shape-cartogram.png"
+    title="図形カルトグラム"
+    site="dataviz.jp"
+    description="47都道府県の値を円・正方形の面積で比較"
+>}}
+{{< /external-link-card >}}
+
+{{< external-link-card
     url="https://tilegrams.dataviz.jp/"
     title="Tilegrams"
     image="/images/cover_tilegrams.png"

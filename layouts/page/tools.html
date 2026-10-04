@@ -16,13 +16,18 @@
 {{- $order := default (slice) .Site.Params.sidebar.categories.order -}}
 {{- $toolCategories := slice -}}
 {{- $toolPages := slice -}}
+{{- $externalTools := index site.Data.tool_links site.Language.Lang | default (slice) -}}
 
 {{- range $slug := $order -}}
   {{- with site.GetPage (printf "categories/%s" $slug) -}}
     {{- $categoryPage := . -}}
-    {{- $toolCategories = $toolCategories | append (dict "slug" $slug "page" . "icon" (index $icons $slug) "count" (len .Pages)) -}}
+    {{- $toolCategories = $toolCategories | append (dict "slug" $slug "page" . "icon" (index $icons $slug) "count" (add (len .Pages) (len (where $externalTools "category" $slug)))) -}}
     {{- range .Pages.ByWeight -}}
       {{- $toolPages = $toolPages | append (dict "page" . "category" $slug "categoryTitle" $categoryPage.Title "icon" (index $icons $slug)) -}}
+    {{- end -}}
+    {{- range where $externalTools "category" $slug -}}
+      {{- $externalPage := dict "Title" .title "Description" .description "RelPermalink" .marketingUrl "Params" (dict "image" .image) -}}
+      {{- $toolPages = $toolPages | append (dict "page" $externalPage "category" $slug "categoryTitle" $categoryPage.Title "icon" (index $icons $slug) "external" true) -}}
     {{- end -}}
   {{- end -}}
 {{- end -}}
@@ -79,7 +84,10 @@
       {{- end -}}
       {{- $searchText := printf "%s %s %s %s %s" $tool.Title $tool.Description $categoryTitle $service $address | plainify | lower -}}
       <article class="tool-directory-card" data-tool-card data-tool-category="{{ $categorySlug }}" data-tool-search-text="{{ $searchText }}">
-        {{- $image := partialCached "helper/image" (dict "Context" $tool "Type" "articleList") $tool.RelPermalink "toolsDirectory" -}}
+        {{- $image := dict "exists" true "permalink" $tool.Params.image -}}
+        {{- if not .external -}}
+          {{- $image = partialCached "helper/image" (dict "Context" $tool "Type" "articleList") $tool.RelPermalink "toolsDirectory" -}}
+        {{- end -}}
         {{- if $image.exists -}}
           <a class="tool-directory-card__media" href="{{ $tool.RelPermalink }}" aria-label="{{ $tool.Title }}">
             {{- if $image.resource -}}
