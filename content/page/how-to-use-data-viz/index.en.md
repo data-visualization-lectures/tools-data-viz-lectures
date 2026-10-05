@@ -11,6 +11,7 @@ image: ""
 Here is a guide to the data visualization tools available, organized by purpose.
 
 - [Create various charts](#create-various-charts)
+- [Visualize hierarchical data](#visualize-hierarchical-data)
 - [Visualize a crosstab matrix](#visualize-a-crosstab-matrix)
 - [Animate rankings and time-series change](#animate-rankings-and-time-series-change)
 - [Exploratory data visualization](#exploratory-data-visualization)
@@ -51,6 +52,17 @@ Here is a guide to the data visualization tools available, organized by purpose.
     image="/images/cover_interactive-chart-builder.png"
     site="dataviz.jp"
     description="Build interactive, animated charts from templates"
+>}}
+{{< /external-link-card >}}
+
+## Visualize hierarchical data
+
+{{< external-link-card
+    url="https://tree-chart-builder.dataviz.jp/"
+    title="Tree Chart Builder"
+    image="/images/cover_tree-chart-builder.png"
+    site="dataviz.jp"
+    description="Visualize hierarchical data with treemaps, radial trees, icicle charts, and sunbursts"
 >}}
 {{< /external-link-card >}}
 

@@ -11,6 +11,7 @@ image: ""
 本ツールで利用可能なデータ可視化ツールについて、目的別にご案内します。
 
 - [さまざまなチャートを作りたい](#さまざまなチャートを作りたい)
+- [階層データを可視化したい](#階層データを可視化したい)
 - [クロス集計表を可視化したい](#クロス集計表を可視化したい)
 - [順位や時系列の変化をアニメーションで見せたい](#順位や時系列の変化をアニメーションで見せたい)
 - [探索的なデータ可視化をしたい場合](#探索的なデータ可視化をしたい場合)
@@ -51,6 +52,17 @@ image: ""
     image="/images/cover_interactive-chart-builder.png"
     site="dataviz.jp"
     description="テンプレートから動きのあるインタラクティブなチャートを作成"
+>}}
+{{< /external-link-card >}}
+
+## 階層データを可視化したい
+
+{{< external-link-card
+    url="https://tree-chart-builder.dataviz.jp/"
+    title="Tree Chart Builder"
+    image="/images/cover_tree-chart-builder.png"
+    site="dataviz.jp"
+    description="ツリーマップ、ラディアル・ツリー、アイシクル、サンバーストで階層データを可視化"
 >}}
 {{< /external-link-card >}}
 

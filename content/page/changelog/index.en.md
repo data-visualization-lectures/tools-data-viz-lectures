@@ -1,7 +1,7 @@
 ---
 title: "Changelog"
 slug: "changelog"
-date: 2026-10-04
+date: 2026-10-05
 ---
 
 
@@ -17,6 +17,11 @@ And more. This list will be updated as needed.
 
 
 ## Changelog
+
+### October 5, 2026 (Visualization)
+
+- Added new tool: "Tree Chart Builder." Create treemaps, radial trees, icicle charts, and sunbursts from hierarchical data.
+
 
 ### October 4, 2026 (Visualization)
 
