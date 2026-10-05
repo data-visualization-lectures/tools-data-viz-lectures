@@ -1,7 +1,7 @@
 # External introduction cards; no individual page is generated on this site.
 ja:
   - title: Tree Chart Builder
-    description: ツリーマップ、ラディアル・ツリー、アイシクル、サンバーストで階層データを可視化
+    description: ツリーマップ、ラディアル・ツリー、つららチャート、サンバーストで階層データを可視化
     category: data-visualization
     marketingUrl: https://www.dataviz.jp/tree-chart-builder/
     image: /images/cover_tree-chart-builder.png

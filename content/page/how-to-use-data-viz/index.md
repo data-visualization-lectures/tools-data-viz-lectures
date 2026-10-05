@@ -62,7 +62,7 @@ image: ""
     title="Tree Chart Builder"
     image="/images/cover_tree-chart-builder.png"
     site="dataviz.jp"
-    description="ツリーマップ、ラディアル・ツリー、アイシクル、サンバーストで階層データを可視化"
+    description="ツリーマップ、ラディアル・ツリー、つららチャート、サンバーストで階層データを可視化"
 >}}
 {{< /external-link-card >}}
 
