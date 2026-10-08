@@ -84,6 +84,14 @@ image: "/images/features/feature-data-viz-capabilities.png"
     description="カテゴリの組み合わせと件数を帯で可視化"
 >}}
 {{< /external-link-card >}}
+{{< external-link-card
+    url="https://upset.dataviz.jp/"
+    title="UpSet"
+    image="/images/cover_upset.png"
+    site="dataviz.jp"
+    description="集合の交差をマトリックスとバーで探索"
+>}}
+{{< /external-link-card >}}
 
 
 ## 3D・3D地図の可視化をしたい

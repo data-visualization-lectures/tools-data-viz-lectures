@@ -15,6 +15,7 @@ image: ""
 - [クロス集計表を可視化したい](#クロス集計表を可視化したい)
 - [順位や時系列の変化をアニメーションで見せたい](#順位や時系列の変化をアニメーションで見せたい)
 - [探索的なデータ可視化をしたい場合](#探索的なデータ可視化をしたい場合)
+- [集合の重なりを見たい](#集合の重なりを見たい)
 - [3Dの可視化をしたい](#3Dの可視化をしたい)
 - [3D地図の可視化をしたい](#3D地図の可視化をしたい)
 - [都道府県や市区町村単位でデータ地図をつくりたい](#都道府県や市区町村単位でデータ地図をつくりたい)
@@ -114,6 +115,17 @@ image: ""
     image="/images/cover_parallel-sets.png"
     site="dataviz.jp"
     description="カテゴリの組み合わせと件数を帯で可視化"
+>}}
+{{< /external-link-card >}}
+
+## 集合の重なりを見たい
+
+{{< external-link-card
+    url="https://upset.dataviz.jp/"
+    title="UpSet"
+    image="/images/cover_upset.png"
+    site="dataviz.jp"
+    description="集合の交差と要素をマトリックスとバーで探索"
 >}}
 {{< /external-link-card >}}
 

@@ -15,6 +15,7 @@ Here is a guide to the data visualization tools available, organized by purpose.
 - [Visualize a crosstab matrix](#visualize-a-crosstab-matrix)
 - [Animate rankings and time-series change](#animate-rankings-and-time-series-change)
 - [Exploratory data visualization](#exploratory-data-visualization)
+- [Explore overlapping sets](#explore-overlapping-sets)
 - [3D visualization](#3d-visualization)
 - [3D map visualization](#3d-map-visualization)
 - [Create data maps by prefecture or municipality](#create-data-maps-by-prefecture-or-municipality)
@@ -114,6 +115,17 @@ Here is a guide to the data visualization tools available, organized by purpose.
     image="/images/cover_parallel-sets.png"
     site="dataviz.jp"
     description="Visualize categorical combinations as ribbons"
+>}}
+{{< /external-link-card >}}
+
+## Explore overlapping sets
+
+{{< external-link-card
+    url="https://upset.dataviz.jp/"
+    title="UpSet"
+    image="/images/cover_upset.png"
+    site="dataviz.jp"
+    description="Explore set intersections and their elements with a matrix and bars"
 >}}
 {{< /external-link-card >}}
 
