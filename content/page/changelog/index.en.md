@@ -1,7 +1,7 @@
 ---
 title: "Changelog"
 slug: "changelog"
-date: 2026-10-05
+date: 2026-10-07
 ---
 
 
@@ -17,6 +17,11 @@ And more. This list will be updated as needed.
 
 
 ## Changelog
+
+### October 7, 2026 (Visualization)
+
+- Added new tool: "UpSet." Explore intersections of multiple sets and their elements with a matrix and bars.
+
 
 ### October 5, 2026 (Visualization)
 
