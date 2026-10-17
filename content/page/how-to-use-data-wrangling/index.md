@@ -14,6 +14,7 @@ image: ""
 - [地図データとテーマデータを簡単に結合したい](#地図データとテーマデータを簡単に結合したい)
 - [JSONの構造をいち早く把握したい](#jsonの構造をいち早く把握したい)
 - [文字化けを解消したい](#文字化けを解消したい)
+- [公開データのCSV/Excelを整然データに整えたい](#公開データのcsvexcelを整然データに整えたい)
 - [住所から緯度経度を簡単に算出したい](#住所から緯度経度を簡単に算出したい)
 - [PDFから表データを簡単に取り出したい](#pdfから表データを簡単に取り出したい)
 - [青空文庫のルビを取り除きたい](#青空文庫のルビを取り除きたい)
@@ -70,6 +71,17 @@ image: ""
     image="/images/cover-change-character-encoding.png"
     site="dataprep.jp"
     description="文字コードを、Shift JIS ⇄ UTF-8 間で相互に変換"
+>}}
+{{< /external-link-card >}}
+
+## 公開データのCSV/Excelを整然データに整えたい
+
+{{< external-link-card
+    url="https://tidy-data-checker.dataprep.jp/"
+    title="整頓データチェッカー"
+    image="/images/cover_tidy-data-checker.png"
+    site="dataprep.jp"
+    description="行政や業界のCSV/Excelを点検し、整然データのCSVに整えます"
 >}}
 {{< /external-link-card >}}
 

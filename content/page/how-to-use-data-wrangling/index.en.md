@@ -14,6 +14,7 @@ Here is a guide to the data wrangling tools available, organized by purpose.
 - [Easily merge map data with thematic data](#easily-merge-map-data-with-thematic-data)
 - [Quickly understand JSON structure](#quickly-understand-json-structure)
 - [Fix character encoding issues](#fix-character-encoding-issues)
+- [Tidy up public CSV/Excel data](#tidy-up-public-csvexcel-data)
 - [Easily convert addresses to latitude/longitude](#easily-convert-addresses-to-latitudelongitude)
 - [Extract table data from PDFs](#extract-table-data-from-pdfs)
 - [Remove furigana from Aozora Bunko texts](#remove-furigana-from-aozora-bunko-texts)
@@ -70,6 +71,17 @@ Here is a guide to the data wrangling tools available, organized by purpose.
     image="/images/cover-change-character-encoding.png"
     site="dataprep.jp"
     description="Convert character encoding between Shift JIS and UTF-8"
+>}}
+{{< /external-link-card >}}
+
+## Tidy up public CSV/Excel data
+
+{{< external-link-card
+    url="https://tidy-data-checker.dataprep.jp/"
+    title="Tidy Data Checker"
+    image="/images/cover_tidy-data-checker.png"
+    site="dataprep.jp"
+    description="Inspect government and industry CSV/Excel files and turn them into tidy CSV data"
 >}}
 {{< /external-link-card >}}
 
