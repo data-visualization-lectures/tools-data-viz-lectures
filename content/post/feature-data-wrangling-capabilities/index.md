@@ -10,6 +10,7 @@ image: "/images/features/feature-data-wrangling-capabilities.png"
 可視化結果の品質は、**元データの品質**で決まります。「データの道具箱」では、データ可視化前の前処理を効率化するデータ加工ツール群を幅広く取り揃えています。
 
 - [データをクレンジングしたい](#データをクレンジングしたい)
+- [公開データを整然データに整えたい](#公開データを整然データに整えたい)
 - [データ同士を結合したい](#データ同士を結合したい)
 - [JSONの構造を把握したい](#jsonの構造を把握したい)
 - [文字化けを解消したい](#文字化けを解消したい)
@@ -29,6 +30,20 @@ image: "/images/features/feature-data-wrangling-capabilities.png"
     image="/images/cover_open-refine.jpg"
     site="dataviz.jp"
     description="表データのクレンジング・変換ツール"
+>}}
+{{< /external-link-card >}}
+
+
+## 公開データを整然データに整えたい
+
+行政や業界のCSV/Excelによくある**多段ヘッダー・セル結合・注記行・文字化け**を、チェックリストに沿って見つけて直せます。
+
+{{< external-link-card
+    url="https://tidy-data-checker.dataprep.jp/"
+    title="整頓データチェッカー"
+    image="/images/cover_tidy-data-checker.png"
+    site="dataprep.jp"
+    description="行政や業界のCSV/Excelを点検し、整然データのCSVに整えます"
 >}}
 {{< /external-link-card >}}
 

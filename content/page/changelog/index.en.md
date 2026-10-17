@@ -1,7 +1,7 @@
 ---
 title: "Changelog"
 slug: "changelog"
-date: 2026-10-07
+date: 2026-10-17
 ---
 
 
@@ -17,6 +17,11 @@ And more. This list will be updated as needed.
 
 
 ## Changelog
+
+### October 17, 2026 (Preparation)
+
+- Added new tool: "Tidy Data Checker." Load government and industry CSV/Excel files, find and fix garbled text, empty rows and columns, title and note rows, and multi-row headers and merged cells by following a checklist, then export the result as a UTF-8 CSV.
+
 
 ### October 7, 2026 (Visualization)
 
