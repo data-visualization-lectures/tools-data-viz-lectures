@@ -12,14 +12,6 @@ weight: 800
 Tools that can create this chart...
 
 {{< external-link-card
-    url="https://rawgraphs.dataviz.jp/"
-    title="RAWGraphs2"
-    image="/images/cover_rawgraphs-db.jpg"
-    site="dataviz.jp"
-    description=""
->}}
-{{< /external-link-card >}}
-{{< external-link-card
     url="https://cytoscape.dataviz.jp/"
     title="Cytoscape"
     image="/images/cover_cytoscape.jpg"

@@ -9,16 +9,5 @@ chart_subcategories:
 weight: 540
 ---
 
-このチャートを作ることができるのは...
-
-{{< external-link-card
-    url="https://rawgraphs.dataviz.jp/"
-    title="RAWGraphs2"
-    image="/images/cover_rawgraphs-db.jpg"
-    site="dataviz.jp"
-    description=""
->}}
-{{< /external-link-card >}}
-
 角度が等しく、一定の時間経過を示し、原点からの距離で別のデータ変数の大きさを示します。フローレンス・ナイチングール(Florence Nightingale)の鶏冠チャートは、このチャートを時系列チャートとして用いているのですが、現代において時系列で用いることはあまりありません。
 
