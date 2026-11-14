@@ -1,7 +1,7 @@
 ---
 title: "Changelog"
 slug: "changelog"
-date: 2026-10-17
+date: 2026-11-14
 ---
 
 
@@ -17,6 +17,12 @@ And more. This list will be updated as needed.
 
 
 ## Changelog
+
+### November 14, 2026 (Visualization)
+
+- RawGraphs can now create eight new chart types: waterfall chart, Pareto chart, population pyramid, network graph, waffle chart, dumbbell chart, ridgeline plot, and polar area chart.
+- Fixed two issues in RawGraphs: some items turned gray when a color scale had 11 or more items, and columns shifted when a row started with an empty cell. The Gantt chart name and description now appear in Japanese in the Japanese interface.
+
 
 ### October 17, 2026 (Preparation)
 
