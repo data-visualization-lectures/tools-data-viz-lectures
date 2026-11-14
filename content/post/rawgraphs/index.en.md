@@ -27,7 +27,7 @@ A missing link tool that bridges the gap between Excel and graphic applications 
 
 ## Features
 
-- 32 diverse chart templates across 8 categories
+- 43 diverse chart templates across 8 categories
 - Export as PNG, JPEG, or SVG images
 - Style adjustments
 - No interactive content creation capabilities
