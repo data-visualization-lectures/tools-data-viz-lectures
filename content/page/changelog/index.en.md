@@ -1,7 +1,7 @@
 ---
 title: "Changelog"
 slug: "changelog"
-date: 2026-11-14
+date: 2026-11-26
 ---
 
 
@@ -17,6 +17,11 @@ And more. This list will be updated as needed.
 
 
 ## Changelog
+
+### November 26, 2026 (Visualization)
+
+- Added new tool: "Timeline Storyteller." Draw timeline data in many forms by combining representation, scale, and layout, then record scenes and play them back as a story.
+
 
 ### November 14, 2026 (Visualization)
 

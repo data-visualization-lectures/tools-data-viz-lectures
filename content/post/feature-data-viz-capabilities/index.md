@@ -94,6 +94,20 @@ image: "/images/features/feature-data-viz-capabilities.png"
 {{< /external-link-card >}}
 
 
+## 年表をつくりたい
+
+出来事や期間のデータを、**直線・円形・人物ごとの比較など、さまざまな形の年表**にできます。場面を記録して、順に見せるストーリーにもできます。
+
+{{< external-link-card
+    url="https://timeline-storyteller.dataviz.jp/"
+    title="Timeline Storyteller"
+    image="/images/cover_timeline-storyteller.png"
+    site="dataviz.jp"
+    description="年表を見せ方の組み合わせで描き、ストーリーに仕立てる"
+>}}
+{{< /external-link-card >}}
+
+
 ## 3D・3D地図の可視化をしたい
 
 立体的な表現で**多次元データを一度に見せたい**ときに便利です。

@@ -129,6 +129,17 @@ image: ""
 >}}
 {{< /external-link-card >}}
 
+## 年表をつくりたい
+
+{{< external-link-card
+    url="https://timeline-storyteller.dataviz.jp/"
+    title="Timeline Storyteller"
+    image="/images/cover_timeline-storyteller.png"
+    site="dataviz.jp"
+    description="年表を見せ方の組み合わせで描き、ストーリーに仕立てる"
+>}}
+{{< /external-link-card >}}
+
 ## 3Dの可視化をしたい
 
 {{< external-link-card
