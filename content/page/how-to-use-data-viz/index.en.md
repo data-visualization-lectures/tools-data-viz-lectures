@@ -129,6 +129,17 @@ Here is a guide to the data visualization tools available, organized by purpose.
 >}}
 {{< /external-link-card >}}
 
+## Create timelines
+
+{{< external-link-card
+    url="https://timeline-storyteller.dataviz.jp/"
+    title="Timeline Storyteller"
+    image="/images/cover_timeline-storyteller.png"
+    site="dataviz.jp"
+    description="Draw timelines in many forms and turn them into a story"
+>}}
+{{< /external-link-card >}}
+
 ## 3D visualization
 
 {{< external-link-card
